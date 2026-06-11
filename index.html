@@ -1,51 +1,1624 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOD Digital | LOD Player</title>
+    <title>LOD Player | Limitless Premium IPTV & VOD Experience</title>
+    <meta name="description" content="LOD Player - Advanced IPTV player featuring offline VOD downloading, customizable audio & subtitle tracks, smart playback resume, and Android TV remote control optimization.">
+    <meta name="keywords" content="IPTV, VOD, Xtream Player, Offline IPTV, Smart TV IPTV, Android TV Player, LOD Player, Parental Control">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Styles -->
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0b111e; /* Uygulamanın o tatlı koyu teması */
-            color: #ffffff;
+        :root {
+            --bg-dark: #060b13;
+            --bg-dark-accent: #0b132b;
+            --card-bg: rgba(15, 23, 42, 0.45);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-border-hover: rgba(59, 130, 246, 0.4);
+            --primary: #3b82f6;
+            --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --accent-gradient: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            --primary-glow: rgba(59, 130, 246, 0.25);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dark: #64748b;
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Base Reset */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        /* Background Glow Animation */
+        .background-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .glow-circle {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            max-width: 600px;
+            max-height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-glow) 0%, rgba(59, 130, 246, 0) 70%);
+            filter: blur(100px);
+            opacity: 0.6;
+            animation: floatGlow 25s infinite ease-in-out;
+        }
+
+        .glow-circle-1 {
+            top: -10%;
+            left: -10%;
+        }
+
+        .glow-circle-2 {
+            top: 40%;
+            right: -10%;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.12) 0%, rgba(147, 51, 234, 0) 70%);
+            animation-delay: -5s;
+        }
+
+        .glow-circle-3 {
+            bottom: -10%;
+            left: 20%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0) 70%);
+            animation-delay: -10s;
+        }
+
+        @keyframes floatGlow {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        /* Container helper */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background-color: rgba(6, 11, 19, 0.7);
+            border-bottom: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 0.75rem 0;
+            background-color: rgba(6, 11, 19, 0.9);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            transition: var(--transition);
+        }
+
+        header.scrolled .nav-container {
+            height: 60px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-img {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            object-fit: cover;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        .btn-nav-download {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px var(--primary-glow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-nav-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Responsive Navbar Media Queries */
+        @media (max-width: 768px) {
+            nav a:not(.btn-nav-download) {
+                display: none;
+            }
+            nav {
+                gap: 0.5rem;
+            }
+            .logo-area {
+                font-size: 1.2rem;
+                gap: 8px;
+            }
+            .logo-img {
+                width: 32px;
+                height: 32px;
+                border-radius: 8px;
+            }
+            .btn-nav-download {
+                padding: 0.5rem 0.9rem;
+                font-size: 0.8rem;
+                border-radius: 8px;
+            }
+            .nav-container {
+                height: 60px;
+                padding: 0 1rem;
+            }
+            header.scrolled .nav-container {
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .logo-area span {
+                display: none; /* Hide brand text to guarantee no wrapping on tiny screens */
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .badge-new {
+            align-self: flex-start;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--soft-blue);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            line-height: 1.15;
+            color: var(--text-main);
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3.8rem;
+            }
+        }
+
+        .text-gradient {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 540px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-store {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 0.8rem 1.6rem;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .btn-store.primary {
+            background: var(--primary-gradient);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-store.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-store.secondary {
+            opacity: 0.7;
+            cursor: default;
+        }
+
+        .btn-store.secondary:hover {
+            border-color: var(--card-border);
+            transform: none;
+        }
+
+        .btn-store-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .btn-store-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .btn-store-subtitle {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-store-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            color: white;
+        }
+
+        /* App Screen Mockup */
+        .hero-mockup {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+        }
+
+        .mockup-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 16/9;
+            background: #0d1527;
+            border-radius: 20px;
+            padding: 8px;
+            border: 4px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(59, 130, 246, 0.15);
+            overflow: hidden;
+        }
+
+        .mockup-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 16px;
+        }
+
+        /* Simulated Player UI */
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .player-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.65rem;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .player-controls-top {
+            display: flex;
+            gap: 10px;
+        }
+
+        .player-icon-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .player-icon-btn svg {
+            width: 12px;
+            height: 12px;
+            fill: white;
+        }
+
+        .player-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .player-play-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+
+        .player-play-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+            margin-left: 2px;
+        }
+
+        .player-skip-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+            opacity: 0.8;
+        }
+
+        .player-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .player-timeline-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .player-timeline-bar {
+            flex-grow: 1;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .player-timeline-progress {
+            width: 40%;
+            height: 100%;
+            background: var(--primary);
+            border-radius: 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .player-timeline-handle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            top: -3px;
+            left: 40%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .player-controls-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-options {
+            display: flex;
+            gap: 12px;
+        }
+
+        .player-opt-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 0.65rem;
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .player-opt-badge svg {
+            width: 10px;
+            height: 10px;
+            fill: var(--text-muted);
+        }
+
+        .player-opt-badge.active {
+            color: var(--soft-blue);
+            border-color: rgba(59, 130, 246, 0.3);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .player-opt-badge.active svg {
+            fill: var(--soft-blue);
+        }
+
+        /* Floating Cards */
+        .floating-card {
+            position: absolute;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: 10px 14px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--glass-shadow);
+            z-index: 10;
+            animation: floatUpDown 6s infinite ease-in-out;
+        }
+
+        .fc-1 {
+            top: -20px;
+            right: -20px;
+            animation-delay: 0s;
+        }
+
+        .fc-2 {
+            bottom: -20px;
+            left: -20px;
+            animation-delay: -3s;
+        }
+
+        @keyframes floatUpDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .fc-icon {
+            width: 28px;
+            height: 28px;
+            background: rgba(59, 130, 246, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fc-icon svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--soft-blue);
+        }
+
+        .fc-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fc-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .fc-subtitle {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
+        /* Section Global Settings */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
             text-align: center;
+            max-width: 650px;
+            margin: 0 auto 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
-        .container {
-            max-width: 600px;
-            padding: 20px;
+
+        .section-subtitle-tag {
+            color: var(--soft-blue);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #3b82f6; /* Canlı mavi tonu */
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--text-main);
         }
-        p {
-            font-size: 1.2rem;
-            color: #9ca3af;
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--card-border-hover);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.15);
+        }
+
+        .feature-icon-wrapper {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon-wrapper {
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .feature-icon-wrapper svg {
+            width: 26px;
+            height: 26px;
+            fill: var(--soft-blue);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon-wrapper svg {
+            fill: white;
+        }
+
+        .feature-card-title {
+            font-size: 1.3rem;
+            color: var(--text-main);
+        }
+
+        .feature-card-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
             line-height: 1.6;
         }
-        .footer {
-            margin-top: 30px;
+
+        /* TV Showcase Section */
+        .tv-showcase {
+            background: linear-gradient(180deg, rgba(6, 11, 19, 0) 0%, rgba(11, 19, 43, 0.4) 50%, rgba(6, 11, 19, 0) 100%);
+        }
+
+        .tv-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .tv-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+        }
+
+        .tv-mockup-outer {
+            position: relative;
+            width: 100%;
+            max-width: 580px;
+            aspect-ratio: 16/9;
+            background: #111827;
+            border: 12px solid #1f2937;
+            border-radius: 16px;
+            box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.9), 0 0 50px rgba(59, 130, 246, 0.1);
+        }
+
+        /* TV Stand */
+        .tv-stand {
+            width: 140px;
+            height: 30px;
+            background: #1f2937;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+        }
+
+        .tv-stand-base {
+            width: 240px;
+            height: 6px;
+            background: #111827;
+            margin: 0 auto;
+            border-radius: 4px;
+        }
+
+        .tv-screen-content {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #090d16 0%, #030712 100%);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tv-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Outfit', sans-serif;
             font-size: 0.9rem;
-            color: #4b5563;
+            font-weight: 700;
+        }
+
+        .tv-logo-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 8px var(--primary);
+        }
+
+        .tv-clock {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .tv-menu {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .tv-menu-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            padding: 6px 14px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+        }
+
+        .tv-menu-item.focused {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+            transform: scale(1.05);
+            font-weight: 600;
+        }
+
+        .tv-body {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .tv-channels-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 100%;
+        }
+
+        .tv-channel-card {
+            aspect-ratio: 16/10;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tv-channel-card.focused {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+            transform: scale(1.08);
+        }
+
+        .tv-channel-title {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .tv-channel-desc {
+            font-size: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 576px) {
+            .tv-mockup-outer {
+                border-width: 6px;
+                border-radius: 8px;
+            }
+            .tv-stand, .tv-stand-base {
+                display: none;
+            }
+            .tv-screen-content {
+                padding: 10px;
+            }
+            .tv-logo-area {
+                font-size: 0.7rem;
+                gap: 4px;
+            }
+            .tv-logo-dot {
+                width: 5px;
+                height: 5px;
+            }
+            .tv-clock {
+                font-size: 0.6rem;
+            }
+            .tv-menu {
+                gap: 6px;
+                margin-top: 8px;
+            }
+            .tv-menu-item {
+                font-size: 0.55rem;
+                padding: 3px 8px;
+                border-radius: 4px;
+            }
+            .tv-body {
+                margin-top: 8px;
+            }
+            .tv-channels-grid {
+                gap: 5px;
+            }
+            .tv-channel-card {
+                padding: 4px;
+                border-radius: 4px;
+            }
+            .tv-channel-title {
+                font-size: 0.45rem;
+            }
+            .tv-channel-desc {
+                font-size: 0.35rem;
+            }
+        }
+
+        .tv-features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .tv-feature-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .tv-feature-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .tv-feature-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--soft-blue);
+        }
+
+        .tv-feature-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .tv-feature-title {
+            font-size: 1.15rem;
+            color: var(--text-main);
+        }
+
+        .tv-feature-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Offline Alert Info Box */
+        .offline-notice-wrapper {
+            margin-top: 80px;
+        }
+
+        .offline-notice {
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        @media (min-width: 768px) {
+            .offline-notice {
+                flex-direction: row;
+                align-items: center;
+                gap: 2rem;
+            }
+        }
+
+        .notice-icon-container {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .notice-icon-container svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--soft-blue);
+        }
+
+        .notice-text-container {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .notice-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .notice-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Call To Action Banner */
+        .cta {
+            padding: 80px 0;
+        }
+
+        .cta-box {
+            background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, rgba(6, 11, 19, 0.8) 100%), var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 4.5rem 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.8rem;
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-title {
+            font-size: 2.2rem;
+            color: var(--text-main);
+        }
+
+        @media (min-width: 768px) {
+            .cta-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        .cta-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #030712;
+            border-top: 1px solid var(--card-border);
+            padding: 60px 0 40px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .footer-brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .footer-brand-logo span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-logo-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .footer-desc {
+            max-width: 320px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 4px;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact-item svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--text-muted);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--card-border);
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+            }
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--text-muted);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>LOD Player</h1>
-        <p>Gelişmiş, hızlı ve kullanıcı dostu IPTV oynatıcı deneyimi. Çok yakında Google Play Store'da!</p>
-        <div class="footer">
-            &copy; 2026 LOD Digital. Tüm Hakları Saklıdır. <br>
-            Contact: loddigital.dev@gmail.com
-        </div>
+
+    <!-- Background Glow Blobs -->
+    <div class="background-glow">
+        <div class="glow-circle glow-circle-1"></div>
+        <div class="glow-circle glow-circle-2"></div>
+        <div class="glow-circle glow-circle-3"></div>
     </div>
+
+    <!-- Header / Nav -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo-area">
+                <img src="./logo.png" alt="LOD Player Logo" class="logo-img">
+                <span>LOD Player</span>
+            </a>
+            <nav id="desktop-nav">
+                <a href="#features">Features</a>
+                <a href="#tv-experience">TV Experience</a>
+                <a href="#downloads" class="btn-nav-download">Download Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge-new">LOD Digital Presents</span>
+                <h1 class="hero-title">Unleash Premium <br><span class="text-gradient">Limitless Streaming</span></h1>
+                <p class="hero-description">LOD Player is a state-of-the-art player featuring offline VOD downloading, advanced audio/subtitle track selection, and seamless Android TV D-Pad controller optimization.</p>
+                <div class="hero-actions">
+                    <!-- Google Play Store Button (Active Link) -->
+                    <a href="https://play.google.com/store/apps/details?id=com.lodplayer" target="_blank" class="btn-store primary">
+                        <div class="btn-store-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3.609 1.814L13.783 12 3.609 22.186A2.23 2.23 0 0 1 3 20.6V3.4c0-.623.232-1.215.609-1.586zm11.597 8.766l2.36 1.362L4.996 23.473l10.21-12.893zm3.729 2.152c.677-.39 1.065-1.042 1.065-1.732s-.388-1.342-1.065-1.732l-2.613-1.508-2.639 3.24 2.639 3.24 2.613-1.508zM15.206 11.58L4.996.527l12.57 7.258-2.36 3.795z"/>
+                            </svg>
+                        </div>
+                        <div class="btn-store-text">
+                            <span class="btn-store-subtitle">GET IT ON</span>
+                            <span class="btn-store-title">Google Play</span>
+                        </div>
+                    </a>
+                    <!-- App Store Button (Coming Soon) -->
+                    <div class="btn-store secondary">
+                        <div class="btn-store-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.1,16.67C20.08,16.74 19.67,18.11 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z" />
+                            </svg>
+                        </div>
+                        <div class="btn-store-text">
+                            <span class="btn-store-subtitle">COMING SOON</span>
+                            <span class="btn-store-title">App Store</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simulated Mobile App Player Mockup -->
+            <div class="hero-mockup">
+                <div class="mockup-wrapper">
+                    <div class="mockup-screen">
+                        <div class="player-header">
+                            <div class="player-title">
+                                <div class="player-badge">LOD Live</div>
+                                <span>National Channel HD (Live)</span>
+                            </div>
+                            <div class="player-controls-top">
+                                <div class="player-icon-btn">
+                                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+                                </div>
+                                <div class="player-icon-btn">
+                                    <svg viewBox="0 0 24 24"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.47,5.34 14.86,5.08L14.47,2.42C14.43,2.18 14.22,2 13.97,2H9.97C9.72,2 9.51,2.18 9.47,2.42L9.08,5.08C8.47,5.34 7.9,5.66 7.38,6.05L4.89,5.05C4.67,4.96 4.4,5.05 4.28,5.27L2.28,8.73C2.16,8.95 2.21,9.22 2.4,9.37L4.51,11C4.47,11.34 4.45,11.67 4.45,12C4.45,12.33 4.47,12.65 4.51,12.97L2.4,14.63C2.21,14.78 2.16,15.05 2.28,15.27L4.28,18.73C4.4,18.95 4.67,19.04 4.89,18.95L7.38,17.95C7.9,18.34 8.47,18.66 9.08,18.92L9.47,21.58C9.51,21.82 9.72,22 9.97,22H13.97C14.22,22 14.43,21.82 14.47,21.58L14.86,18.92C15.47,18.66 16.04,18.34 16.56,17.95L19.05,18.95C19.27,19.04 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="player-center">
+                            <div class="player-skip-btn">
+                                <svg viewBox="0 0 24 24"><path d="M6,18V6H8V18H6M9.5,12L18,6V18L9.5,12Z"/></svg>
+                            </div>
+                            <div class="player-play-btn">
+                                <svg viewBox="0 0 24 24"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"/></svg>
+                            </div>
+                            <div class="player-skip-btn">
+                                <svg viewBox="0 0 24 24"><path d="M16,18H18V6H16M14.5,12L6,18V6L14.5,12Z"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="player-bottom">
+                            <div class="player-timeline-container">
+                                <span>20:15</span>
+                                <div class="player-timeline-bar">
+                                    <div class="player-timeline-progress"></div>
+                                    <div class="player-timeline-handle"></div>
+                                </div>
+                                <span>22:00</span>
+                            </div>
+                            <div class="player-controls-bottom">
+                                <div class="player-options">
+                                    <div class="player-opt-badge active">
+                                        <svg viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z"/></svg>
+                                        English (5.1)
+                                    </div>
+                                    <div class="player-opt-badge">
+                                        <svg viewBox="0 0 24 24"><path d="M20,2H4C2.89,2 2,2.89 2,4V16C2,17.11 2.89,18 4,18H8V21A1,1 0 0,0 9,22H15A1,1 0 0,0 16,21V18H20F2,20C21.11,18 22,17.11 22,16V4C22,2.89 21.11,2 20,2M20,16H4V4H20V16M8,12H16V14H8V12M8,8H16V10H8V8Z"/></svg>
+                                        Subtitles On
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating glass card: Offline Active -->
+                <div class="floating-card fc-1">
+                    <div class="fc-icon">
+                        <svg viewBox="0 0 24 24"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg>
+                    </div>
+                    <div class="fc-text">
+                        <span class="fc-title">VOD Download Active</span>
+                        <span class="fc-subtitle">Watch Offline</span>
+                    </div>
+                </div>
+
+                <!-- Floating glass card: Sleep Timer -->
+                <div class="floating-card fc-2">
+                    <div class="fc-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12.2,2C11.1,2.8 10.4,4.1 10.4,5.5C10.4,8.5 12.9,11 15.9,11C17.3,11 18.6,10.3 19.4,9.2C19,13.9 15.1,17.5 10.4,17.5C5.2,17.5 1,13.3 1,8.1C1,3.4 4.6,0.5 9.2,0.1C10,1.3 11,2 12.2,2Z"/></svg>
+                    </div>
+                    <div class="fc-text">
+                        <span class="fc-title">Sleep Timer</span>
+                        <span class="fc-subtitle">Smart Shutdown</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle-tag">Premium Experience</span>
+                <h2 class="section-title">Advanced Features</h2>
+                <p class="section-desc">LOD Player combines industry-leading media playback capabilities with a clean, hardware-optimized user interface.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Card 1: VOD Offline Download -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,17L7,12H10V8H14V12H17L12,17Z"/></svg>
+                    </div>
+                    <h3 class="feature-card-title">Offline VOD Download</h3>
+                    <p class="feature-card-desc">Download your favorite movies and series directly inside the app. Enjoy high-quality local playback without needing an active internet connection.</p>
+                </div>
+
+                <!-- Card 2: Language & Subtitles -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z"/></svg>
+                    </div>
+                    <h3 class="feature-card-title">Language & Subtitle Tracks</h3>
+                    <p class="feature-card-desc">Easily toggle between available audio streams (multiple languages/dubbing) and customize text subtitle files on the fly.</p>
+                </div>
+
+                <!-- Card 3: Playback History -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z"/></svg>
+                    </div>
+                    <h3 class="feature-card-title">Smart Watch History</h3>
+                    <p class="feature-card-desc">Our high-performance database remembers exactly where you stopped watching and lets you resume from the exact second with a single tap.</p>
+                </div>
+
+                <!-- Card 4: Android TV & High Performance -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M21,17H3V5H21M21,3H3C1.89,3 1,3.89 1,5V17A2,2 0 0,0 3,19H10V21H14V19H21A2,2 0 0,0 23,17V5C23,3.89 22.1,3 21,3Z"/></svg>
+                    </div>
+                    <h3 class="feature-card-title">Smart TV & D-Pad Remote</h3>
+                    <p class="feature-card-desc">Fully optimized for Android TV/Smart TV screens. Enjoy smooth D-Pad remote navigation and lag-free renders even on low-end TV Box devices.</p>
+                </div>
+
+                <!-- Card 5: Background Audio Playback -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                    </div>
+                    <h3 class="feature-card-title">Background Audio Playback</h3>
+                    <p class="feature-card-desc">Keep your live streams or video audio playing in the background or while your screen is off. (Note: Available on mobile devices only).</p>
+                </div>
+
+                <!-- Card 6: Parental Control & +18 Filter -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M12,12c2.21,0,4-1.79,4-4s-1.79-4-4-4S8,5.79,8,8S9.79,12,12,12z M12,14c-2.67,0-8,1.34-8,4v2h16v-2C20,15.34,14.67,14,12,14z M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8S16.41,20,12,20z"/></svg>
+                    </div>
+                    <h3 class="feature-card-title">Parental Control (+18 Filter)</h3>
+                    <p class="feature-card-desc">Protect your family and organize your media lists by easily filtering out, hiding, or password-locking adult (+18) categories and channels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TV Experience Showcase Section -->
+    <section id="tv-experience" class="tv-showcase">
+        <div class="container tv-grid">
+            <!-- Simulated Television Frame -->
+            <div class="hero-mockup">
+                <div>
+                    <div class="tv-mockup-outer">
+                        <div class="tv-screen-content">
+                            <div class="tv-header">
+                                <div class="tv-logo-area">
+                                    <div class="tv-logo-dot"></div>
+                                    <span>LOD Player TV</span>
+                                </div>
+                                <div class="tv-clock">18:45</div>
+                            </div>
+                            
+                            <div class="tv-menu">
+                                <div class="tv-menu-item">Live TV</div>
+                                <div class="tv-menu-item focused">Movies (VOD)</div>
+                                <div class="tv-menu-item">Series</div>
+                                <div class="tv-menu-item">Settings</div>
+                            </div>
+
+                            <div class="tv-body">
+                                <div class="tv-channels-grid">
+                                    <div class="tv-channel-card">
+                                        <span class="tv-channel-title">Lucid Dreams</span>
+                                        <span class="tv-channel-desc">Sci-Fi | 2.5 hrs</span>
+                                    </div>
+                                    <div class="tv-channel-card focused">
+                                        <span class="tv-channel-title">Cosmic Quest</span>
+                                        <span class="tv-channel-desc">Adventure | 2.8 hrs</span>
+                                    </div>
+                                    <div class="tv-channel-card">
+                                        <span class="tv-channel-title">Digital Awakening</span>
+                                        <span class="tv-channel-desc">Action | 2.1 hrs</span>
+                                    </div>
+                                    <div class="tv-channel-card">
+                                        <span class="tv-channel-title">Water Planet</span>
+                                        <span class="tv-channel-desc">Fantasy | 3.1 hrs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tv-stand"></div>
+                    <div class="tv-stand-base"></div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="tv-features-list">
+                <div class="section-header" style="text-align: left; margin: 0;">
+                    <span class="section-subtitle-tag">Big Screen Comfort</span>
+                    <h2 class="section-title">Engineered For Smart TVs</h2>
+                    <p class="section-desc">Say goodbye to frustrating cursor controls. LOD Player transforms IPTV navigation on large screens into a smooth, natural experience.</p>
+                </div>
+
+                <div class="tv-feature-item">
+                    <div class="tv-feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6L16,10H13V18H11V10H8L12,6Z"/></svg>
+                    </div>
+                    <div class="tv-feature-text">
+                        <h4 class="tv-feature-title">Smart D-Pad Navigation</h4>
+                        <p class="tv-feature-desc">Easily jump between features, categories, and channels using only the arrow keys (up, down, left, right, select) of your TV remote.</p>
+                    </div>
+                </div>
+
+                <div class="tv-feature-item">
+                    <div class="tv-feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4,6H20V16H4M20,18A2,2 0 0,0 22,16V6C22,4.89 21.1,4 20,4H4C2.89,4 2,4.89 2,6V16A2,2 0 0,0 4,18H0V20H24V18H20Z"/></svg>
+                    </div>
+                    <div class="tv-feature-text">
+                        <h4 class="tv-feature-title">Responsive Landscape Layout</h4>
+                        <p class="tv-feature-desc">Custom optimized grids and readable typography that scale perfectly for televisions, set-top boxes, and landscape tablet displays.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Offline Information Box -->
+        <div class="container offline-notice-wrapper">
+            <div class="offline-notice">
+                <div class="notice-icon-container">
+                    <svg viewBox="0 0 24 24"><path d="M12,2C17.5,2 22,6.5 22,12C22,17.5 17.5,22 12,22C6.5,22 2,17.5 2,12C2,6.5 6.5,2 12,2M12,4C7.58,4 4,7.58 4,12C4,16.42 7.58,20 12,20C16.42,20 20,16.42 20,12C20,7.58 16.42,4 12,4M11,7H13V9H11V7M11,11H13V17H11V11Z"/></svg>
+                </div>
+                <div class="notice-text-container">
+                    <h4 class="notice-title">Secure Offline Download Policy</h4>
+                    <p class="notice-desc">To protect copyright holders and guarantee device security, VOD contents downloaded within LOD Player cannot be accessed or copied by third-party file managers. You can watch your downloaded files offline exclusively through LOD Player's built-in secure player inside the 'Downloads' tab.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section / CTA -->
+    <section id="downloads" class="cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2 class="cta-title">Upgrade Your Streaming Experience Today</h2>
+                <p class="cta-desc">Download LOD Player for free and enjoy the most advanced, fast, and feature-rich media playback engine on the market.</p>
+                
+                <div class="hero-actions" style="justify-content: center;">
+                    <!-- Google Play Active (Real Link) -->
+                    <a href="https://play.google.com/store/apps/details?id=com.lodplayer" target="_blank" class="btn-store primary">
+                        <div class="btn-store-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3.609 1.814L13.783 12 3.609 22.186A2.23 2.23 0 0 1 3 20.6V3.4c0-.623.232-1.215.609-1.586zm11.597 8.766l2.36 1.362L4.996 23.473l10.21-12.893zm3.729 2.152c.677-.39 1.065-1.042 1.065-1.732s-.388-1.342-1.065-1.732l-2.613-1.508-2.639 3.24 2.639 3.24 2.613-1.508zM15.206 11.58L4.996.527l12.57 7.258-2.36 3.795z"/>
+                            </svg>
+                        </div>
+                        <div class="btn-store-text">
+                            <span class="btn-store-subtitle">GET IT ON</span>
+                            <span class="btn-store-title">Google Play</span>
+                        </div>
+                    </a>
+
+                    <!-- App Store Badge (Coming Soon) -->
+                    <div class="btn-store secondary">
+                        <div class="btn-store-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.1,16.67C20.08,16.74 19.67,18.11 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z" />
+                            </svg>
+                        </div>
+                        <div class="btn-store-text">
+                            <span class="btn-store-subtitle">COMING SOON</span>
+                            <span class="btn-store-title">App Store</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-brand-logo">
+                    <img src="./logo.png" alt="LOD Player Logo" class="footer-logo-img">
+                    <span>LOD Player</span>
+                </div>
+                <p class="footer-desc">An advanced IPTV player developed by LOD Digital. Offering secure local offline downloads and smart D-pad remote controller support for televisions and mobile devices.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#tv-experience">TV Experience</a></li>
+                    <li><a href="#downloads">Download</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Support & Contact</h4>
+                <div class="footer-contact">
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
+                        <a href="mailto:support.lodplayer@gmail.com">support.lodplayer@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,17H13V11H11V17M11,9H13V7H11V9Z"/></svg>
+                        <span>LOD Digital IPTV Player Project</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 LOD Digital. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="https://lodplayer-app.github.io/index.html" target="_blank">Privacy Policy</a>
+                <a href="https://lodplayer-app.github.io/index.html" target="_blank">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive script to change header design on scroll -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
