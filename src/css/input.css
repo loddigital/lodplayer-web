@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bgDark: #060b13;
+  --color-bgDarkAccent: #0b132b;
+  --color-primary: #3b82f6;
+  --color-softBlue: #60a5fa;
+  --color-textMain: #ffffff;
+  --color-textMuted: #cbd5e1;
+  --color-textDark: #94a3b8;
+
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+
+  --animate-floatGlow: floatGlow 25s infinite ease-in-out;
+  --animate-floatUpDown: floatUpDown 6s infinite ease-in-out;
+
+  @keyframes floatGlow {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.05); }
+    66% { transform: translate(-20px, 20px) scale(0.95); }
+  }
+
+  @keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+/* Custom base styles mapping that don't need utility classes because they affect global html/body tags */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-bgDark);
+    color: var(--color-textMain);
+    font-family: var(--font-inter);
+    overflow-x: hidden;
+  }
+}
