@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOD Player | Limitless Premium IPTV & VOD Experience</title>
-    <meta name="description" content="LOD Player - Advanced IPTV player featuring offline VOD downloading, customizable audio & subtitle tracks, smart playback resume, and Android TV remote control optimization.">
-    <meta name="keywords" content="IPTV, VOD, Xtream Player, Offline IPTV, Smart TV IPTV, Android TV Player, LOD Player, Parental Control">
+    <meta name="description"
+        content="LOD Player - Advanced IPTV player featuring offline VOD downloading, customizable audio & subtitle tracks, smart playback resume, and Android TV remote control optimization.">
+    <meta name="keywords"
+        content="IPTV, VOD, Xtream Player, Offline IPTV, Smart TV IPTV, Android TV Player, LOD Player, Parental Control">
     <meta name="google-site-verification" content="5viU7AZYJhWrIuPQ--Jdr91vPQqOsZcE2SOCvHB2hfs" />
-    
+
     <!-- Hreflang Tags for Multi-language readiness -->
     <link rel="alternate" hreflang="x-default" href="https://lodplayer.com/" />
     <link rel="alternate" hreflang="en" href="https://lodplayer.com/" />
 
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="LOD Player - Free IPTV Player for Android" />
-    <meta property="og:description" content="Download LOD Player, the fastest and cleanest free IPTV player for Android TV and smartphones." />
+    <meta property="og:description"
+        content="Download LOD Player, the fastest and cleanest free IPTV player for Android TV and smartphones." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lodplayer.com/" />
     <meta property="og:image" content="https://lodplayer.com/assets/images/og-banner.jpg" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    
+
     <!-- Favicon & Touch Icons -->
     <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
@@ -33,8 +37,10 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- CSS Styles -->
     <link rel="stylesheet" href="./style.css">
 
@@ -58,68 +64,82 @@
     }
     </script>
 </head>
-<body class="bg-[#060b13] text-[#ffffff] font-inter overflow-x-hidden relative">
+
+<body class="bg-bgDark text-textMain font-inter overflow-x-hidden relative">
 
     <!-- Background Glow Blobs -->
     <div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
-        <div class="absolute w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full blur-[100px] opacity-60 animate-[floatGlow_25s_infinite_ease-in-out] top-[-10%] left-[-10%] bg-[radial-gradient(circle,rgba(59,130,246,0.25)_0%,rgba(59,130,246,0)_70%)]"></div>
-        <div class="absolute w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full blur-[100px] opacity-60 animate-[floatGlow_25s_infinite_ease-in-out] top-[40%] right-[-10%] bg-[radial-gradient(circle,rgba(147,51,234,0.12)_0%,rgba(147,51,234,0)_70%)]" style="animation-delay: -5s;"></div>
-        <div class="absolute w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full blur-[100px] opacity-60 animate-[floatGlow_25s_infinite_ease-in-out] bottom-[-10%] left-[20%] bg-[radial-gradient(circle,rgba(59,130,246,0.15)_0%,rgba(59,130,246,0)_70%)]" style="animation-delay: -10s;"></div>
+        <div
+            class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow top-[-10%] left-[-10%] bg-[radial-gradient(circle,rgba(59,130,246,0.25)_0%,rgba(59,130,246,0)_70%)]">
+        </div>
+        <div class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow top-[40%] right-[-10%] bg-[radial-gradient(circle,rgba(147,51,234,0.12)_0%,rgba(147,51,234,0)_70%)]"
+            style="animation-delay: -5s;"></div>
+        <div class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow bottom-[-10%] left-[20%] bg-[radial-gradient(circle,rgba(59,130,246,0.15)_0%,rgba(59,130,246,0)_70%)]"
+            style="animation-delay: -10s;"></div>
     </div>
 
-    <!-- Header / Nav -->
-    <header id="header" class="fixed top-0 left-0 w-full z-[100] backdrop-blur-[16px] bg-[#060b13]/70 border-b border-white/12 transition-all duration-300">
-        <div id="nav-container" class="max-w-[1200px] mx-auto px-4 md:px-8 relative flex justify-between items-center h-[60px] md:h-[80px] transition-all duration-300">
-            <a href="#" class="flex items-center gap-2 md:gap-3 text-xl md:text-2xl font-extrabold font-outfit bg-clip-text text-transparent bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)]">
-                <img src="./assets/images/logo.png" alt="LOD Player Logo" loading="lazy" class="w-[32px] h-[32px] md:w-[42px] md:h-[42px] rounded-lg md:rounded-[10px] border border-white/15 shadow-[0_4px_12px_rgba(59,130,246,0.3)] object-cover">
-                <span class="max-[380px]:hidden">LOD Player</span>
-            </a>
-            <nav id="desktop-nav" class="flex items-center gap-2 md:gap-8">
-                <a href="#features" class="text-[0.95rem] font-medium text-[#cbd5e1] hover:text-white transition-all hidden md:block">Features</a>
-                <a href="#tv-experience" class="text-[0.95rem] font-medium text-[#cbd5e1] hover:text-white transition-all hidden md:block">TV Experience</a>
-                <a href="#downloads" class="bg-[linear-gradient(135deg,#3b82f6_0%,#1d4ed8_100%)] text-white px-[0.9rem] md:px-[1.2rem] py-[0.5rem] md:py-[0.6rem] rounded-lg md:rounded-xl text-[0.8rem] md:text-[0.9rem] font-semibold shadow-[0_4px_15px_rgba(59,130,246,0.25)] border border-white/10 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(59,130,246,0.4)] transition-all">Download Now</a>
-            </nav>
-        </div>
-    </header>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
-    <section class="pt-[160px] pb-[100px] relative">
-        <div class="max-w-[1200px] mx-auto px-8 relative grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+    <section class="pt-40 pb-25 relative">
+        <div class="max-w-300 mx-auto px-8 relative grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
             <div class="flex flex-col gap-6">
-                <span class="self-start bg-[#3b82f6]/15 text-[#60a5fa] border border-[#3b82f6]/30 px-4 py-1.5 rounded-full text-[0.85rem] font-semibold tracking-[0.05em] uppercase">LOD Digital Presents</span>
-                <h1 class="font-outfit font-bold text-[2.8rem] md:text-[3.8rem] leading-[1.15] text-white tracking-[-0.02em]">Unleash Premium <br><span class="bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)] bg-clip-text text-transparent">Limitless Streaming</span></h1>
-                <p class="text-[1.15rem] text-[#cbd5e1] max-w-[540px]">LOD Player is a state-of-the-art player featuring offline VOD downloading, advanced audio/subtitle track selection, and seamless Android TV D-Pad controller optimization.</p>
+                <span
+                    class="self-start bg-primary/15 text-softBlue border border-primary/30 px-4 py-1.5 rounded-full text-[0.85rem] font-semibold tracking-wider uppercase">LOD
+                    Digital Presents</span>
+                <h1
+                    class="font-outfit font-bold text-[2.8rem] md:text-[3.8rem] leading-[1.15] text-white tracking-[-0.02em]">
+                    Unleash Premium <br><span
+                        class="bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)] bg-clip-text text-transparent">Limitless
+                        Streaming</span></h1>
+                <p class="text-[1.15rem] text-textMuted max-w-135">LOD Player is a state-of-the-art player featuring
+                    offline VOD downloading, advanced audio/subtitle track selection, and seamless Android TV D-Pad
+                    controller optimization.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 w-full sm:w-max">
                     <!-- 1. Google Play Store Button -->
-                    <a href="https://play.google.com/store/apps/details?id=com.lodplayer" target="_blank" class="flex items-center gap-3 bg-[linear-gradient(135deg,#3b82f6_0%,#1d4ed8_100%)] border border-white/10 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer transition-all duration-300 backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(59,130,246,0.4)] hover:border-white/20 w-full justify-start">
+                    <a href="https://play.google.com/store/apps/details?id=com.lodplayer" target="_blank"
+                        class="flex items-center gap-3 bg-[linear-gradient(135deg,#3b82f6_0%,#1d4ed8_100%)] border border-white/10 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer transition-all duration-300 backdrop-blur-md shadow-glass hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(59,130,246,0.4)] hover:border-white/20 w-full justify-start">
                         <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                            <svg viewBox="0 0 24 24" class="fill-white"><path d="M3.609 1.814L13.783 12 3.609 22.186A2.23 2.23 0 0 1 3 20.6V3.4c0-.623.232-1.215.609-1.586zm11.597 8.766l2.36 1.362L4.996 23.473l10.21-12.893zm3.729 2.152c.677-.39 1.065-1.042 1.065-1.732s-.388-1.342-1.065-1.732l-2.613-1.508-2.639 3.24 2.639 3.24 2.613-1.508zM15.206 11.58L4.996.527l12.57 7.258-2.36 3.795z"/></svg>
+                            <svg viewBox="0 0 24 24" class="fill-white">
+                                <path
+                                    d="M3.609 1.814L13.783 12 3.609 22.186A2.23 2.23 0 0 1 3 20.6V3.4c0-.623.232-1.215.609-1.586zm11.597 8.766l2.36 1.362L4.996 23.473l10.21-12.893zm3.729 2.152c.677-.39 1.065-1.042 1.065-1.732s-.388-1.342-1.065-1.732l-2.613-1.508-2.639 3.24 2.639 3.24 2.613-1.508zM15.206 11.58L4.996.527l12.57 7.258-2.36 3.795z" />
+                            </svg>
                         </div>
                         <div class="flex flex-col items-start whitespace-nowrap">
-                            <span class="text-[0.75rem] text-white/70 uppercase tracking-[0.05em]">GET IT ON</span>
+                            <span class="text-[0.75rem] text-white/70 uppercase tracking-wider">GET IT ON</span>
                             <span class="text-[1.05rem] font-bold font-outfit text-white">Google Play</span>
                         </div>
                     </a>
 
                     <!-- 2. App Store Button (Coming Soon) -->
-                    <div class="flex items-center gap-3 bg-[#0a1120]/65 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-default opacity-70 backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] hover:border-white/12 transition-all duration-300 w-full justify-start">
+                    <div
+                        class="flex items-center gap-3 bg-[#0a1120]/65 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-default opacity-70 backdrop-blur-md shadow-glass hover:border-white/12 transition-all duration-300 w-full justify-start">
                         <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                            <svg viewBox="0 0 24 24" class="fill-white"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.1,16.67C20.08,16.74 19.67,18.11 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z" /></svg>
+                            <svg viewBox="0 0 24 24" class="fill-white">
+                                <path
+                                    d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.1,16.67C20.08,16.74 19.67,18.11 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z" />
+                            </svg>
                         </div>
                         <div class="flex flex-col items-start whitespace-nowrap">
-                            <span class="text-[0.75rem] text-white/70 uppercase tracking-[0.05em]">COMING SOON</span>
+                            <span class="text-[0.75rem] text-white/70 uppercase tracking-wider">COMING SOON</span>
                             <span class="text-[1.05rem] font-bold font-outfit text-white">App Store</span>
                         </div>
                     </div>
 
                     <!-- 3. APK Direct Download -->
-                    <a href="https://github.com/loddigital/loddigital.github.io/releases/download/v1.1.1-50/lod-player-1.1.1-50.apk" download="LOD_Player_1.1.1.apk" class="flex items-center gap-3 bg-[#0a1120]/80 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:border-white/30 transition-all duration-300 w-full justify-start">
+                    <a href="https://github.com/loddigital/loddigital.github.io/releases/download/v1.1.1-50/lod-player-1.1.1-50.apk"
+                        download="LOD_Player_1.1.1.apk"
+                        class="flex items-center gap-3 bg-[#0a1120]/80 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:border-white/30 transition-all duration-300 w-full justify-start">
                         <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                            <svg viewBox="0 0 24 24" class="fill-white w-5 h-5"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg>
+                            <svg viewBox="0 0 24 24" class="fill-white w-5 h-5">
+                                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                            </svg>
                         </div>
                         <div class="flex flex-col items-start whitespace-nowrap">
-                            <span class="text-[0.75rem] text-white/70 uppercase tracking-[0.05em]">DIRECT DOWNLOAD</span>
-                            <span class="text-[1.05rem] font-bold font-outfit text-white">Android APK <span class="text-[0.65rem] text-[#94a3b8] font-normal ml-1 tracking-wide">v1.1.1-50</span></span>
+                            <span class="text-[0.75rem] text-white/70 uppercase tracking-wider">DIRECT DOWNLOAD</span>
+                            <span class="text-[1.05rem] font-bold font-outfit text-white">Android APK <span
+                                    class="text-[0.65rem] text-textDark font-normal ml-1 tracking-wide">v1.1.1-50</span></span>
                         </div>
                     </a>
                 </div>
@@ -127,52 +147,79 @@
 
             <!-- Simulated Mobile App Player Mockup -->
             <div class="relative flex justify-center items-center">
-                <div class="relative w-full max-w-[500px] aspect-video bg-[#0d1527] rounded-[20px] p-2 border-[4px] border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_40px_rgba(59,130,246,0.15)] overflow-hidden">
-                    <div class="w-full h-full rounded-xl bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden flex flex-col justify-between p-4">
+                <div
+                    class="relative w-full max-w-125 aspect-video bg-[#0d1527] rounded-[20px] p-2 border-4 border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_40px_rgba(59,130,246,0.15)] overflow-hidden">
+                    <div
+                        class="w-full h-full rounded-xl bg-linear-to-b from-slate-900 to-slate-950 relative overflow-hidden flex flex-col justify-between p-4">
                         <div class="flex justify-between items-center">
                             <div class="font-outfit text-[0.85rem] font-semibold text-white flex items-center gap-2">
-                                <div class="bg-red-500 text-white text-[0.65rem] px-1.5 py-[1px] rounded uppercase font-bold">LOD Live</div>
+                                <div
+                                    class="bg-red-500 text-white text-[0.65rem] px-1.5 py-px rounded uppercase font-bold">
+                                    LOD Live</div>
                                 <span>National Channel HD (Live)</span>
                             </div>
                             <div class="flex gap-2.5">
                                 <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
-                                    <svg viewBox="0 0 24 24" class="w-3 h-3 fill-white"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+                                    <svg viewBox="0 0 24 24" class="w-3 h-3 fill-white">
+                                        <path
+                                            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                    </svg>
                                 </div>
                                 <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
-                                    <svg viewBox="0 0 24 24" class="w-3 h-3 fill-white"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.47,5.34 14.86,5.08L14.47,2.42C14.43,2.18 14.22,2 13.97,2H9.97C9.72,2 9.51,2.18 9.47,2.42L9.08,5.08C8.47,5.34 7.9,5.66 7.38,6.05L4.89,5.05C4.67,4.96 4.4,5.05 4.28,5.27L2.28,8.73C2.16,8.95 2.21,9.22 2.4,9.37L4.51,11C4.47,11.34 4.45,11.67 4.45,12C4.45,12.33 4.47,12.65 4.51,12.97L2.4,14.63C2.21,14.78 2.16,15.05 2.28,15.27L4.28,18.73C4.4,18.95 4.67,19.04 4.89,18.95L7.38,17.95C7.9,18.34 8.47,18.66 9.08,18.92L9.47,21.58C9.51,21.82 9.72,22 9.97,22H13.97C14.22,22 14.43,21.82 14.47,21.58L14.86,18.92C15.47,18.66 16.04,18.34 16.56,17.95L19.05,18.95C19.27,19.04 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/></svg>
+                                    <svg viewBox="0 0 24 24" class="w-3 h-3 fill-white">
+                                        <path
+                                            d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.47,5.34 14.86,5.08L14.47,2.42C14.43,2.18 14.22,2 13.97,2H9.97C9.72,2 9.51,2.18 9.47,2.42L9.08,5.08C8.47,5.34 7.9,5.66 7.38,6.05L4.89,5.05C4.67,4.96 4.4,5.05 4.28,5.27L2.28,8.73C2.16,8.95 2.21,9.22 2.4,9.37L4.51,11C4.47,11.34 4.45,11.67 4.45,12C4.45,12.33 4.47,12.65 4.51,12.97L2.4,14.63C2.21,14.78 2.16,15.05 2.28,15.27L4.28,18.73C4.4,18.95 4.67,19.04 4.89,18.95L7.38,17.95C7.9,18.34 8.47,18.66 9.08,18.92L9.47,21.58C9.51,21.82 9.72,22 9.97,22H13.97C14.22,22 14.43,21.82 14.47,21.58L14.86,18.92C15.47,18.66 16.04,18.34 16.56,17.95L19.05,18.95C19.27,19.04 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="flex justify-center items-center gap-6">
                             <div class="opacity-80">
-                                <svg viewBox="0 0 24 24" class="w-4 h-4 fill-white"><path d="M6,18V6H8V18H6M9.5,12L18,6V18L9.5,12Z"/></svg>
+                                <svg viewBox="0 0 24 24" class="w-4 h-4 fill-white">
+                                    <path d="M6,18V6H8V18H6M9.5,12L18,6V18L9.5,12Z" />
+                                </svg>
                             </div>
-                            <div class="w-12 h-12 rounded-full bg-[#3b82f6] flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)]">
-                                <svg viewBox="0 0 24 24" class="w-[18px] h-[18px] fill-white ml-0.5"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"/></svg>
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+                                <svg viewBox="0 0 24 24" class="w-4.5 h-4.5 fill-white ml-0.5">
+                                    <path d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+                                </svg>
                             </div>
                             <div class="opacity-80">
-                                <svg viewBox="0 0 24 24" class="w-4 h-4 fill-white"><path d="M16,18H18V6H16M14.5,12L6,18V6L14.5,12Z"/></svg>
+                                <svg viewBox="0 0 24 24" class="w-4 h-4 fill-white">
+                                    <path d="M16,18H18V6H16M14.5,12L6,18V6L14.5,12Z" />
+                                </svg>
                             </div>
                         </div>
 
                         <div class="flex flex-col gap-2">
-                            <div class="flex items-center gap-2.5 text-[0.7rem] text-[#cbd5e1]">
+                            <div class="flex items-center gap-2.5 text-[0.7rem] text-textMuted">
                                 <span>20:15</span>
                                 <div class="grow h-1 bg-white/20 rounded-full relative">
-                                    <div class="w-[40%] h-full bg-[#3b82f6] rounded-full absolute top-0 left-0"></div>
-                                    <div class="w-2.5 h-2.5 rounded-full bg-white absolute -top-[3px] left-[40%] -translate-x-1/2 shadow-[0_0_6px_rgba(0,0,0,0.5)]"></div>
+                                    <div class="w-[40%] h-full bg-primary rounded-full absolute top-0 left-0"></div>
+                                    <div
+                                        class="w-2.5 h-2.5 rounded-full bg-white absolute -top-0.75 left-[40%] -translate-x-1/2 shadow-[0_0_6px_rgba(0,0,0,0.5)]">
+                                    </div>
                                 </div>
                                 <span>22:00</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <div class="flex gap-3">
-                                    <div class="bg-[#3b82f6]/25 border border-[#3b82f6]/50 text-white text-[0.65rem] px-2 py-1 rounded-md flex items-center gap-1">
-                                        <svg viewBox="0 0 24 24" class="w-2.5 h-2.5 fill-white"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z"/></svg>
+                                    <div
+                                        class="bg-primary/25 border border-primary/50 text-white text-[0.65rem] px-2 py-1 rounded-md flex items-center gap-1">
+                                        <svg viewBox="0 0 24 24" class="w-2.5 h-2.5 fill-white">
+                                            <path
+                                                d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z" />
+                                        </svg>
                                         English (5.1)
                                     </div>
-                                    <div class="bg-white/10 border border-white/20 text-white text-[0.65rem] px-2 py-1 rounded-md flex items-center gap-1">
-                                        <svg viewBox="0 0 24 24" class="w-2.5 h-2.5 fill-white"><path d="M20,2H4C2.89,2 2,2.89 2,4V16C2,17.11 2.89,18 4,18H8V21A1,1 0 0,0 9,22H15A1,1 0 0,0 16,21V18H20F2,20C21.11,18 22,17.11 22,16V4C22,2.89 21.11,2 20,2M20,16H4V4H20V16M8,12H16V14H8V12M8,8H16V10H8V8Z"/></svg>
+                                    <div
+                                        class="bg-white/10 border border-white/20 text-white text-[0.65rem] px-2 py-1 rounded-md flex items-center gap-1">
+                                        <svg viewBox="0 0 24 24" class="w-2.5 h-2.5 fill-white">
+                                            <path
+                                                d="M20,2H4C2.89,2 2,2.89 2,4V16C2,17.11 2.89,18 4,18H8V21A1,1 0 0,0 9,22H15A1,1 0 0,0 16,21V18H20F2,20C21.11,18 22,17.11 22,16V4C22,2.89 21.11,2 20,2M20,16H4V4H20V16M8,12H16V14H8V12M8,8H16V10H8V8Z" />
+                                        </svg>
                                         Subtitles On
                                     </div>
                                 </div>
@@ -182,9 +229,12 @@
                 </div>
 
                 <!-- Floating glass card: Offline Active -->
-                <div class="absolute bg-[#0a1120]/90 border border-white/20 rounded-xl px-3.5 py-2.5 backdrop-blur-md flex items-center gap-2.5 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] z-10 animate-[floatUpDown_6s_infinite_ease-in-out] -top-5 -right-5 delay-0">
-                    <div class="w-7 h-7 bg-[#3b82f6]/15 rounded-lg flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-[#60a5fa]"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg>
+                <div
+                    class="absolute bg-[#0a1120]/90 border border-white/20 rounded-xl px-3.5 py-2.5 backdrop-blur-md flex items-center gap-2.5 shadow-glass z-10 animate-floatUpDown -top-5 -right-5 delay-0">
+                    <div class="w-7 h-7 bg-primary/15 rounded-lg flex items-center justify-center">
+                        <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-softBlue">
+                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                        </svg>
                     </div>
                     <div class="flex flex-col">
                         <span class="text-[0.75rem] font-bold text-white font-outfit">VOD Download Active</span>
@@ -193,9 +243,13 @@
                 </div>
 
                 <!-- Floating glass card: Sleep Timer -->
-                <div class="absolute bg-[#0a1120]/90 border border-white/20 rounded-xl px-3.5 py-2.5 backdrop-blur-md flex items-center gap-2.5 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] z-10 animate-[floatUpDown_6s_infinite_ease-in-out] -bottom-5 -left-5 [animation-delay:-3s]">
-                    <div class="w-7 h-7 bg-[#3b82f6]/15 rounded-lg flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-[#60a5fa]"><path d="M12.2,2C11.1,2.8 10.4,4.1 10.4,5.5C10.4,8.5 12.9,11 15.9,11C17.3,11 18.6,10.3 19.4,9.2C19,13.9 15.1,17.5 10.4,17.5C5.2,17.5 1,13.3 1,8.1C1,3.4 4.6,0.5 9.2,0.1C10,1.3 11,2 12.2,2Z"/></svg>
+                <div
+                    class="absolute bg-[#0a1120]/90 border border-white/20 rounded-xl px-3.5 py-2.5 backdrop-blur-md flex items-center gap-2.5 shadow-glass z-10 animate-floatUpDown -bottom-5 -left-5 [animation-delay:-3s]">
+                    <div class="w-7 h-7 bg-primary/15 rounded-lg flex items-center justify-center">
+                        <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-softBlue">
+                            <path
+                                d="M12.2,2C11.1,2.8 10.4,4.1 10.4,5.5C10.4,8.5 12.9,11 15.9,11C17.3,11 18.6,10.3 19.4,9.2C19,13.9 15.1,17.5 10.4,17.5C5.2,17.5 1,13.3 1,8.1C1,3.4 4.6,0.5 9.2,0.1C10,1.3 11,2 12.2,2Z" />
+                        </svg>
                     </div>
                     <div class="flex flex-col">
                         <span class="text-[0.75rem] font-bold text-white font-outfit">Sleep Timer</span>
@@ -207,204 +261,315 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-[100px] relative">
-        <div class="max-w-[1200px] mx-auto px-8 relative">
-            <div class="text-center max-w-[650px] mx-auto mb-16 flex flex-col gap-4">
-                <span class="text-[#60a5fa] text-[0.9rem] font-bold uppercase tracking-[0.1em]">Premium Experience</span>
-                <h2 class="font-outfit font-bold text-[2.2rem] md:text-[2.8rem] text-white tracking-[-0.02em]">Advanced Features</h2>
-                <p class="text-[1.05rem] text-[#cbd5e1]">LOD Player combines industry-leading media playback capabilities with a clean, hardware-optimized user interface.</p>
+    <section id="features" class="py-10 relative">
+        <div class="max-w-300 mx-auto px-8 relative">
+            <div class="text-center max-w-162.5 mx-auto mb-16 flex flex-col gap-4">
+                <span class="text-softBlue text-[0.9rem] font-bold uppercase tracking-widest">Premium Experience</span>
+                <h2 class="font-outfit font-bold text-[2.2rem] md:text-[2.8rem] text-white tracking-[-0.02em]">Advanced
+                    Features</h2>
+                <p class="text-[1.05rem] text-textMuted">LOD Player combines industry-leading media playback
+                    capabilities with a clean, hardware-optimized user interface.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1: VOD Offline Download -->
-                <article class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-[#3b82f6]/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
-                    <div class="w-14 h-14 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/25 flex items-center justify-center transition-all duration-300 group-hover:bg-[#3b82f6] group-hover:border-[#3b82f6] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
-                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-[#60a5fa] transition-all duration-300 group-hover:fill-white"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,17L7,12H10V8H14V12H17L12,17Z"/></svg>
+                <article
+                    class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+                        <svg viewBox="0 0 24 24"
+                            class="w-6 h-6 fill-softBlue transition-all duration-300 group-hover:fill-white">
+                            <path
+                                d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,17L7,12H10V8H14V12H17L12,17Z" />
+                        </svg>
                     </div>
                     <h3 class="font-outfit font-bold text-[1.3rem] text-white">Offline VOD Download</h3>
-                    <p class="text-[0.95rem] text-[#cbd5e1] leading-relaxed">Download your favorite movies and series directly inside the app. Enjoy high-quality local playback without needing an active internet connection.</p>
+                    <p class="text-[0.95rem] text-textMuted leading-relaxed">Download your favorite movies and series
+                        directly inside the app. Enjoy high-quality local playback without needing an active internet
+                        connection.</p>
                 </article>
 
                 <!-- Card 2: Language & Subtitles -->
-                <article class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-[#3b82f6]/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
-                    <div class="w-14 h-14 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/25 flex items-center justify-center transition-all duration-300 group-hover:bg-[#3b82f6] group-hover:border-[#3b82f6] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
-                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-[#60a5fa] transition-all duration-300 group-hover:fill-white"><path d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z"/></svg>
+                <article
+                    class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+                        <svg viewBox="0 0 24 24"
+                            class="w-6 h-6 fill-softBlue transition-all duration-300 group-hover:fill-white">
+                            <path
+                                d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z" />
+                        </svg>
                     </div>
                     <h3 class="font-outfit font-bold text-[1.3rem] text-white">Language & Subtitle Tracks</h3>
-                    <p class="text-[0.95rem] text-[#cbd5e1] leading-relaxed">Easily toggle between available audio streams (multiple languages/dubbing) and customize text subtitle files on the fly.</p>
+                    <p class="text-[0.95rem] text-textMuted leading-relaxed">Easily toggle between available audio
+                        streams (multiple languages/dubbing) and customize text subtitle files on the fly.</p>
                 </article>
 
                 <!-- Card 3: Playback History -->
-                <article class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-[#3b82f6]/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
-                    <div class="w-14 h-14 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/25 flex items-center justify-center transition-all duration-300 group-hover:bg-[#3b82f6] group-hover:border-[#3b82f6] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
-                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-[#60a5fa] transition-all duration-300 group-hover:fill-white"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z"/></svg>
+                <article
+                    class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+                        <svg viewBox="0 0 24 24"
+                            class="w-6 h-6 fill-softBlue transition-all duration-300 group-hover:fill-white">
+                            <path
+                                d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z" />
+                        </svg>
                     </div>
                     <h3 class="font-outfit font-bold text-[1.3rem] text-white">Smart Watch History</h3>
-                    <p class="text-[0.95rem] text-[#cbd5e1] leading-relaxed">Our high-performance database remembers exactly where you stopped watching and lets you resume from the exact second with a single tap.</p>
+                    <p class="text-[0.95rem] text-textMuted leading-relaxed">Our high-performance database remembers
+                        exactly where you stopped watching and lets you resume from the exact second with a single tap.
+                    </p>
                 </article>
 
                 <!-- Card 4: Android TV & High Performance -->
-                <article class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-[#3b82f6]/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
-                    <div class="w-14 h-14 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/25 flex items-center justify-center transition-all duration-300 group-hover:bg-[#3b82f6] group-hover:border-[#3b82f6] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
-                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-[#60a5fa] transition-all duration-300 group-hover:fill-white"><path d="M21,17H3V5H21M21,3H3C1.89,3 1,3.89 1,5V17A2,2 0 0,0 3,19H10V21H14V19H21A2,2 0 0,0 23,17V5C23,3.89 22.1,3 21,3Z"/></svg>
+                <article
+                    class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+                        <svg viewBox="0 0 24 24"
+                            class="w-6 h-6 fill-softBlue transition-all duration-300 group-hover:fill-white">
+                            <path
+                                d="M21,17H3V5H21M21,3H3C1.89,3 1,3.89 1,5V17A2,2 0 0,0 3,19H10V21H14V19H21A2,2 0 0,0 23,17V5C23,3.89 22.1,3 21,3Z" />
+                        </svg>
                     </div>
                     <h3 class="font-outfit font-bold text-[1.3rem] text-white">Smart TV & D-Pad Remote</h3>
-                    <p class="text-[0.95rem] text-[#cbd5e1] leading-relaxed">Fully optimized for Android TV/Smart TV screens. Enjoy smooth D-Pad remote navigation and lag-free renders even on low-end TV Box devices.</p>
+                    <p class="text-[0.95rem] text-textMuted leading-relaxed">Fully optimized for Android TV/Smart TV
+                        screens. Enjoy smooth D-Pad remote navigation and lag-free renders even on low-end TV Box
+                        devices.</p>
                 </article>
 
                 <!-- Card 5: Background Audio Playback -->
-                <article class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-[#3b82f6]/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
-                    <div class="w-14 h-14 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/25 flex items-center justify-center transition-all duration-300 group-hover:bg-[#3b82f6] group-hover:border-[#3b82f6] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
-                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-[#60a5fa] transition-all duration-300 group-hover:fill-white"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                <article
+                    class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+                        <svg viewBox="0 0 24 24"
+                            class="w-6 h-6 fill-softBlue transition-all duration-300 group-hover:fill-white">
+                            <path
+                                d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+                        </svg>
                     </div>
                     <h3 class="font-outfit font-bold text-[1.3rem] text-white">Background Audio Playback</h3>
-                    <p class="text-[0.95rem] text-[#cbd5e1] leading-relaxed">Keep your live streams or video audio playing in the background or while your screen is off. (Note: Available on mobile devices only).</p>
+                    <p class="text-[0.95rem] text-textMuted leading-relaxed">Keep your live streams or video audio
+                        playing in the background or while your screen is off. (Note: Available on mobile devices only).
+                    </p>
                 </article>
 
                 <!-- Card 6: Parental Control & +18 Filter -->
-                <article class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-[#3b82f6]/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
-                    <div class="w-14 h-14 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/25 flex items-center justify-center transition-all duration-300 group-hover:bg-[#3b82f6] group-hover:border-[#3b82f6] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
-                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-[#60a5fa] transition-all duration-300 group-hover:fill-white"><path d="M12,12c2.21,0,4-1.79,4-4s-1.79-4-4-4S8,5.79,8,8S9.79,12,12,12z M12,14c-2.67,0-8,1.34-8,4v2h16v-2C20,15.34,14.67,14,12,14z M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8S16.41,20,12,20z"/></svg>
+                <article
+                    class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-10 backdrop-blur-md shadow-glass transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1.5 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+                        <svg viewBox="0 0 24 24"
+                            class="w-6 h-6 fill-softBlue transition-all duration-300 group-hover:fill-white">
+                            <path
+                                d="M12,12c2.21,0,4-1.79,4-4s-1.79-4-4-4S8,5.79,8,8S9.79,12,12,12z M12,14c-2.67,0-8,1.34-8,4v2h16v-2C20,15.34,14.67,14,12,14z M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8S16.41,20,12,20z" />
+                        </svg>
                     </div>
                     <h3 class="font-outfit font-bold text-[1.3rem] text-white">Parental Control (+18 Filter)</h3>
-                    <p class="text-[0.95rem] text-[#cbd5e1] leading-relaxed">Protect your family and organize your media lists by easily filtering out, hiding, or password-locking adult (+18) categories and channels.</p>
+                    <p class="text-[0.95rem] text-textMuted leading-relaxed">Protect your family and organize your media
+                        lists by easily filtering out, hiding, or password-locking adult (+18) categories and channels.
+                    </p>
                 </article>
             </div>
         </div>
     </section>
 
     <!-- TV Experience Showcase Section -->
-    <section id="tv-experience" class="py-[100px] relative bg-gradient-to-b from-[#060b13]/0 via-[#0b132b]/40 to-[#060b13]/0">
-        <div class="max-w-[1200px] mx-auto px-8 relative grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+    <section id="tv-experience" class="py-25 relative bg-linear-to-b from-bgDark/0 via-bgDarkAccent/40 to-bgDark/0">
+        <div class="max-w-300 mx-auto px-8 relative grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
             <!-- Simulated Television Frame -->
             <div class="relative flex justify-center items-center">
                 <div>
-                    <div class="relative w-full max-w-[580px] aspect-video bg-gray-900 border-[12px] sm:border-[6px] lg:border-[12px] border-gray-800 rounded-2xl shadow-[0_30px_70px_-20px_rgba(0,0,0,0.9),0_0_50px_rgba(59,130,246,0.1)]">
-                        <div class="w-full h-full bg-gradient-to-br from-[#090d16] to-[#030712] p-2.5 sm:p-5 flex flex-col justify-between overflow-hidden relative">
+                    <div
+                        class="relative w-full max-w-145 aspect-video bg-gray-900 border-12 sm:border-[6px] lg:border-12 border-gray-800 rounded-2xl shadow-[0_30px_70px_-20px_rgba(0,0,0,0.9),0_0_50px_rgba(59,130,246,0.1)]">
+                        <div
+                            class="w-full h-full bg-linear-to-br from-[#090d16] to-[#030712] p-2.5 sm:p-5 flex flex-col justify-between overflow-hidden relative">
                             <div class="flex justify-between items-center">
-                                <div class="flex items-center gap-1 sm:gap-2 font-outfit text-[0.7rem] sm:text-[0.9rem] font-bold text-white">
-                                    <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#3b82f6] shadow-[0_0_8px_#3b82f6]"></div>
+                                <div
+                                    class="flex items-center gap-1 sm:gap-2 font-outfit text-[0.7rem] sm:text-[0.9rem] font-bold text-white">
+                                    <div
+                                        class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary shadow-[0_0_8px_#3b82f6]">
+                                    </div>
                                     <span>LOD Player TV</span>
                                 </div>
-                                <div class="text-[0.6rem] sm:text-[0.75rem] text-[#cbd5e1]">18:45</div>
+                                <div class="text-[0.6rem] sm:text-[0.75rem] text-textMuted">18:45</div>
                             </div>
-                            
+
                             <div class="flex gap-1.5 sm:gap-3 mt-2 sm:mt-4">
-                                <div class="font-outfit text-[0.55rem] sm:text-[0.75rem] px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md bg-white/10 border border-white/20 text-white">Live TV</div>
-                                <div class="font-outfit text-[0.55rem] sm:text-[0.75rem] px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md bg-[#3b82f6]/35 border border-[#3b82f6] text-white shadow-[0_0_12px_rgba(59,130,246,0.4)] scale-105 font-bold">Movies (VOD)</div>
-                                <div class="font-outfit text-[0.55rem] sm:text-[0.75rem] px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md bg-white/10 border border-white/20 text-white">Series</div>
-                                <div class="font-outfit text-[0.55rem] sm:text-[0.75rem] px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md bg-white/10 border border-white/20 text-white">Settings</div>
+                                <div
+                                    class="font-outfit text-[0.55rem] sm:text-[0.75rem] px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md bg-white/10 border border-white/20 text-white">
+                                    Live TV</div>
+                                <div
+                                    class="font-outfit text-[0.55rem] sm:text-[0.75rem] px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md bg-primary/35 border border-primary text-white shadow-[0_0_12px_rgba(59,130,246,0.4)] scale-105 font-bold">
+                                    Movies (VOD)</div>
+                                <div
+                                    class="font-outfit text-[0.55rem] sm:text-[0.75rem] px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md bg-white/10 border border-white/20 text-white">
+                                    Series</div>
+                                <div
+                                    class="font-outfit text-[0.55rem] sm:text-[0.75rem] px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md bg-white/10 border border-white/20 text-white">
+                                    Settings</div>
                             </div>
 
                             <div class="grow flex items-center mt-2 sm:mt-4">
                                 <div class="grid grid-cols-4 gap-1 sm:gap-2.5 w-full">
-                                    <div class="aspect-[16/10] bg-white/10 border border-white/15 rounded p-1 sm:p-2 flex flex-col justify-between">
-                                        <span class="text-[0.45rem] sm:text-[0.65rem] font-semibold text-white">Lucid Dreams</span>
-                                        <span class="text-[0.35rem] sm:text-[0.5rem] text-slate-200">Sci-Fi | 2.5 hrs</span>
+                                    <div
+                                        class="aspect-16/10 bg-white/10 border border-white/15 rounded p-1 sm:p-2 flex flex-col justify-between">
+                                        <span class="text-[0.45rem] sm:text-[0.65rem] font-semibold text-white">Lucid
+                                            Dreams</span>
+                                        <span class="text-[0.35rem] sm:text-[0.5rem] text-slate-200">Sci-Fi | 2.5
+                                            hrs</span>
                                     </div>
-                                    <div class="aspect-[16/10] bg-[#3b82f6]/35 border border-[#3b82f6] rounded p-1 sm:p-2 flex flex-col justify-between shadow-[0_0_15px_rgba(59,130,246,0.5)] scale-110">
-                                        <span class="text-[0.45rem] sm:text-[0.65rem] font-semibold text-white">Cosmic Quest</span>
-                                        <span class="text-[0.35rem] sm:text-[0.5rem] text-slate-200">Adventure | 2.8 hrs</span>
+                                    <div
+                                        class="aspect-16/10 bg-primary/35 border border-primary rounded p-1 sm:p-2 flex flex-col justify-between shadow-[0_0_15px_rgba(59,130,246,0.5)] scale-110">
+                                        <span class="text-[0.45rem] sm:text-[0.65rem] font-semibold text-white">Cosmic
+                                            Quest</span>
+                                        <span class="text-[0.35rem] sm:text-[0.5rem] text-slate-200">Adventure | 2.8
+                                            hrs</span>
                                     </div>
-                                    <div class="aspect-[16/10] bg-white/10 border border-white/15 rounded p-1 sm:p-2 flex flex-col justify-between">
-                                        <span class="text-[0.45rem] sm:text-[0.65rem] font-semibold text-white">Digital Awakening</span>
-                                        <span class="text-[0.35rem] sm:text-[0.5rem] text-slate-200">Action | 2.1 hrs</span>
+                                    <div
+                                        class="aspect-16/10 bg-white/10 border border-white/15 rounded p-1 sm:p-2 flex flex-col justify-between">
+                                        <span class="text-[0.45rem] sm:text-[0.65rem] font-semibold text-white">Digital
+                                            Awakening</span>
+                                        <span class="text-[0.35rem] sm:text-[0.5rem] text-slate-200">Action | 2.1
+                                            hrs</span>
                                     </div>
-                                    <div class="aspect-[16/10] bg-white/10 border border-white/15 rounded p-1 sm:p-2 flex flex-col justify-between">
-                                        <span class="text-[0.45rem] sm:text-[0.65rem] font-semibold text-white">Water Planet</span>
-                                        <span class="text-[0.35rem] sm:text-[0.5rem] text-slate-200">Fantasy | 3.1 hrs</span>
+                                    <div
+                                        class="aspect-16/10 bg-white/10 border border-white/15 rounded p-1 sm:p-2 flex flex-col justify-between">
+                                        <span class="text-[0.45rem] sm:text-[0.65rem] font-semibold text-white">Water
+                                            Planet</span>
+                                        <span class="text-[0.35rem] sm:text-[0.5rem] text-slate-200">Fantasy | 3.1
+                                            hrs</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="w-[140px] h-[30px] bg-gray-800 mx-auto border-t border-white/10 [clip-path:polygon(15%_0%,85%_0%,100%_100%,0%_100%)] hidden sm:block"></div>
-                    <div class="w-[240px] h-1.5 bg-gray-900 mx-auto rounded-sm hidden sm:block"></div>
+                    <div
+                        class="w-35 h-7.5 bg-gray-800 mx-auto border-t border-white/10 [clip-path:polygon(15%_0%,85%_0%,100%_100%,0%_100%)] hidden sm:block">
+                    </div>
+                    <div class="w-60 h-1.5 bg-gray-900 mx-auto rounded-sm hidden sm:block"></div>
                 </div>
             </div>
 
             <!-- Description -->
             <div class="flex flex-col gap-6">
                 <div class="flex flex-col gap-4">
-                    <span class="text-[#60a5fa] text-[0.9rem] font-bold uppercase tracking-[0.1em]">Big Screen Comfort</span>
-                    <h2 class="font-outfit font-bold text-[2.2rem] md:text-[2.8rem] text-white tracking-[-0.02em]">Engineered For Smart TVs</h2>
-                    <p class="text-[1.05rem] text-[#cbd5e1]">Say goodbye to frustrating cursor controls. LOD Player transforms IPTV navigation on large screens into a smooth, natural experience.</p>
+                    <span class="text-softBlue text-[0.9rem] font-bold uppercase tracking-widest">Big Screen
+                        Comfort</span>
+                    <h2 class="font-outfit font-bold text-[2.2rem] md:text-[2.8rem] text-white tracking-[-0.02em]">
+                        Engineered For Smart TVs</h2>
+                    <p class="text-[1.05rem] text-textMuted">Say goodbye to frustrating cursor controls. LOD Player
+                        transforms IPTV navigation on large screens into a smooth, natural experience.</p>
                 </div>
 
                 <div class="flex gap-4 mt-2">
-                    <div class="shrink-0 w-8 h-8 rounded-full bg-[#3b82f6]/15 flex items-center justify-center mt-1">
-                        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-[#60a5fa]"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6L16,10H13V18H11V10H8L12,6Z"/></svg>
+                    <div class="shrink-0 w-8 h-8 rounded-full bg-primary/15 flex items-center justify-center mt-1">
+                        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-softBlue">
+                            <path
+                                d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6L16,10H13V18H11V10H8L12,6Z" />
+                        </svg>
                     </div>
                     <div class="flex flex-col gap-1">
                         <h4 class="font-outfit font-bold text-[1.15rem] text-white">Smart D-Pad Navigation</h4>
-                        <p class="text-[0.95rem] text-[#cbd5e1]">Easily jump between features, categories, and channels using only the arrow keys (up, down, left, right, select) of your TV remote.</p>
+                        <p class="text-[0.95rem] text-textMuted">Easily jump between features, categories, and channels
+                            using only the arrow keys (up, down, left, right, select) of your TV remote.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-4">
-                    <div class="shrink-0 w-8 h-8 rounded-full bg-[#3b82f6]/15 flex items-center justify-center mt-1">
-                        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-[#60a5fa]"><path d="M4,6H20V16H4M20,18A2,2 0 0,0 22,16V6C22,4.89 21.1,4 20,4H4C2.89,4 2,4.89 2,6V16A2,2 0 0,0 4,18H0V20H24V18H20Z"/></svg>
+                    <div class="shrink-0 w-8 h-8 rounded-full bg-primary/15 flex items-center justify-center mt-1">
+                        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-softBlue">
+                            <path
+                                d="M4,6H20V16H4M20,18A2,2 0 0,0 22,16V6C22,4.89 21.1,4 20,4H4C2.89,4 2,4.89 2,6V16A2,2 0 0,0 4,18H0V20H24V18H20Z" />
+                        </svg>
                     </div>
                     <div class="flex flex-col gap-1">
                         <h4 class="font-outfit font-bold text-[1.15rem] text-white">Responsive Landscape Layout</h4>
-                        <p class="text-[0.95rem] text-[#cbd5e1]">Custom optimized grids and readable typography that scale perfectly for televisions, set-top boxes, and landscape tablet displays.</p>
+                        <p class="text-[0.95rem] text-textMuted">Custom optimized grids and readable typography that
+                            scale perfectly for televisions, set-top boxes, and landscape tablet displays.</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Offline Information Box -->
-        <div class="max-w-[1200px] mx-auto px-8 relative mt-20">
-            <div class="bg-[#3b82f6]/5 border border-[#3b82f6]/20 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-4 md:gap-8 backdrop-blur-md">
-                <div class="w-[60px] h-[60px] rounded-full bg-[#3b82f6]/15 flex items-center justify-center shrink-0 border border-[#3b82f6]/30">
-                    <svg viewBox="0 0 24 24" class="w-7 h-7 fill-[#60a5fa]"><path d="M12,2C17.5,2 22,6.5 22,12C22,17.5 17.5,22 12,22C6.5,22 2,17.5 2,12C2,6.5 6.5,2 12,2M12,4C7.58,4 4,7.58 4,12C4,16.42 7.58,20 12,20C16.42,20 20,16.42 20,12C20,7.58 16.42,4 12,4M11,7H13V9H11V7M11,11H13V17H11V11Z"/></svg>
+        <div class="max-w-300 mx-auto px-8 relative mt-20">
+            <div
+                class="bg-primary/5 border border-primary/20 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-4 md:gap-8 backdrop-blur-md">
+                <div
+                    class="w-15 h-15 rounded-full bg-primary/15 flex items-center justify-center shrink-0 border border-primary/30">
+                    <svg viewBox="0 0 24 24" class="w-7 h-7 fill-softBlue">
+                        <path
+                            d="M12,2C17.5,2 22,6.5 22,12C22,17.5 17.5,22 12,22C6.5,22 2,17.5 2,12C2,6.5 6.5,2 12,2M12,4C7.58,4 4,7.58 4,12C4,16.42 7.58,20 12,20C16.42,20 20,16.42 20,12C20,7.58 16.42,4 12,4M11,7H13V9H11V7M11,11H13V17H11V11Z" />
+                    </svg>
                 </div>
                 <div class="flex flex-col gap-1">
                     <h4 class="text-[1.1rem] font-bold text-white font-outfit">Secure Offline Download Policy</h4>
-                    <p class="text-[0.95rem] text-[#cbd5e1] leading-relaxed">To protect copyright holders and guarantee device security, VOD contents downloaded within LOD Player cannot be accessed or copied by third-party file managers. You can watch your downloaded files offline exclusively through LOD Player's built-in secure player inside the 'Downloads' tab.</p>
+                    <p class="text-[0.95rem] text-textMuted leading-relaxed">To protect copyright holders and guarantee
+                        device security, VOD contents downloaded within LOD Player cannot be accessed or copied by
+                        third-party file managers. You can watch your downloaded files offline exclusively through LOD
+                        Player's built-in secure player inside the 'Downloads' tab.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Downloads Section / CTA -->
-    <section id="downloads" class="py-[80px]">
-        <div class="max-w-[1200px] mx-auto px-8 relative">
-            <div class="bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.15)_0%,rgba(6,11,19,0.8)_100%),rgba(10,17,32,0.65)] border border-white/12 rounded-[24px] p-10 md:p-[4.5rem_2rem] text-center flex flex-col items-center gap-7 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden">
-                <h2 class="font-outfit font-bold text-[2.2rem] md:text-[2.8rem] text-white tracking-[-0.02em]">Upgrade Your Streaming Experience Today</h2>
-                <p class="text-[1.1rem] text-[#cbd5e1] max-w-[600px]">Download LOD Player for free and enjoy the most advanced, fast, and feature-rich media playback engine on the market.</p>
-                
+    <section id="downloads" class="py-10">
+        <div class="max-w-300 mx-auto px-8 relative">
+            <div
+                class="bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.15)_0%,rgba(6,11,19,0.8)_100%),rgba(10,17,32,0.65)] border border-white/12 rounded-3xl p-10 md:p-[4.5rem_2rem] text-center flex flex-col items-center gap-7 shadow-glass backdrop-blur-xl relative overflow-hidden">
+                <h2 class="font-outfit font-bold text-[2.2rem] md:text-[2.8rem] text-white tracking-[-0.02em]">Upgrade
+                    Your Streaming Experience Today</h2>
+                <p class="text-[1.1rem] text-textMuted max-w-150">Download LOD Player for free and enjoy the most
+                    advanced, fast, and feature-rich media playback engine on the market.</p>
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 w-full sm:w-max mx-auto">
                     <!-- 1. Google Play Store Button -->
-                    <a href="https://play.google.com/store/apps/details?id=com.lodplayer" target="_blank" class="flex items-center gap-3 bg-[linear-gradient(135deg,#3b82f6_0%,#1d4ed8_100%)] border border-white/10 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer transition-all duration-300 backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(59,130,246,0.4)] hover:border-white/20 w-full justify-start">
+                    <a href="https://play.google.com/store/apps/details?id=com.lodplayer" target="_blank"
+                        class="flex items-center gap-3 bg-[linear-gradient(135deg,#3b82f6_0%,#1d4ed8_100%)] border border-white/10 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer transition-all duration-300 backdrop-blur-md shadow-glass hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(59,130,246,0.4)] hover:border-white/20 w-full justify-start">
                         <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                            <svg viewBox="0 0 24 24" class="fill-white"><path d="M3.609 1.814L13.783 12 3.609 22.186A2.23 2.23 0 0 1 3 20.6V3.4c0-.623.232-1.215.609-1.586zm11.597 8.766l2.36 1.362L4.996 23.473l10.21-12.893zm3.729 2.152c.677-.39 1.065-1.042 1.065-1.732s-.388-1.342-1.065-1.732l-2.613-1.508-2.639 3.24 2.639 3.24 2.613-1.508zM15.206 11.58L4.996.527l12.57 7.258-2.36 3.795z"/></svg>
+                            <svg viewBox="0 0 24 24" class="fill-white">
+                                <path
+                                    d="M3.609 1.814L13.783 12 3.609 22.186A2.23 2.23 0 0 1 3 20.6V3.4c0-.623.232-1.215.609-1.586zm11.597 8.766l2.36 1.362L4.996 23.473l10.21-12.893zm3.729 2.152c.677-.39 1.065-1.042 1.065-1.732s-.388-1.342-1.065-1.732l-2.613-1.508-2.639 3.24 2.639 3.24 2.613-1.508zM15.206 11.58L4.996.527l12.57 7.258-2.36 3.795z" />
+                            </svg>
                         </div>
                         <div class="flex flex-col items-start whitespace-nowrap">
-                            <span class="text-[0.75rem] text-white/70 uppercase tracking-[0.05em]">GET IT ON</span>
+                            <span class="text-[0.75rem] text-white/70 uppercase tracking-wider">GET IT ON</span>
                             <span class="text-[1.05rem] font-bold font-outfit text-white">Google Play</span>
                         </div>
                     </a>
 
                     <!-- 2. App Store Button (Coming Soon) -->
-                    <div class="flex items-center gap-3 bg-[#0a1120]/65 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-default opacity-70 backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] hover:border-white/12 transition-all duration-300 w-full justify-start">
+                    <div
+                        class="flex items-center gap-3 bg-[#0a1120]/65 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-default opacity-70 backdrop-blur-md shadow-glass hover:border-white/12 transition-all duration-300 w-full justify-start">
                         <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                            <svg viewBox="0 0 24 24" class="fill-white"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.1,16.67C20.08,16.74 19.67,18.11 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z" /></svg>
+                            <svg viewBox="0 0 24 24" class="fill-white">
+                                <path
+                                    d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.1,16.67C20.08,16.74 19.67,18.11 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z" />
+                            </svg>
                         </div>
                         <div class="flex flex-col items-start whitespace-nowrap">
-                            <span class="text-[0.75rem] text-white/70 uppercase tracking-[0.05em]">COMING SOON</span>
+                            <span class="text-[0.75rem] text-white/70 uppercase tracking-wider">COMING SOON</span>
                             <span class="text-[1.05rem] font-bold font-outfit text-white">App Store</span>
                         </div>
                     </div>
 
                     <!-- 3. APK Direct Download -->
-                    <a href="https://github.com/loddigital/loddigital.github.io/releases/download/v1.1.1-50/lod-player-1.1.1-50.apk" download="LOD_Player_1.1.1.apk" class="flex items-center gap-3 bg-[#0a1120]/80 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:border-white/30 transition-all duration-300 w-full justify-start sm:col-start-1">
+                    <a href="https://github.com/loddigital/loddigital.github.io/releases/download/v1.1.1-50/lod-player-1.1.1-50.apk"
+                        download="LOD_Player_1.1.1.apk"
+                        class="flex items-center gap-3 bg-[#0a1120]/80 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:border-white/30 transition-all duration-300 w-full justify-start sm:col-start-1">
                         <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                            <svg viewBox="0 0 24 24" class="fill-white w-5 h-5"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg>
+                            <svg viewBox="0 0 24 24" class="fill-white w-5 h-5">
+                                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                            </svg>
                         </div>
                         <div class="flex flex-col items-start whitespace-nowrap">
-                            <span class="text-[0.75rem] text-white/70 uppercase tracking-[0.05em]">DIRECT DOWNLOAD</span>
-                            <span class="text-[1.05rem] font-bold font-outfit text-white">Android APK <span class="text-[0.65rem] text-[#94a3b8] font-normal ml-1 tracking-wide">v1.1.1-50</span></span>
+                            <span class="text-[0.75rem] text-white/70 uppercase tracking-wider">DIRECT DOWNLOAD</span>
+                            <span class="text-[1.05rem] font-bold font-outfit text-white">Android APK <span
+                                    class="text-[0.65rem] text-textDark font-normal ml-1 tracking-wide">v1.1.1-50</span></span>
                         </div>
                     </a>
                 </div>
@@ -412,48 +577,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#030712] border-t border-white/12 pt-[60px] pb-[40px] text-[0.95rem] text-[#cbd5e1]">
-        <div class="max-w-[1200px] mx-auto px-8 relative grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-12 mb-10">
-            <div class="flex flex-col gap-5">
-                <div class="flex items-center gap-2.5 font-outfit text-[1.4rem] font-extrabold text-white">
-                    <img src="./assets/images/logo.png" loading="lazy" alt="LOD Player Logo" class="w-8 h-8 rounded-lg object-cover">
-                    <span class="bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)] bg-clip-text text-transparent">LOD Player</span>
-                </div>
-                <p class="max-w-[320px] text-[0.9rem] leading-relaxed">An advanced IPTV player developed by LOD Digital. Offering secure local offline downloads and smart D-pad remote controller support for televisions and mobile devices.</p>
-            </div>
-            <div>
-                <h4 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Quick Links</h4>
-                <ul class="flex flex-col gap-2.5 list-none">
-                    <li><a href="#features" class="hover:text-white transition-all hover:pl-1">Features</a></li>
-                    <li><a href="#tv-experience" class="hover:text-white transition-all hover:pl-1">TV Experience</a></li>
-                    <li><a href="#downloads" class="hover:text-white transition-all hover:pl-1">Download</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Support & Contact</h4>
-                <div class="flex flex-col gap-2.5">
-                    <div class="flex items-center gap-2.5 text-[0.9rem]">
-                        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-[#cbd5e1]"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
-                        <a href="mailto:support.lodplayer@gmail.com" class="hover:text-white">support.lodplayer@gmail.com</a>
-                    </div>
-                    <div class="flex items-center gap-2.5 text-[0.9rem]">
-                        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-[#cbd5e1]"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,17H13V11H11V17M11,9H13V7H11V9Z"/></svg>
-                        <span>LOD Digital IPTV Player Project</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-[1200px] mx-auto px-8 relative border-t border-white/12 pt-7 flex flex-col md:flex-row gap-4 items-center justify-between text-[0.85rem] text-[#94a3b8]">
-            <p>&copy; 2026 LOD Digital. All Rights Reserved.</p>
-            <div class="flex gap-5">
-                <a href="https://lodplayer.com/privacy-policy" target="_blank" class="hover:text-[#cbd5e1] transition-colors">Privacy Policy</a>
-                <a href="https://lodplayer.com/terms-of-use" target="_blank" class="hover:text-[#cbd5e1] transition-colors">Terms of Use</a>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 
     <!-- Application Logic (MVC) -->
     <script type="module" src="./src/js/app.js"></script>
 </body>
+
 </html>

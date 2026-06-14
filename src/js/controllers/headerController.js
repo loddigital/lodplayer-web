@@ -3,6 +3,7 @@ import headerView from '../views/headerView.js';
 
 class HeaderController {
     init() {
+        headerView.init();
         this.bindEvents();
         // Check initial state in case page is reloaded halfway down
         this.checkScrollState();

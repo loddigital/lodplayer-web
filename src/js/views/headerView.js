@@ -1,7 +1,7 @@
 class HeaderView {
     constructor() {
-        this.header = document.getElementById('header');
-        this.navContainer = document.getElementById('nav-container');
+        this.header = null;
+        this.navContainer = null;
         
         // Tailwind utility classes mappings for states
         this.scrolledHeaderClasses = ['py-3', 'bg-[#060b13]/90', 'shadow-[0_4px_20px_rgba(0,0,0,0.3)]'];
@@ -9,6 +9,11 @@ class HeaderView {
         
         this.scrolledNavClasses = ['h-[50px]', 'md:h-[60px]'];
         this.topNavClasses = ['h-[60px]', 'md:h-[80px]'];
+    }
+
+    init() {
+        this.header = document.getElementById('header');
+        this.navContainer = document.getElementById('nav-container');
     }
 
     updateHeaderOnScroll(isScrolled) {
