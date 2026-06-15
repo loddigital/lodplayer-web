@@ -36,3 +36,9 @@ out/
 .replace.js
 *.tmp
 *.temp
+
+# Source and Build Scripts (to protect the automated setup on the public repo)
+dev/
+package.json
+package-lock.json
+tailwind.config.js

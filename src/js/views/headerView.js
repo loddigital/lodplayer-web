@@ -4,11 +4,11 @@ class HeaderView {
         this.navContainer = null;
         
         // Tailwind utility classes mappings for states
-        this.scrolledHeaderClasses = ['py-3', 'bg-[#060b13]/90', 'shadow-[0_4px_20px_rgba(0,0,0,0.3)]'];
+        this.scrolledHeaderClasses = ['bg-[#060b13]/90', 'shadow-[0_4px_20px_rgba(0,0,0,0.3)]'];
         this.topHeaderClasses = ['bg-[#060b13]/70'];
         
-        this.scrolledNavClasses = ['h-[50px]', 'md:h-[60px]'];
-        this.topNavClasses = ['h-[60px]', 'md:h-[80px]'];
+        this.scrolledNavClasses = ['h-[60px]', 'md:h-[70px]'];
+        this.topNavClasses = ['h-[70px]', 'md:h-[80px]'];
     }
 
     init() {
