@@ -39,9 +39,9 @@ export const getHeaderHTML = (isHome = true) => {
                    <a href="/zh/" class="text-[0.85rem] text-textMuted hover:text-white hover:bg-white/10 px-4 py-2 transition-all flex items-center gap-2">中文 (ZH)</a>
                </div>
            </div>`
-        : `<a href="/index.html" class="text-[0.95rem] font-medium text-textMuted hover:text-white transition-all flex items-center gap-2">
+        : `<a href="javascript:void(0)" onclick="if(window.history.length > 1 && document.referrer.includes(window.location.host)) { window.history.back(); } else { window.location.href='/index.html'; }" class="text-[0.95rem] font-medium text-textMuted hover:text-white transition-all flex items-center gap-2">
                 <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current" aria-hidden="true"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/></svg>
-                Back to Home
+                Back
             </a>`;
 
     return `

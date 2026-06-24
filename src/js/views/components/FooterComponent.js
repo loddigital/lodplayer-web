@@ -18,7 +18,7 @@ export const getFooterHTML = () => {
                 </ul>
             </div>
             <div>
-                <h3 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Support & Contact</h3>
+                <h3 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Support and Contact</h3>
                 <div class="flex flex-col gap-2.5">
                     <div class="flex items-center gap-2.5 text-[0.9rem]">
                         <svg viewBox="0 0 24 24" class="w-4 h-4 fill-textMuted" aria-hidden="true"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
