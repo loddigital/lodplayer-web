@@ -11,7 +11,8 @@ This repository contains the source code and assets for the official landing pag
 * **Google Play Store Verified:** Available officially on the Google Play Store for seamless and secure installation.
 * **Zero Ads on Android TV:** Optimized for smart TVs and streaming sticks (Mi Stick, Fire Stick, etc.) with a completely ad-free interface.
 * **Advanced Offline Mode (Download & Watch):** Allows mobile users to download media contents to local storage and watch them later without an internet connection.
-* **High Performance Parsing:** Capable of loading massive Xtream playlists within seconds without any memory leaks or performance drops.
+* **Flexible M3U & Xtream API Support:** Easily load your digital content by uploading raw M3U playlist links or logging in with your Xtream API credentials.
+* **High Performance Parsing:** Capable of loading massive playlists and heavy media catalogs within seconds without any memory leaks or performance drops.
 * **Premium UI/UX:** Dark-mode inspired elegant interface tailored for both high-end TVs and smartphones.
 
 ---
@@ -20,7 +21,7 @@ This repository contains the source code and assets for the official landing pag
 
 **LOD Player** is a pure media player software. 
 * It **does not** contain, provide, or sell any playlists, channels, streams, or illegal media content.
-* Users must provide their own legally acquired content (Xtream Codes credentials). 
+* Users must provide their own legally acquired content (M3U playlists or Xtream Codes credentials). 
 * We do not endorse or support the streaming of copyrighted material without permission from the rightful owner.
 
 ---
