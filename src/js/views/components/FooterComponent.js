@@ -12,9 +12,9 @@ export const getFooterHTML = () => {
             <div>
                 <h3 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Quick Links</h3>
                 <ul class="flex flex-col gap-2.5 list-none">
-                    <li><a href="/index.html#features" class="hover:text-white transition-all hover:pl-1">Features</a></li>
-                    <li><a href="/index.html#tv-experience" class="hover:text-white transition-all hover:pl-1">TV Experience</a></li>
-                    <li><a href="/index.html#downloads" class="hover:text-white transition-all hover:pl-1">Download</a></li>
+                    <li><a href="{{seo.base_url}}#features" class="hover:text-white transition-all hover:pl-1">Features</a></li>
+                    <li><a href="{{seo.base_url}}#tv-experience" class="hover:text-white transition-all hover:pl-1">TV Experience</a></li>
+                    <li><a href="{{seo.base_url}}#downloads" class="hover:text-white transition-all hover:pl-1">Download</a></li>
                 </ul>
             </div>
             <div>

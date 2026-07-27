@@ -10,11 +10,15 @@ class LayoutController {
         const isHome = path.endsWith('index.html') || path === '/' || !path.includes('.html');
 
         if (headerPlaceholder) {
-            headerPlaceholder.outerHTML = getHeaderHTML(isHome);
+            let headerHTML = getHeaderHTML(isHome);
+            headerHTML = headerHTML.replace(/\{\{seo\.base_url\}\}/g, '/');
+            headerPlaceholder.outerHTML = headerHTML;
         }
 
         if (footerPlaceholder) {
-            footerPlaceholder.outerHTML = getFooterHTML();
+            let footerHTML = getFooterHTML();
+            footerHTML = footerHTML.replace(/\{\{seo\.base_url\}\}/g, '/');
+            footerPlaceholder.outerHTML = footerHTML;
         }
     }
 }
