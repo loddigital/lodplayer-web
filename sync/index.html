@@ -75,8 +75,7 @@
             <!-- Card Container -->
             <div
                 class="bg-bgDarkAccent/80 border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-primary via-softBlue to-primary">
-                </div>
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-softBlue to-primary"></div>
 
                 <!-- Title Section -->
                 <div class="text-center mb-7">
@@ -96,7 +95,8 @@
                 </div>
 
                 <!-- PIN Code Box -->
-                <div class="bg-black/40 border border-dashed border-primary/40 rounded-2xl p-4 mb-6 text-center">
+                <div
+                    class="bg-black/40 border border-dashed border-primary/40 rounded-2xl p-4 mb-6 text-center">
                     <label for="syncCode"
                         class="block text-[0.75rem] font-bold text-softBlue uppercase tracking-wider mb-1">
                         6-Digit TV Pairing Code
@@ -130,14 +130,51 @@
                     </div>
 
                     <!-- M3U Fields -->
-                    <div id="m3uSection">
-                        <div>
+                    <div id="m3uSection" class="space-y-3.5">
+                        <!-- Submode Selector -->
+                        <div class="flex bg-black/30 p-1 rounded-lg border border-white/5 text-[0.8rem]">
+                            <button type="button" id="m3uModeUrlBtn" onclick="switchM3uMode('url')"
+                                class="flex-1 py-1.5 px-3 rounded-md font-semibold text-white bg-white/10 shadow-sm transition-all cursor-pointer">
+                                M3U URL / Link
+                            </button>
+                            <button type="button" id="m3uModeFileBtn" onclick="switchM3uMode('file')"
+                                class="flex-1 py-1.5 px-3 rounded-md font-semibold text-textDark hover:text-white transition-all cursor-pointer">
+                                Upload File (.m3u, .m3u8)
+                            </button>
+                        </div>
+
+                        <!-- URL Input View -->
+                        <div id="m3uUrlBox">
                             <label for="m3uUrl" class="block text-[0.8rem] font-medium text-textMuted mb-1.5">
                                 M3U Playlist URL <span class="text-primary">*</span>
                             </label>
                             <input type="url" id="m3uUrl"
                                 class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white text-[0.95rem] focus:outline-none focus:border-primary transition-colors"
                                 placeholder="https://provider.com/get.php?username=...">
+                        </div>
+
+                        <!-- File Upload Dropzone -->
+                        <div id="m3uFileBox" class="hidden">
+                            <label class="block text-[0.8rem] font-medium text-textMuted mb-1.5">
+                                M3U / M3U8 File <span class="text-primary">*</span>
+                            </label>
+                            <div id="dropzone" onclick="document.getElementById('m3uFileInput').click()"
+                                class="w-full border-2 border-dashed border-white/15 hover:border-primary/50 bg-black/25 hover:bg-black/35 rounded-2xl p-6 text-center cursor-pointer transition-all group">
+                                <div class="w-10 h-10 mx-auto mb-2.5 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <svg class="w-5 h-5 text-softBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                    </svg>
+                                </div>
+                                <p id="dropzoneText" class="text-white text-[0.9rem] font-semibold">
+                                    Choose .m3u / .m3u8 file or drag here
+                                </p>
+                                <p id="dropzoneSub" class="text-textDark text-[0.75rem] mt-1">
+                                    Supports files up to 10 MB
+                                </p>
+                                <input type="file" id="m3uFileInput" accept=".m3u,.m3u8,audio/x-mpegurl,application/x-mpegurl,text/plain"
+                                    class="hidden" onchange="handleFilePicked(event)">
+                            </div>
                         </div>
                     </div>
 
@@ -204,6 +241,9 @@
     <script>
         const FIREBASE_DB_URL = 'https://lod-player-f6aad-default-rtdb.europe-west1.firebasedatabase.app';
         let currentType = 'm3u';
+        let m3uMode = 'url';
+        let selectedM3uContent = '';
+        let selectedM3uFileName = '';
 
         // Auto extract ?code= from URL
         window.addEventListener('DOMContentLoaded', () => {
@@ -217,6 +257,34 @@
                 } else {
                     syncInput.value = clean;
                 }
+            }
+
+            // Drag and drop setup for file dropzone
+            const dropzone = document.getElementById('dropzone');
+            if (dropzone) {
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    dropzone.addEventListener(eventName, (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        dropzone.classList.add('border-primary', 'bg-black/40');
+                    }, false);
+                });
+
+                ['dragleave', 'drop'].forEach(eventName => {
+                    dropzone.addEventListener(eventName, (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        dropzone.classList.remove('border-primary', 'bg-black/40');
+                    }, false);
+                });
+
+                dropzone.addEventListener('drop', (e) => {
+                    const dt = e.dataTransfer;
+                    const files = dt.files;
+                    if (files && files.length > 0) {
+                        processSelectedFile(files[0]);
+                    }
+                }, false);
             }
         });
 
@@ -251,6 +319,63 @@
             hideStatus();
         }
 
+        function switchM3uMode(mode) {
+            m3uMode = mode;
+            const urlBtn = document.getElementById('m3uModeUrlBtn');
+            const fileBtn = document.getElementById('m3uModeFileBtn');
+            const urlBox = document.getElementById('m3uUrlBox');
+            const fileBox = document.getElementById('m3uFileBox');
+
+            if (mode === 'url') {
+                urlBtn.className = 'flex-1 py-1.5 px-3 rounded-md font-semibold text-white bg-white/10 shadow-sm transition-all cursor-pointer';
+                fileBtn.className = 'flex-1 py-1.5 px-3 rounded-md font-semibold text-textDark hover:text-white transition-all cursor-pointer';
+                urlBox.classList.remove('hidden');
+                fileBox.classList.add('hidden');
+            } else {
+                fileBtn.className = 'flex-1 py-1.5 px-3 rounded-md font-semibold text-white bg-white/10 shadow-sm transition-all cursor-pointer';
+                urlBtn.className = 'flex-1 py-1.5 px-3 rounded-md font-semibold text-textDark hover:text-white transition-all cursor-pointer';
+                fileBox.classList.remove('hidden');
+                urlBox.classList.add('hidden');
+            }
+            hideStatus();
+        }
+
+        function handleFilePicked(e) {
+            const file = e.target.files?.[0];
+            if (file) {
+                processSelectedFile(file);
+            }
+        }
+
+        function processSelectedFile(file) {
+            if (file.size > 10 * 1024 * 1024) {
+                showStatus('The selected file exceeds 10MB limit. Please use an M3U URL.', false);
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                selectedM3uContent = e.target.result;
+                selectedM3uFileName = file.name;
+
+                const textEl = document.getElementById('dropzoneText');
+                const subEl = document.getElementById('dropzoneSub');
+                textEl.textContent = '📄 ' + file.name;
+                textEl.classList.add('text-softBlue');
+                subEl.textContent = (file.size / 1024).toFixed(1) + ' KB - Ready to transfer';
+
+                const nameInput = document.getElementById('playlistName');
+                if (!nameInput.value.trim()) {
+                    nameInput.value = file.name.replace(/\.[^/.]+$/, '');
+                }
+                hideStatus();
+            };
+            reader.onerror = () => {
+                showStatus('Could not read the selected file. Please try again.', false);
+            };
+            reader.readAsText(file);
+        }
+
         function showStatus(text, isSuccess) {
             const el = document.getElementById('statusMsg');
             el.className = isSuccess
@@ -269,7 +394,7 @@
             e.preventDefault();
             hideStatus();
 
-            const codeInput = document.getElementById('syncCode').value.replace(/\s+/g, '');
+            const codeInput = document.getElementById('syncCode').value.replace(/\D/g, '').slice(0, 6);
             if (codeInput.length !== 6) {
                 showStatus('Please enter the full 6-digit code shown on your TV screen.', false);
                 return;
@@ -279,17 +404,32 @@
             let payloadPlaylist = null;
 
             if (currentType === 'm3u') {
-                const url = document.getElementById('m3uUrl').value.trim();
-                if (!url) {
-                    showStatus('Please enter a valid M3U playlist URL.', false);
-                    return;
+                if (m3uMode === 'url') {
+                    const url = document.getElementById('m3uUrl').value.trim();
+                    if (!url) {
+                        showStatus('Please enter a valid M3U playlist URL.', false);
+                        return;
+                    }
+                    payloadPlaylist = {
+                        name,
+                        type: 'm3u_url',
+                        url,
+                        refreshFrequency: 'weekly'
+                    };
+                } else {
+                    if (!selectedM3uContent) {
+                        showStatus('Please select or drop an M3U file to upload.', false);
+                        return;
+                    }
+                    payloadPlaylist = {
+                        name,
+                        type: 'm3u_url',
+                        url: '',
+                        m3uContent: selectedM3uContent,
+                        fileName: selectedM3uFileName || 'playlist.m3u',
+                        refreshFrequency: 'never'
+                    };
                 }
-                payloadPlaylist = {
-                    name,
-                    type: 'm3u_url',
-                    url,
-                    refreshFrequency: 'weekly'
-                };
             } else {
                 const url = document.getElementById('xtreamUrl').value.trim();
                 const username = document.getElementById('xtreamUser').value.trim();
@@ -340,6 +480,15 @@
                 if (sendRes.ok) {
                     showStatus('✨ Success! Your playlist has been sent to your TV. Please check your TV screen.', true);
                     document.getElementById('syncForm').reset();
+                    selectedM3uContent = '';
+                    selectedM3uFileName = '';
+                    const textEl = document.getElementById('dropzoneText');
+                    const subEl = document.getElementById('dropzoneSub');
+                    if (textEl && subEl) {
+                        textEl.textContent = 'Choose .m3u / .m3u8 file or drag here';
+                        textEl.classList.remove('text-softBlue');
+                        subEl.textContent = 'Supports files up to 10 MB';
+                    }
                 } else {
                     showStatus('Failed to send playlist. Please verify your connection and try again.', false);
                 }
