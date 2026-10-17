@@ -75,7 +75,8 @@
             <!-- Card Container -->
             <div
                 class="bg-bgDarkAccent/80 border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-softBlue to-primary"></div>
+                <div class="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-primary via-softBlue to-primary">
+                </div>
 
                 <!-- Title Section -->
                 <div class="text-center mb-7">
@@ -95,8 +96,7 @@
                 </div>
 
                 <!-- PIN Code Box -->
-                <div
-                    class="bg-black/40 border border-dashed border-primary/40 rounded-2xl p-4 mb-6 text-center">
+                <div class="bg-black/40 border border-dashed border-primary/40 rounded-2xl p-4 mb-6 text-center">
                     <label for="syncCode"
                         class="block text-[0.75rem] font-bold text-softBlue uppercase tracking-wider mb-1">
                         6-Digit TV Pairing Code
@@ -160,8 +160,10 @@
                             </label>
                             <div id="dropzone" onclick="document.getElementById('m3uFileInput').click()"
                                 class="w-full border-2 border-dashed border-white/15 hover:border-primary/50 bg-black/25 hover:bg-black/35 rounded-2xl p-6 text-center cursor-pointer transition-all group">
-                                <div class="w-10 h-10 mx-auto mb-2.5 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-softBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div
+                                    class="w-10 h-10 mx-auto mb-2.5 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <svg class="w-5 h-5 text-softBlue" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                                     </svg>
@@ -172,8 +174,9 @@
                                 <p id="dropzoneSub" class="text-textDark text-[0.75rem] mt-1">
                                     Supports files up to 10 MB
                                 </p>
-                                <input type="file" id="m3uFileInput" accept=".m3u,.m3u8,audio/x-mpegurl,application/x-mpegurl,text/plain"
-                                    class="hidden" onchange="handleFilePicked(event)">
+                                <input type="file" id="m3uFileInput"
+                                    accept=".m3u,.m3u8,audio/x-mpegurl,application/x-mpegurl,text/plain" class="hidden"
+                                    onchange="handleFilePicked(event)">
                             </div>
                         </div>
                     </div>
