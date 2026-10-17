@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LOD Player - Quick Playlist Sync | TV Setup</title>
+    <meta name="description"
+        content="Easily transfer your M3U and Xtream IPTV playlists to your Android TV and Smart TV with LOD Player Quick Sync.">
+    <meta name="keywords"
+        content="LOD Player Sync, IPTV TV Sync, M3U to Android TV, Xtream API TV setup, Fast IPTV transfer">
+
+    <link rel="canonical" href="https://lodplayer.com/sync/" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="LOD Player - Quick Playlist Sync" />
+    <meta property="og:description"
+        content="Easily transfer your M3U and Xtream IPTV playlists to your Android TV in seconds with LOD Player." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lodplayer.com/sync/" />
+    <meta property="og:image" content="https://lodplayer.com/assets/images/og-banner.png" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="LOD Player" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "LOD Player Quick Sync",
+      "url": "https://lodplayer.com/sync/",
+      "applicationCategory": "MultimediaApplication",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "description": "Cross-platform IPTV playlist transfer tool for LOD Player."
+    }
+    </script>
+</head>
+
+<body class="bg-bgDark text-textMain font-inter overflow-x-hidden relative min-h-screen flex flex-col">
+
+    <!-- Background Glow Blobs -->
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
+        <div
+            class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow top-[-10%] left-[-10%] bg-[radial-gradient(circle,rgba(59,130,246,0.25)_0%,rgba(59,130,246,0)_70%)]">
+        </div>
+        <div class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow top-[40%] right-[-10%] bg-[radial-gradient(circle,rgba(147,51,234,0.12)_0%,rgba(147,51,234,0)_70%)]"
+            style="animation-delay: -5s;"></div>
+    </div>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="pt-45 md:pt-28 pb-25 relative grow flex items-center justify-center px-4">
+        <div class="w-full max-w-125 mx-auto relative">
+
+            <!-- Card Container -->
+            <div
+                class="bg-bgDarkAccent/80 border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-primary via-softBlue to-primary">
+                </div>
+
+                <!-- Title Section -->
+                <div class="text-center mb-7">
+                    <div
+                        class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-primary/15 border border-primary/30 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                        <svg viewBox="0 0 24 24" class="w-7 h-7 fill-softBlue">
+                            <path
+                                d="M21 3H3C1.9 3 1 3.9 1 5V17C1 18.1 1.9 19 3 19H8V21H16V19H21C22.1 19 23 18.1 23 17V5C23 3.9 22.1 3 21 3M21 17H3V5H21V17M10 7L16 11L10 15V7Z" />
+                        </svg>
+                    </div>
+                    <h1 class="font-outfit font-extrabold text-[2rem] text-white tracking-[-0.02em] mb-2">
+                        Quick Playlist Sync
+                    </h1>
+                    <p class="text-textDark text-[0.95rem]">
+                        Transfer your IPTV playlist to your TV in seconds
+                    </p>
+                </div>
+
+                <!-- PIN Code Box -->
+                <div class="bg-black/40 border border-dashed border-primary/40 rounded-2xl p-4 mb-6 text-center">
+                    <label for="syncCode"
+                        class="block text-[0.75rem] font-bold text-softBlue uppercase tracking-wider mb-1">
+                        6-Digit TV Pairing Code
+                    </label>
+                    <input type="text" id="syncCode"
+                        class="bg-transparent border-none text-white text-[2rem] font-outfit font-black tracking-[8px] text-center w-full focus:outline-none"
+                        placeholder="000 000" maxlength="7" autocomplete="off" inputmode="numeric">
+                </div>
+
+                <!-- Tabs -->
+                <div class="flex bg-black/40 p-1 rounded-xl mb-5 border border-white/5">
+                    <button type="button" id="tabM3u" onclick="switchTab('m3u')"
+                        class="flex-1 py-2.5 px-4 rounded-lg text-[0.9rem] font-semibold text-white bg-white/10 shadow-sm transition-all cursor-pointer">
+                        M3U Playlist
+                    </button>
+                    <button type="button" id="tabXtream" onclick="switchTab('xtream')"
+                        class="flex-1 py-2.5 px-4 rounded-lg text-[0.9rem] font-semibold text-textDark hover:text-white transition-all cursor-pointer">
+                        Xtream API
+                    </button>
+                </div>
+
+                <!-- Form -->
+                <form id="syncForm" onsubmit="handleSend(event)" class="space-y-4">
+                    <div>
+                        <label for="playlistName" class="block text-[0.8rem] font-medium text-textMuted mb-1.5">
+                            Playlist Name (Optional)
+                        </label>
+                        <input type="text" id="playlistName"
+                            class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white text-[0.95rem] focus:outline-none focus:border-primary transition-colors"
+                            placeholder="e.g. My Home IPTV">
+                    </div>
+
+                    <!-- M3U Fields -->
+                    <div id="m3uSection">
+                        <div>
+                            <label for="m3uUrl" class="block text-[0.8rem] font-medium text-textMuted mb-1.5">
+                                M3U Playlist URL <span class="text-primary">*</span>
+                            </label>
+                            <input type="url" id="m3uUrl"
+                                class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white text-[0.95rem] focus:outline-none focus:border-primary transition-colors"
+                                placeholder="https://provider.com/get.php?username=...">
+                        </div>
+                    </div>
+
+                    <!-- Xtream Fields -->
+                    <div id="xtreamSection" class="hidden space-y-4">
+                        <div>
+                            <label for="xtreamUrl" class="block text-[0.8rem] font-medium text-textMuted mb-1.5">
+                                Server URL with Port <span class="text-primary">*</span>
+                            </label>
+                            <input type="text" id="xtreamUrl"
+                                class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white text-[0.95rem] focus:outline-none focus:border-primary transition-colors"
+                                placeholder="http://server.example.com:8080">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label for="xtreamUser" class="block text-[0.8rem] font-medium text-textMuted mb-1.5">
+                                    Username <span class="text-primary">*</span>
+                                </label>
+                                <input type="text" id="xtreamUser"
+                                    class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white text-[0.95rem] focus:outline-none focus:border-primary transition-colors"
+                                    placeholder="Username">
+                            </div>
+                            <div>
+                                <label for="xtreamPass" class="block text-[0.8rem] font-medium text-textMuted mb-1.5">
+                                    Password <span class="text-primary">*</span>
+                                </label>
+                                <input type="password" id="xtreamPass"
+                                    class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white text-[0.95rem] focus:outline-none focus:border-primary transition-colors"
+                                    placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submitBtn"
+                        class="w-full mt-6 bg-[linear-gradient(135deg,#3b82f6_0%,#1d4ed8_100%)] text-white font-bold py-3.5 px-6 rounded-xl shadow-[0_4px_15px_rgba(59,130,246,0.35)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                        <span id="btnSpinner"
+                            class="hidden w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                        <span id="btnText">Send to Television</span>
+                    </button>
+
+                    <!-- Status Notification -->
+                    <div id="statusMsg"
+                        class="hidden p-4 rounded-xl text-[0.85rem] text-center font-medium leading-relaxed transition-all">
+                    </div>
+                </form>
+
+                <!-- Footer note inside card -->
+                <div class="mt-6 pt-5 border-t border-white/10 text-center text-[0.75rem] text-textDark">
+                    🔒 End-to-end ephemeral session. Data is permanently removed upon transfer.
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Application Logic (MVC) -->
+    <script type="module" src="/src/js/app.js"></script>
+
+    <!-- Sync Logic -->
+    <script>
+        const FIREBASE_DB_URL = 'https://lod-player-f6aad-default-rtdb.europe-west1.firebasedatabase.app';
+        let currentType = 'm3u';
+
+        // Auto extract ?code= from URL
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const codeFromUrl = urlParams.get('code');
+            if (codeFromUrl) {
+                const clean = codeFromUrl.replace(/\D/g, '').slice(0, 6);
+                const syncInput = document.getElementById('syncCode');
+                if (clean.length === 6) {
+                    syncInput.value = clean.slice(0, 3) + ' ' + clean.slice(3);
+                } else {
+                    syncInput.value = clean;
+                }
+            }
+        });
+
+        // 3-digit spacing formatter
+        document.getElementById('syncCode').addEventListener('input', (e) => {
+            let raw = e.target.value.replace(/\D/g, '').slice(0, 6);
+            if (raw.length > 3) {
+                e.target.value = raw.slice(0, 3) + ' ' + raw.slice(3);
+            } else {
+                e.target.value = raw;
+            }
+        });
+
+        function switchTab(type) {
+            currentType = type;
+            const tabM3u = document.getElementById('tabM3u');
+            const tabXtream = document.getElementById('tabXtream');
+            const m3uSection = document.getElementById('m3uSection');
+            const xtreamSection = document.getElementById('xtreamSection');
+
+            if (type === 'm3u') {
+                tabM3u.className = 'flex-1 py-2.5 px-4 rounded-lg text-[0.9rem] font-semibold text-white bg-white/10 shadow-sm transition-all cursor-pointer';
+                tabXtream.className = 'flex-1 py-2.5 px-4 rounded-lg text-[0.9rem] font-semibold text-textDark hover:text-white transition-all cursor-pointer';
+                m3uSection.classList.remove('hidden');
+                xtreamSection.classList.add('hidden');
+            } else {
+                tabXtream.className = 'flex-1 py-2.5 px-4 rounded-lg text-[0.9rem] font-semibold text-white bg-white/10 shadow-sm transition-all cursor-pointer';
+                tabM3u.className = 'flex-1 py-2.5 px-4 rounded-lg text-[0.9rem] font-semibold text-textDark hover:text-white transition-all cursor-pointer';
+                m3uSection.classList.add('hidden');
+                xtreamSection.classList.remove('hidden');
+            }
+            hideStatus();
+        }
+
+        function showStatus(text, isSuccess) {
+            const el = document.getElementById('statusMsg');
+            el.className = isSuccess
+                ? 'p-4 rounded-xl text-[0.85rem] text-center font-medium leading-relaxed bg-emerald-500/15 border border-emerald-500/30 text-emerald-300'
+                : 'p-4 rounded-xl text-[0.85rem] text-center font-medium leading-relaxed bg-red-500/15 border border-red-500/30 text-red-300';
+            el.textContent = text;
+            el.classList.remove('hidden');
+        }
+
+        function hideStatus() {
+            const el = document.getElementById('statusMsg');
+            el.classList.add('hidden');
+        }
+
+        async function handleSend(e) {
+            e.preventDefault();
+            hideStatus();
+
+            const codeInput = document.getElementById('syncCode').value.replace(/\s+/g, '');
+            if (codeInput.length !== 6) {
+                showStatus('Please enter the full 6-digit code shown on your TV screen.', false);
+                return;
+            }
+
+            const name = document.getElementById('playlistName').value.trim() || 'My Playlist';
+            let payloadPlaylist = null;
+
+            if (currentType === 'm3u') {
+                const url = document.getElementById('m3uUrl').value.trim();
+                if (!url) {
+                    showStatus('Please enter a valid M3U playlist URL.', false);
+                    return;
+                }
+                payloadPlaylist = {
+                    name,
+                    type: 'm3u_url',
+                    url,
+                    refreshFrequency: 'weekly'
+                };
+            } else {
+                const url = document.getElementById('xtreamUrl').value.trim();
+                const username = document.getElementById('xtreamUser').value.trim();
+                const password = document.getElementById('xtreamPass').value.trim();
+                if (!url || !username || !password) {
+                    showStatus('Please fill in Xtream server URL, username, and password.', false);
+                    return;
+                }
+                payloadPlaylist = {
+                    name,
+                    type: 'xtream',
+                    url,
+                    username,
+                    password,
+                    refreshFrequency: 'weekly'
+                };
+            }
+
+            const submitBtn = document.getElementById('submitBtn');
+            const btnSpinner = document.getElementById('btnSpinner');
+            const btnText = document.getElementById('btnText');
+            submitBtn.disabled = true;
+            btnSpinner.classList.remove('hidden');
+            btnText.textContent = 'Connecting to TV...';
+
+            try {
+                // 1. Check if room exists
+                const checkRes = await fetch(`${FIREBASE_DB_URL}/sync_rooms/${codeInput}.json`);
+                const roomData = await checkRes.json();
+
+                if (!roomData) {
+                    showStatus('No waiting TV found with this code. Please check or refresh the code on your TV.', false);
+                    return;
+                }
+
+                // 2. Put playlist into room
+                const sendRes = await fetch(`${FIREBASE_DB_URL}/sync_rooms/${codeInput}.json`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        status: 'ready',
+                        playlist: payloadPlaylist,
+                        createdAt: roomData.createdAt || Date.now(),
+                        sentAt: Date.now()
+                    })
+                });
+
+                if (sendRes.ok) {
+                    showStatus('✨ Success! Your playlist has been sent to your TV. Please check your TV screen.', true);
+                    document.getElementById('syncForm').reset();
+                } else {
+                    showStatus('Failed to send playlist. Please verify your connection and try again.', false);
+                }
+            } catch (err) {
+                showStatus('Network error: Could not reach server. Please check your internet connection.', false);
+            } finally {
+                submitBtn.disabled = false;
+                btnSpinner.classList.add('hidden');
+                btnText.textContent = 'Send to Television';
+            }
+        }
+    </script>
+</body>
+
+</html>
