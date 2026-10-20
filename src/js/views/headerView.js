@@ -7,8 +7,8 @@ class HeaderView {
         this.scrolledHeaderClasses = ['bg-[#060b13]/90', 'shadow-[0_4px_20px_rgba(0,0,0,0.3)]'];
         this.topHeaderClasses = ['bg-[#060b13]/70'];
         
-        this.scrolledNavClasses = ['h-[60px]', 'md:h-[70px]'];
-        this.topNavClasses = ['h-[70px]', 'md:h-[80px]'];
+        this.scrolledNavClasses = ['h-15', 'md:h-17.5'];
+        this.topNavClasses = ['h-17.5', 'md:h-20'];
     }
 
     init() {
