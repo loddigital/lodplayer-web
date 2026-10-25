@@ -16,7 +16,7 @@ If you believe you have found a security vulnerability in the LOD Player applica
 **🚨 Please do not report security vulnerabilities through public GitHub issues.**
 
 **How to report:**
-Please email your findings to **support.lodplayer@gmail.com**
+Please email your findings to **support@lodplayer.com**
 
 **What to include:**
 * A clear description of the vulnerability.

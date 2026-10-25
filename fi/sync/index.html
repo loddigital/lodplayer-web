@@ -181,15 +181,15 @@
                 <!-- Form -->
                 <form id="syncForm" onsubmit="handleSend(event)" class="space-y-5" novalidate>
 
-                    <!-- 6-Digit TV Pairing Code Box -->
+                    <!-- 8-Digit TV Pairing Code Box -->
                     <div class="bg-black/40 border-2 border-dashed border-primary/40 rounded-2xl p-4 text-center transition-colors focus-within:border-primary">
                         <label for="syncCode"
                             class="block text-xs font-bold text-softBlue uppercase tracking-widest mb-1.5">
-                            6-numeroinen TV-pariliitoskoodi
+                            8-numeroinen TV-pariliitoskoodi
                         </label>
                         <input type="text" id="syncCode"
                             class="bg-transparent border-none text-white text-3xl sm:text-4xl font-outfit font-black tracking-widest text-center w-full focus:outline-none"
-                            placeholder="000 000" maxlength="7" autocomplete="off" inputmode="numeric" required>
+                            placeholder="____ ____" maxlength="9" autocomplete="off" inputmode="numeric" required>
                     </div>
 
                     <!-- Type Selection Tabs (Xtream API / M3U) -->
@@ -320,6 +320,11 @@ Se ei ehk채 toimi 100%!</span>
                         </div>
                     </div>
 
+                    <!-- Privacy Notice Before Submit -->
+                    <p class="text-xs text-textDark text-center leading-relaxed mb-3">
+                        Your playlist details are transmitted securely and solely to your TV, and are permanently removed after pairing. <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer" class="text-softBlue underline hover:text-white transition-colors">Privacy Policy</a>
+                    </p>
+
                     <!-- Submit CTA Button -->
                     <button type="submit" id="submitBtn"
                         class="w-full mt-2 bg-linear-to-r from-primary to-blue-700 text-white font-bold py-4 px-6 rounded-2xl shadow-lg hover:opacity-95 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2.5 cursor-pointer">
@@ -359,7 +364,7 @@ Se ei ehk채 toimi 100%!</span>
                             <span class="w-6 h-6 rounded-full bg-primary/20 text-softBlue font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
                             <div>
                                 <h3 class="font-semibold text-white text-sm">Puhelimen kameran tai selaimen kautta (sovellusta ei tarvita)</h3>
-                                <p class="text-textDark text-xs mt-1 leading-relaxed">Skannaa QR-koodi vasemmalla tai k채y osoitteessa lodplayer.com/sync, sy철t채 6-numeroinen koodi ja liit채 soittolistasi.</p>
+                                <p class="text-textDark text-xs mt-1 leading-relaxed">Skannaa QR-koodi vasemmalla tai k채y osoitteessa lodplayer.com/sync, sy철t채 8-numeroinen koodi ja liit채 soittolistasi.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-black/25 border border-white/5">
@@ -426,8 +431,10 @@ Tarjoaa turvalliset paikalliset offline-lataukset ja 채lykk채채n D-pad-kaukos채�
         </div>
         <div class="max-w-300 mx-auto px-8 relative border-t border-white/12 pt-7 flex flex-col md:flex-row gap-4 items-center justify-between text-[0.85rem] text-textDark">
             <p>&copy; 2026 LOD Digital. Kaikki oikeudet pid채tet채채n.</p>
-            <div class="flex gap-5">
+            <div class="flex flex-wrap gap-5">
                 <a href="/privacy-policy.html" class="hover:text-textMuted transition-colors">Tietosuojak채yt채nt철</a>
+                <a href="/terms.html" class="hover:text-textMuted transition-colors">Terms of Service</a>
+                <a href="/delete-account.html" class="hover:text-textMuted transition-colors">Delete Account</a>
             </div>
         </div>
     </footer>
@@ -439,6 +446,7 @@ Tarjoaa turvalliset paikalliset offline-lataukset ja 채lykk채채n D-pad-kaukos채�
     <!-- Sync Controller Script -->
     <script>
         const FIREBASE_DB_URL = 'https://lod-player-f6aad-default-rtdb.europe-west1.firebasedatabase.app';
+        const FIREBASE_WEB_API_KEY = 'AIzaSyB8k68PD9lNFLgO6Q3K4U0GJ89EeaZ6ELk';
         let currentType = 'xtream';
 
         const I18N_MESSAGES = {
@@ -446,21 +454,69 @@ Tarjoaa turvalliset paikalliset offline-lataukset ja 채lykk채채n D-pad-kaukos채�
             m3uUrlLabel: "M3U URL",
             sendBtn: "L채het채 televisioon",
             connectingBtn: "Connecting to TV...",
-            invalidCodeError: "Anna television ruudulla n채kyv채 6-numeroinen koodi.",
+            invalidCodeError: "Anna television ruudulla n채kyv채 8-numeroinen koodi.",
             fillAllFieldsError: "T채yt채 kaikki kent채t.",
             roomNotFoundError: "T채ll채 koodilla ei l철ytynyt odottavaa televisiota. Tarkista koodi televisiostasi.",
+            alreadySentError: "A playlist has already been sent to this TV room or the code is invalid.",
             sendSuccess: "Soittolista l채hetetty televisioosi! Se latautuu automaattisesti.",
             networkError: "Yhteysvirhe. Tarkista internetyhteytesi ja yrit채 uudelleen."
         };
 
+        async function getAnonToken() {
+            let token = sessionStorage.getItem('lod_anon_token');
+            const expiresAt = Number(sessionStorage.getItem('lod_anon_expires') || '0');
+            if (token && Date.now() < expiresAt - 60000) {
+                return token;
+            }
+            const refreshToken = sessionStorage.getItem('lod_anon_refresh');
+            if (refreshToken) {
+                try {
+                    const res = await fetch(`https://securetoken.googleapis.com/v1/token?key=${FIREBASE_WEB_API_KEY}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: `grant_type=refresh_token&refresh_token=${encodeURIComponent(refreshToken)}`
+                    });
+                    if (res.ok) {
+                        const data = await res.json();
+                        sessionStorage.setItem('lod_anon_token', data.id_token);
+                        sessionStorage.setItem('lod_anon_refresh', data.refresh_token);
+                        sessionStorage.setItem('lod_anon_expires', String(Date.now() + (Number(data.expires_in) * 1000)));
+                        return data.id_token;
+                    }
+                } catch (e) {
+                    // Fall back to new anon signup
+                }
+            }
+
+            try {
+                const res = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${FIREBASE_WEB_API_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ returnSecureToken: true })
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    sessionStorage.setItem('lod_anon_token', data.idToken);
+                    sessionStorage.setItem('lod_anon_refresh', data.refreshToken);
+                    sessionStorage.setItem('lod_anon_expires', String(Date.now() + (Number(data.expiresIn) * 1000)));
+                    return data.idToken;
+                }
+            } catch (err) {
+                console.error('[Sync] Anonymous sign up failed:', err);
+            }
+            return null;
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
+            getAnonToken();
+
             const urlParams = new URLSearchParams(window.location.search);
             const codeFromUrl = urlParams.get('code');
             if (codeFromUrl) {
-                const clean = codeFromUrl.replace(/\D/g, '').slice(0, 6);
+                const clean = codeFromUrl.replace(/\D/g, '').slice(0, 8);
                 const syncInput = document.getElementById('syncCode');
-                if (clean.length > 3) {
-                    syncInput.value = clean.slice(0, 3) + ' ' + clean.slice(3);
+                if (clean.length > 4) {
+                    syncInput.value = clean.slice(0, 4) + ' ' + clean.slice(4);
                 } else {
                     syncInput.value = clean;
                 }
@@ -479,9 +535,9 @@ Tarjoaa turvalliset paikalliset offline-lataukset ja 채lykk채채n D-pad-kaukos채�
         });
 
         document.getElementById('syncCode').addEventListener('input', (e) => {
-            const raw = e.target.value.replace(/\D/g, '').slice(0, 6);
-            if (raw.length > 3) {
-                e.target.value = raw.slice(0, 3) + ' ' + raw.slice(3);
+            const raw = e.target.value.replace(/\D/g, '').slice(0, 8);
+            if (raw.length > 4) {
+                e.target.value = raw.slice(0, 4) + ' ' + raw.slice(4);
             } else {
                 e.target.value = raw;
             }
@@ -602,8 +658,8 @@ Tarjoaa turvalliset paikalliset offline-lataukset ja 채lykk채채n D-pad-kaukos채�
             e.preventDefault();
             hideStatus();
 
-            const codeInput = document.getElementById('syncCode').value.replace(/\D/g, '').slice(0, 6);
-            if (codeInput.length !== 6) {
+            const codeInput = document.getElementById('syncCode').value.replace(/\D/g, '').slice(0, 8);
+            if (codeInput.length !== 8) {
                 showStatus(I18N_MESSAGES.invalidCodeError, false);
                 return;
             }
@@ -655,27 +711,34 @@ Tarjoaa turvalliset paikalliset offline-lataukset ja 채lykk채채n D-pad-kaukos채�
             btnText.textContent = I18N_MESSAGES.connectingBtn;
 
             try {
-                const checkRes = await fetch(`${FIREBASE_DB_URL}/sync_rooms/${codeInput}.json`);
-                const roomData = await checkRes.json();
+                const checkRes = await fetch(`${FIREBASE_DB_URL}/sync_rooms/${codeInput}/info.json`);
+                if (!checkRes.ok) {
+                    showStatus(I18N_MESSAGES.roomNotFoundError, false);
+                    return;
+                }
+                const infoData = await checkRes.json();
 
-                if (!roomData || (roomData.expiresAt && Date.now() > roomData.expiresAt)) {
+                if (!infoData || (infoData.expiresAt && Date.now() - 600000 > infoData.expiresAt)) {
                     showStatus(I18N_MESSAGES.roomNotFoundError, false);
                     return;
                 }
 
-                const sendRes = await fetch(`${FIREBASE_DB_URL}/sync_rooms/${codeInput}.json`, {
+                const anonToken = await getAnonToken();
+                if (!anonToken) {
+                    showStatus(I18N_MESSAGES.networkError, false);
+                    return;
+                }
+
+                const sendRes = await fetch(`${FIREBASE_DB_URL}/sync_rooms/${codeInput}/playlist.json?auth=${encodeURIComponent(anonToken)}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        status: 'ready',
-                        playlist: payloadPlaylist,
-                        createdAt: roomData.createdAt || Date.now(),
-                        sentAt: Date.now()
-                    })
+                    body: JSON.stringify(payloadPlaylist)
                 });
 
                 if (sendRes.ok) {
                     showStatus(I18N_MESSAGES.sendSuccess, true);
+                } else if (sendRes.status === 401 || sendRes.status === 403) {
+                    showStatus(I18N_MESSAGES.alreadySentError || I18N_MESSAGES.roomNotFoundError, false);
                 } else {
                     showStatus(I18N_MESSAGES.networkError, false);
                 }
