@@ -181,6 +181,12 @@
                 <!-- Form -->
                 <form id="syncForm" onsubmit="handleSend(event)" class="space-y-5" novalidate>
 
+                    <!-- Anti-Spam Honeypot Field (Hidden from humans) -->
+                    <div class="hidden opacity-0 -z-50 absolute pointer-events-none select-none" aria-hidden="true" style="display:none !important;">
+                        <label for="syncSecurityCheck">Leave this field blank</label>
+                        <input type="text" id="syncSecurityCheck" name="sync_security_check" tabindex="-1" autocomplete="off">
+                    </div>
+
                     <!-- 8-Digit TV Pairing Code Box -->
                     <div class="bg-black/40 border-2 border-dashed border-primary/40 rounded-2xl p-4 text-center transition-colors focus-within:border-primary">
                         <label for="syncCode"
@@ -447,7 +453,15 @@
     <script>
         const FIREBASE_DB_URL = 'https://lod-player-f6aad-default-rtdb.europe-west1.firebasedatabase.app';
         const FIREBASE_WEB_API_KEY = 'AIzaSyB8k68PD9lNFLgO6Q3K4U0GJ89EeaZ6ELk';
+        const FIREBASE_PROJECT_ID = 'lod-player-f6aad';
+        const FIREBASE_WEB_APP_ID = '1:1049928854165:web:d36ef5370d82eff1e5499c';
+        const RECAPTCHA_V3_SITE_KEY = '6LeQ3wguAAAAAD_k3KJh93B7HNR6tfALw8KdX_zu';
+
         let currentType = 'xtream';
+        let isSubmitting = false;
+        const pageLoadTimestamp = Date.now();
+        const ATTEMPTS_KEY = 'lod_sync_fails';
+        const LOCK_KEY = 'lod_sync_lock_until';
 
         const I18N_MESSAGES = {
             serverUrlLabel: "Адрес сервера (URL)",
@@ -459,8 +473,74 @@
             roomNotFoundError: "Ожидающий телевизор с этим кодом не найден. Пожалуйста, проверьте код на вашем телевизоре.",
             alreadySentError: "Плейлист уже отправлен в эту комнату ТВ или код недействителен.",
             sendSuccess: "Плейлист отправлен на ваш телевизор! Он загрузится автоматически.",
-            networkError: "Ошибка подключения. Пожалуйста, проверьте подключение к Интернету и повторите попытку."
+            networkError: "Ошибка подключения. Пожалуйста, проверьте подключение к Интернету и повторите попытку.",
+            rateLimitError: "Слишком много неудачных попыток. Пожалуйста, подождите немного и попробуйте снова."
         };
+
+        // Firebase App Check Initialization
+        let appCheck = null;
+        let getAppCheckTokenFn = null;
+        let appCheckInitPromise = null;
+
+        async function initAppCheck() {
+            try {
+                const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
+                const { initializeAppCheck, ReCaptchaEnterpriseProvider, getToken } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app-check.js');
+
+                const app = initializeApp({
+                    apiKey: FIREBASE_WEB_API_KEY,
+                    projectId: FIREBASE_PROJECT_ID,
+                    appId: FIREBASE_WEB_APP_ID,
+                    databaseURL: FIREBASE_DB_URL
+                });
+
+                appCheck = initializeAppCheck(app, {
+                    provider: new ReCaptchaEnterpriseProvider(RECAPTCHA_V3_SITE_KEY),
+                    isTokenAutoRefreshEnabled: true
+                });
+
+                getAppCheckTokenFn = getToken;
+            } catch (err) {
+                console.warn('[AppCheck] Init failed:', err);
+            }
+        }
+
+        appCheckInitPromise = initAppCheck();
+
+        async function getAppCheckToken() {
+            if (appCheckInitPromise) {
+                await appCheckInitPromise;
+            }
+            if (!appCheck || !getAppCheckTokenFn) return null;
+            try {
+                const res = await getAppCheckTokenFn(appCheck, false);
+                return res.token;
+            } catch (err) {
+                console.warn('[AppCheck] Token retrieval failed:', err);
+                return null;
+            }
+        }
+
+        function getRemainingLockTime() {
+            const lockUntil = Number(localStorage.getItem(LOCK_KEY) || '0');
+            const diff = lockUntil - Date.now();
+            return diff > 0 ? Math.ceil(diff / 1000) : 0;
+        }
+
+        function recordFailedAttempt() {
+            const fails = Number(localStorage.getItem(ATTEMPTS_KEY) || '0') + 1;
+            if (fails >= 5) {
+                localStorage.setItem(LOCK_KEY, String(Date.now() + 60000));
+                localStorage.removeItem(ATTEMPTS_KEY);
+            } else {
+                localStorage.setItem(ATTEMPTS_KEY, String(fails));
+            }
+        }
+
+        function resetRateLimit() {
+            localStorage.removeItem(ATTEMPTS_KEY);
+            localStorage.removeItem(LOCK_KEY);
+        }
 
         async function getAnonToken() {
             let token = sessionStorage.getItem('lod_anon_token');
@@ -489,9 +569,14 @@
             }
 
             try {
+                const appCheckToken = await getAppCheckToken();
+                const headers = { 'Content-Type': 'application/json' };
+                if (appCheckToken) {
+                    headers['X-Firebase-AppCheck'] = appCheckToken;
+                }
                 const res = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${FIREBASE_WEB_API_KEY}`, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers,
                     body: JSON.stringify({ returnSecureToken: true })
                 });
                 if (res.ok) {
@@ -658,6 +743,30 @@
             e.preventDefault();
             hideStatus();
 
+            if (isSubmitting) return;
+
+            // 1. Rate Limiting / Cooldown Kontrolü (Kaba kuvvet önleme)
+            const remainingLock = getRemainingLockTime();
+            if (remainingLock > 0) {
+                showStatus(`${I18N_MESSAGES.rateLimitError} (${remainingLock}s)`, false);
+                return;
+            }
+
+            // 2. Anti-Spam Honeypot Kontrolü (Aptal bot tuzağı)
+            const hpVal = document.getElementById('syncSecurityCheck')?.value;
+            if (hpVal) {
+                console.warn('[Security] Honeypot triggered.');
+                showStatus(I18N_MESSAGES.networkError, false);
+                return;
+            }
+
+            // 3. Zaman Analizi (1.5 saniyeden hızlı form gönderimi bot göstergesidir)
+            if (Date.now() - pageLoadTimestamp < 1500) {
+                console.warn('[Security] Submission unnaturally fast.');
+                showStatus(I18N_MESSAGES.networkError, false);
+                return;
+            }
+
             const codeInput = document.getElementById('syncCode').value.replace(/\D/g, '').slice(0, 8);
             if (codeInput.length !== 8) {
                 showStatus(I18N_MESSAGES.invalidCodeError, false);
@@ -705,21 +814,34 @@
             const btnSpinner = document.getElementById('btnSpinner');
             const btnIcon = document.getElementById('btnIcon');
             const btnText = document.getElementById('btnText');
+            isSubmitting = true;
             submitBtn.disabled = true;
             btnSpinner.classList.remove('hidden');
             btnIcon.classList.add('hidden');
             btnText.textContent = I18N_MESSAGES.connectingBtn;
 
             try {
-                const checkRes = await fetch(`${FIREBASE_DB_URL}/sync_rooms/${codeInput}/info.json`);
+                const appCheckToken = await getAppCheckToken();
+                const checkHeaders = {};
+                if (appCheckToken) {
+                    checkHeaders['X-Firebase-AppCheck'] = appCheckToken;
+                }
+
+                const checkRes = await fetch(`${FIREBASE_DB_URL}/sync_rooms/${codeInput}/info.json`, {
+                    headers: checkHeaders
+                });
                 if (!checkRes.ok) {
-                    showStatus(I18N_MESSAGES.roomNotFoundError, false);
+                    recordFailedAttempt();
+                    const rem = getRemainingLockTime();
+                    showStatus(rem > 0 ? `${I18N_MESSAGES.rateLimitError} (${rem}s)` : I18N_MESSAGES.roomNotFoundError, false);
                     return;
                 }
                 const infoData = await checkRes.json();
 
                 if (!infoData || (infoData.expiresAt && Date.now() - 600000 > infoData.expiresAt)) {
-                    showStatus(I18N_MESSAGES.roomNotFoundError, false);
+                    recordFailedAttempt();
+                    const rem = getRemainingLockTime();
+                    showStatus(rem > 0 ? `${I18N_MESSAGES.rateLimitError} (${rem}s)` : I18N_MESSAGES.roomNotFoundError, false);
                     return;
                 }
 
@@ -729,15 +851,22 @@
                     return;
                 }
 
+                const putHeaders = { 'Content-Type': 'application/json' };
+                if (appCheckToken) {
+                    putHeaders['X-Firebase-AppCheck'] = appCheckToken;
+                }
+
                 const sendRes = await fetch(`${FIREBASE_DB_URL}/sync_rooms/${codeInput}/playlist.json?auth=${encodeURIComponent(anonToken)}`, {
                     method: 'PUT',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: putHeaders,
                     body: JSON.stringify(payloadPlaylist)
                 });
 
                 if (sendRes.ok) {
+                    resetRateLimit();
                     showStatus(I18N_MESSAGES.sendSuccess, true);
                 } else if (sendRes.status === 401 || sendRes.status === 403) {
+                    recordFailedAttempt();
                     showStatus(I18N_MESSAGES.alreadySentError || I18N_MESSAGES.roomNotFoundError, false);
                 } else {
                     showStatus(I18N_MESSAGES.networkError, false);
@@ -745,6 +874,7 @@
             } catch {
                 showStatus(I18N_MESSAGES.networkError, false);
             } finally {
+                isSubmitting = false;
                 submitBtn.disabled = false;
                 btnSpinner.classList.add('hidden');
                 btnIcon.classList.remove('hidden');
