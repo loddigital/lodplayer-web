@@ -485,7 +485,7 @@ Erbjuder säkra lokala offlinenedladdningar och smart D-pad-fjärrkontrollstöd 
         async function initAppCheck() {
             try {
                 const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
-                const { initializeAppCheck, ReCaptchaEnterpriseProvider, getToken } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app-check.js');
+                const { initializeAppCheck, ReCaptchaV3Provider, getToken } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app-check.js');
 
                 const app = initializeApp({
                     apiKey: FIREBASE_WEB_API_KEY,
@@ -495,7 +495,7 @@ Erbjuder säkra lokala offlinenedladdningar och smart D-pad-fjärrkontrollstöd 
                 });
 
                 appCheck = initializeAppCheck(app, {
-                    provider: new ReCaptchaEnterpriseProvider(RECAPTCHA_V3_SITE_KEY),
+                    provider: new ReCaptchaV3Provider(RECAPTCHA_V3_SITE_KEY),
                     isTokenAutoRefreshEnabled: true
                 });
 
