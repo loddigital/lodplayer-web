@@ -33,6 +33,7 @@ export const getFooterHTML = () => {
                 <a href="/privacy-policy.html" class="hover:text-textMuted transition-colors">Privacy Policy</a>
                 <a href="/terms.html" class="hover:text-textMuted transition-colors">Terms of Service</a>
                 <a href="/delete-account.html" class="hover:text-textMuted transition-colors">Delete Account</a>
+                <a href="/delete-data.html" class="hover:text-textMuted transition-colors">Delete Data</a>
             </div>
         </div>
     </footer>
