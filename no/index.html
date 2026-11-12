@@ -4,19 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Last ned LOD Player | 
-Premium offline IPTV og VOD-spiller</title>
+    <title>LOD Player | Offisiell offline IPTV og VOD-spiller (Android TV og Mobil)</title>
     <meta name="description" content="Last ned LOD Player – Den ultimate offline IPTV-spilleren med sikker VOD-nedlasting, se offline-funksjoner, tilpassbar lyd/teksting og Android TV-optimalisering.">
     <meta name="keywords" content="Last ned LOD Player, LOD Player APK, Frakoblet IPTV, VOD-nedlasting, Se frakoblet, IPTV med nedlastingsfunksjon, Smart TV IPTV, Android TV-spiller, Xtream-spiller, Premium IPTV">
+    <meta name="author" content="LOD Digital">
+    <meta name="application-name" content="LOD Player">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="google-site-verification" content="5viU7AZYJhWrIuPQ--Jdr91vPQqOsZcE2SOCvHB2hfs" />
 
     <!-- Hreflang Tags for Multi-language readiness -->
     <link rel="alternate" hreflang="x-default" href="https://lodplayer.com/" />
+    <link rel="alternate" hreflang="en" href="https://lodplayer.com/" />
     <link rel="alternate" hreflang="ar" href="https://lodplayer.com/ar/" />
     <link rel="alternate" hreflang="cs" href="https://lodplayer.com/cs/" />
     <link rel="alternate" hreflang="da" href="https://lodplayer.com/da/" />
     <link rel="alternate" hreflang="de" href="https://lodplayer.com/de/" />
-    <link rel="alternate" hreflang="en" href="https://lodplayer.com/" />
     <link rel="alternate" hreflang="es" href="https://lodplayer.com/es/" />
     <link rel="alternate" hreflang="fi" href="https://lodplayer.com/fi/" />
     <link rel="alternate" hreflang="fr" href="https://lodplayer.com/fr/" />
@@ -43,15 +45,20 @@ Premium offline IPTV og VOD-spiller</title>
     <link rel="alternate" hreflang="zh" href="https://lodplayer.com/zh/" />
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="LOD Player - Free IPTV Player for Android" />
-    <meta property="og:description"
-        content="Download LOD Player, the fastest and cleanest free IPTV player for Android TV and smartphones." />
+    <meta property="og:site_name" content="LOD Player" />
+    <meta property="og:title" content="LOD Player | Offisiell offline IPTV og VOD-spiller (Android TV og Mobil)" />
+    <meta property="og:description" content="Last ned LOD Player – Den ultimate offline IPTV-spilleren med sikker VOD-nedlasting, se offline-funksjoner, tilpassbar lyd/teksting og Android TV-optimalisering." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://lodplayer.com/" />
+    <meta property="og:url" content="https://lodplayer.com/no/" />
+    <meta property="og:locale" content="no" />
     <meta property="og:image" content="https://lodplayer.com/assets/images/og-banner.png" />
+    <meta property="og:image:alt" content="LOD Player - Offline IPTV and VOD Player for Android TV and Mobile" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LOD Player | Offisiell offline IPTV og VOD-spiller (Android TV og Mobil)" />
+    <meta name="twitter:description" content="Last ned LOD Player – Den ultimate offline IPTV-spilleren med sikker VOD-nedlasting, se offline-funksjoner, tilpassbar lyd/teksting og Android TV-optimalisering." />
+    <meta name="twitter:image" content="https://lodplayer.com/assets/images/og-banner.png" />
 
     <!-- Favicon & Touch Icons -->
     <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
@@ -73,21 +80,82 @@ Premium offline IPTV og VOD-spiller</title>
 
     <link rel="canonical" href="https://lodplayer.com/no/" />
 
-    <!-- SEO Schema.org -->
+    <!-- SEO, GEO & AEO Schema.org (Organization, WebSite, SoftwareApplication) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "LOD Player",
-      "url": "https://lodplayer.com/no/",
-      "operatingSystem": "Android, Android TV",
-      "applicationCategory": "MultimediaApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "Last ned LOD Player – Den ultimate offline IPTV-spilleren med sikker VOD-nedlasting, se offline-funksjoner, tilpassbar lyd/teksting og Android TV-optimalisering."
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://lodplayer.com/#organization",
+          "name": "LOD Digital",
+          "alternateName": "LOD Player",
+          "url": "https://lodplayer.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://lodplayer.com/assets/images/logo.png"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@lodplayer.com",
+            "contactType": "customer support"
+          },
+          "sameAs": [
+            "https://play.google.com/store/apps/details?id=com.lodplayer",
+            "https://github.com/loddigital/lodplayer-web"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://lodplayer.com/#website",
+          "url": "https://lodplayer.com/",
+          "name": "LOD Player",
+          "alternateName": ["LOD Player IPTV", "LOD Digital IPTV Player"],
+          "inLanguage": "no",
+          "publisher": {
+            "@id": "https://lodplayer.com/#organization"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://lodplayer.com/#software",
+          "name": "LOD Player",
+          "alternateName": "LOD Player - Offline IPTV and VOD Player",
+          "url": "https://lodplayer.com/no/",
+          "operatingSystem": "Android, Android TV, Google TV, Smart TV",
+          "applicationCategory": "MultimediaApplication",
+          "applicationSubCategory": "IPTV and VOD Media Player",
+          "installUrl": "https://play.google.com/store/apps/details?id=com.lodplayer",
+          "downloadUrl": "https://github.com/loddigital/lodplayer-web/releases/latest/download/lod-player.apk",
+          "screenshot": "https://lodplayer.com/assets/images/tv-mockup.png",
+          "softwareVersion": "1.2.0",
+          "author": {
+            "@id": "https://lodplayer.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://lodplayer.com/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Offline VOD Download (Watch Offline)",
+            "Android TV and Smart TV D-Pad Remote Navigation",
+            "Xtream Codes API and M3U Playlist Support",
+            "Quick Phone-to-TV Playlist Sync via 8-Digit Code",
+            "Multi-Language Audio and Custom Subtitles",
+            "Cloud Synchronization across 5 Devices",
+            "Smart Playback History and Parental Control"
+          ],
+          "sameAs": [
+            "https://play.google.com/store/apps/details?id=com.lodplayer",
+            "https://github.com/loddigital/lodplayer-web/releases"
+          ],
+          "description": "Last ned LOD Player – Den ultimate offline IPTV-spilleren med sikker VOD-nedlasting, se offline-funksjoner, tilpassbar lyd/teksting og Android TV-optimalisering."
+        }
+      ]
     }
     </script>
     <script type="application/ld+json">
@@ -99,21 +167,35 @@ Premium offline IPTV og VOD-spiller</title>
         "name": "Kan jeg laste ned VOD-er og se dem offline?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja, LOD Player er en av få IPTV-spillere som tilbyr sikker nedlasting uten nett. \nDu kan laste ned filmer og serier direkte i appen og se dem senere uten internettforbindelse."
+          "text": "Ja, LOD Player er en av få IPTV-spillere som tilbyr sikker nedlasting uten nett. Du kan laste ned filmer og serier direkte i appen og se dem senere uten internettforbindelse."
         }
       }, {
         "@type": "Question",
         "name": "Tilbyr LOD Player IPTV-innhold?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nei, LOD Player er kun en mediespiller. \nVi tilbyr ikke, er vert for eller selger noe medieinnhold, direktesendinger eller spillelister. \nDu må oppgi din egen lovlig ervervede M3U- eller Xtream API-spilleliste."
+          "text": "Nei, LOD Player er kun en mediespiller. Vi tilbyr ikke, er vert for eller selger noe medieinnhold, direktesendinger eller spillelister. Du må oppgi din egen lovlig ervervede M3U- eller Xtream API-spilleliste."
         }
       }, {
         "@type": "Question",
         "name": "Er appen optimalisert for Android TV?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutt. \nAppen vår har et tilpasset landskapsoppsett og full støtte for D-Pad fjernkontroll, noe som gjør navigeringen på store Smart TV-skjermer og Android TV-bokser utrolig smidig."
+          "text": "Absolutt. Appen vår har et tilpasset landskapsoppsett og full støtte for D-Pad fjernkontroll, noe som gjør navigeringen på store Smart TV-skjermer og Android TV-bokser utrolig smidig."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Hva er LOD Player, og hvilke spillelisteformater støttes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "LOD Player er en moderne, gratis IPTV- og VOD-mediespiller utviklet av LOD Digital for Android-telefoner, nettbrett og Android TV. Den støtter Xtream Codes API og M3U-spillelister, frakoblet videonedlasting, skysynkronisering på 5 enheter og D-Pad fjernkontroll."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Hvordan legger jeg raskt til en M3U- eller Xtream-spilleliste på Smart TV?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Overfør spillelisten på sekunder uten å skrive med fjernkontrollen. Åpne LOD Player på TV-en for å få en 8-sifret kode, og gå til lodplayer.com/sync på telefonen for å sende listen umiddelbart."
         }
       }]
     }
@@ -138,7 +220,7 @@ Premium offline IPTV og VOD-spiller</title>
     <header id="header" class="fixed top-0 left-0 w-full z-100 backdrop-blur-lg bg-bgDark/70 border-b border-white/12 transition-all duration-300">
         <div id="nav-container" class="max-w-300 mx-auto px-4 md:px-8 relative flex justify-between items-center h-17.5 md:h-20 transition-all duration-300">
             <a href="/no/" class="flex items-center gap-2 md:gap-3 text-xl md:text-2xl font-extrabold font-outfit bg-clip-text text-transparent bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)]">
-                <img src="/assets/images/logo.png" alt="LOD Player Logo" loading="lazy" class="w-8 h-8 md:w-10.5 md:h-10.5 rounded-lg md:rounded-[10px] border border-white/15 shadow-[0_4px_12px_rgba(59,130,246,0.3)] object-cover">
+                <img src="/assets/images/logo.png" alt="LOD Player Logo" width="42" height="42" class="w-8 h-8 md:w-10.5 md:h-10.5 rounded-lg md:rounded-[10px] border border-white/15 shadow-[0_4px_12px_rgba(59,130,246,0.3)] object-cover">
                 <span class="max-[380px]:hidden">LOD Player</span>
             </a>
             <nav id="desktop-nav" class="flex items-center gap-2 md:gap-8">
@@ -196,7 +278,7 @@ Premium offline IPTV og VOD-spiller</title>
                         class="self-start bg-primary/15 text-softBlue border border-primary/30 px-4 py-1.5 rounded-full text-[0.85rem] font-semibold tracking-wider uppercase">Last ned og se hvor som helst</span>
                     <h1
                         class="font-outfit font-bold text-[1.5rem] md:text-[2.5rem] leading-[1.15] text-white tracking-[-0.02em]">
-                        Offline IPTV og VOD-spiller</h1>
+                        LOD Player — Offline IPTV og VOD-spiller</h1>
                     <p class="text-[1.15rem] text-textMuted max-w-135">LOD Player er en toppmoderne spiller med offline VOD-nedlasting, avansert valg av lyd/undertekstspor og sømløs Android TV D-Pad-kontrolleroptimalisering.</p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 w-full sm:w-max">
                         <!-- 1. Google Play Store Button -->
@@ -422,8 +504,7 @@ Premium offline IPTV og VOD-spiller</title>
                             </svg>
                         </div>
                         <h3 class="font-outfit font-bold text-[1.3rem] text-white">Frakoblet VOD-nedlasting</h3>
-                        <p class="text-[0.95rem] text-textMuted leading-relaxed">Last ned favorittfilmene og -seriene dine direkte i appen. 
-Nyt lokal avspilling av høy kvalitet uten å trenge en aktiv internettforbindelse.</p>
+                        <p class="text-[0.95rem] text-textMuted leading-relaxed">Last ned favorittfilmene og -seriene dine direkte i appen. Nyt lokal avspilling av høy kvalitet uten å trenge en aktiv internettforbindelse.</p>
                     </article>
 
                     <!-- Card 2: Language & Subtitles -->
@@ -468,8 +549,7 @@ Nyt lokal avspilling av høy kvalitet uten å trenge en aktiv internettforbindel
                             </svg>
                         </div>
                         <h3 class="font-outfit font-bold text-[1.3rem] text-white">Smart TV og D-Pad-fjernkontroll</h3>
-                        <p class="text-[0.95rem] text-textMuted leading-relaxed">Fullt optimalisert for Android TV/Smart TV-skjermer. 
-Nyt jevn D-Pad-fjernnavigering og forsinkelsesfri avspilling selv på low-end TV Box-enheter.</p>
+                        <p class="text-[0.95rem] text-textMuted leading-relaxed">Fullt optimalisert for Android TV/Smart TV-skjermer. Nyt jevn D-Pad-fjernnavigering og forsinkelsesfri avspilling selv på low-end TV Box-enheter.</p>
                     </article>
 
                     <!-- Card 5: Skysynkronisering -->
@@ -519,14 +599,14 @@ Nyt jevn D-Pad-fjernnavigering og forsinkelsesfri avspilling selv på low-end TV
                     <!-- 1. TV Screen (Back Center) -->
                     <div
                         class="absolute top-0 sm:top-[5%] left-1/2 -translate-x-1/2 w-[90%] sm:w-[85%] lg:w-full aspect-video rounded-xl sm:rounded-2xl border border-white/10 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.9),0_0_50px_rgba(59,130,246,0.2)] overflow-hidden z-10 transition-transform hover:scale-[1.02] duration-500">
-                        <img src="/assets/images/tv-mockup.png" alt="LOD Player on Smart TV" loading="lazy"
+                        <img src="/assets/images/tv-mockup.png" alt="LOD Player Android TV and Smart TV IPTV Interface with D-Pad Remote Navigation" loading="lazy"
                             class="w-full h-full object-cover">
                     </div>
 
                     <!-- 2. Tablet Screen (Middle Left) -->
                     <div
                         class="absolute bottom-[10%] sm:bottom-[-5%] left-[0%] sm:left-[-10%] w-[55%] sm:w-[50%] lg:w-[60%] aspect-video rounded-lg sm:rounded-xl border border-white/15 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.8),0_0_30px_rgba(59,130,246,0.15)] overflow-hidden z-20 transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 backdrop-blur-sm bg-bgDark/40">
-                        <img src="/assets/images/tablet-mockup.jpeg" alt="LOD Player on Tablet" loading="lazy"
+                        <img src="/assets/images/tablet-mockup.jpeg" alt="LOD Player Offline VOD and Series Playback on Tablet" loading="lazy"
                             class="w-full h-full object-cover">
                     </div>
 
@@ -537,7 +617,7 @@ Nyt jevn D-Pad-fjernnavigering og forsinkelsesfri avspilling selv på low-end TV
                         <div
                             class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-3.75 sm:h-6.25 bg-gray-900 rounded-b-xl sm:rounded-b-3xl z-40">
                         </div>
-                        <img src="/assets/images/mobile-mockup.png" alt="LOD Player on Mobile" loading="lazy"
+                        <img src="/assets/images/mobile-mockup.png" alt="LOD Player Mobile IPTV App with Offline VOD Downloads" loading="lazy"
                             class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -545,12 +625,10 @@ Nyt jevn D-Pad-fjernnavigering og forsinkelsesfri avspilling selv på low-end TV
                 <!-- Description -->
                 <div class="flex flex-col gap-6">
                     <div class="flex flex-col gap-4">
-                        <span class="text-softBlue text-[0.9rem] font-bold uppercase tracking-widest">Big Screen
-                            Comfort</span>
+                        <span class="text-softBlue text-[0.9rem] font-bold uppercase tracking-widest">Stor skjermkomfort</span>
                         <h2 class="font-outfit font-bold text-[2.2rem] md:text-[2.8rem] text-white tracking-[-0.02em]">
                             Utviklet for smart-TVer</h2>
-                        <p class="text-[1.05rem] text-textMuted">Si farvel til frustrerende markørkontroller. 
-LOD Player forvandler IPTV-navigasjon på store skjermer til en jevn, naturlig opplevelse.</p>
+                        <p class="text-[1.05rem] text-textMuted">Si farvel til frustrerende markørkontroller. LOD Player forvandler IPTV-navigasjon på store skjermer til en jevn, naturlig opplevelse.</p>
                     </div>
 
                     <div class="flex gap-4 mt-2">
@@ -594,8 +672,7 @@ LOD Player forvandler IPTV-navigasjon på store skjermer til en jevn, naturlig o
                     </div>
                     <div class="flex flex-col gap-1">
                         <h3 class="text-[1.1rem] font-bold text-white font-outfit">Sikker frakoblet nedlastingspolicy</h3>
-                        <p class="text-[0.95rem] text-textMuted leading-relaxed">For å beskytte opphavsrettsinnehavere og garantere enhetssikkerhet, kan ikke VOD-innhold lastet ned i LOD Player få tilgang til eller kopieres av tredjeparts filbehandlere. 
-Du kan se de nedlastede filene dine uten nett eksklusivt gjennom LOD Players innebygde sikre spiller i fanen "Nedlastinger".</p>
+                        <p class="text-[0.95rem] text-textMuted leading-relaxed">For å beskytte opphavsrettsinnehavere og garantere enhetssikkerhet, kan ikke VOD-innhold lastet ned i LOD Player få tilgang til eller kopieres av tredjeparts filbehandlere. Du kan se de nedlastede filene dine uten nett eksklusivt gjennom LOD Players innebygde sikre spiller i fanen "Nedlastinger".</p>
                     </div>
                 </div>
             </div>
@@ -653,7 +730,7 @@ Du kan se de nedlastede filene dine uten nett eksklusivt gjennom LOD Players inn
                             <div class="flex flex-col items-start whitespace-nowrap">
                                 <span class="text-[0.75rem] text-white/70 uppercase tracking-wider">DIREKTE NEDLASTING</span>
                                 <span class="text-[1.05rem] font-bold font-outfit text-white">Android APK <span
-                                        class="apk-version-text text-[0.65rem] text-textDark font-normal ml-1 tracking-wide">v1.2.0-54</span></span>
+                                        class="apk-version-text text-[0.65rem] text-textDark font-normal ml-1 tracking-wide"></span></span>
                             </div>
                         </a>
                     </div>
@@ -671,19 +748,23 @@ Du kan se de nedlastede filene dine uten nett eksklusivt gjennom LOD Players inn
                 <div class="flex flex-col gap-4">
                     <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
                         <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Kan jeg laste ned VOD-er og se dem offline?</h3>
-                        <p class="text-[0.95rem] text-textMuted">Ja, LOD Player er en av få IPTV-spillere som tilbyr sikker nedlasting uten nett. 
-Du kan laste ned filmer og serier direkte i appen og se dem senere uten internettforbindelse.</p>
+                        <p class="text-[0.95rem] text-textMuted">Ja, LOD Player er en av få IPTV-spillere som tilbyr sikker nedlasting uten nett. Du kan laste ned filmer og serier direkte i appen og se dem senere uten internettforbindelse.</p>
                     </div>
                     <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
                         <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Tilbyr LOD Player IPTV-innhold?</h3>
-                        <p class="text-[0.95rem] text-textMuted">Nei, LOD Player er kun en mediespiller. 
-Vi tilbyr ikke, er vert for eller selger noe medieinnhold, direktesendinger eller spillelister. 
-Du må oppgi din egen lovlig ervervede M3U- eller Xtream API-spilleliste.</p>
+                        <p class="text-[0.95rem] text-textMuted">Nei, LOD Player er kun en mediespiller. Vi tilbyr ikke, er vert for eller selger noe medieinnhold, direktesendinger eller spillelister. Du må oppgi din egen lovlig ervervede M3U- eller Xtream API-spilleliste.</p>
                     </div>
                     <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
                         <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Er appen optimalisert for Android TV?</h3>
-                        <p class="text-[0.95rem] text-textMuted">Absolutt. 
-Appen vår har et tilpasset landskapsoppsett og full støtte for D-Pad fjernkontroll, noe som gjør navigeringen på store Smart TV-skjermer og Android TV-bokser utrolig smidig.</p>
+                        <p class="text-[0.95rem] text-textMuted">Absolutt. Appen vår har et tilpasset landskapsoppsett og full støtte for D-Pad fjernkontroll, noe som gjør navigeringen på store Smart TV-skjermer og Android TV-bokser utrolig smidig.</p>
+                    </div>
+                    <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
+                        <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Hva er LOD Player, og hvilke spillelisteformater støttes?</h3>
+                        <p class="text-[0.95rem] text-textMuted">LOD Player er en moderne, gratis IPTV- og VOD-mediespiller utviklet av LOD Digital for Android-telefoner, nettbrett og Android TV. Den støtter Xtream Codes API og M3U-spillelister, frakoblet videonedlasting, skysynkronisering på 5 enheter og D-Pad fjernkontroll.</p>
+                    </div>
+                    <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
+                        <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Hvordan legger jeg raskt til en M3U- eller Xtream-spilleliste på Smart TV?</h3>
+                        <p class="text-[0.95rem] text-textMuted">Overfør spillelisten på sekunder uten å skrive med fjernkontrollen. Åpne LOD Player på TV-en for å få en 8-sifret kode, og gå til lodplayer.com/sync på telefonen for å sende listen umiddelbart.</p>
                     </div>
                 </div>
             </div>
@@ -700,8 +781,7 @@ Appen vår har et tilpasset landskapsoppsett og full støtte for D-Pad fjernkont
                     <img src="/assets/images/logo.png" loading="lazy" alt="LOD Player Logo" class="w-8 h-8 rounded-lg object-cover">
                     <span class="bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)] bg-clip-text text-transparent">LOD Player</span>
                 </div>
-                <p class="max-w-[320px] text-[0.9rem] leading-relaxed">En avansert IPTV-spiller utviklet av LOD Digital. 
-Tilbyr sikre lokale offline nedlastinger og smart D-pad fjernkontrollstøtte for TV-er og mobile enheter.</p>
+                <p class="max-w-[320px] text-[0.9rem] leading-relaxed">En avansert IPTV-spiller utviklet av LOD Digital. Tilbyr sikre lokale offline nedlastinger og smart D-pad fjernkontrollstøtte for TV-er og mobile enheter.</p>
             </div>
             <div>
                 <h3 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Hurtigkoblinger</h3>
@@ -709,6 +789,7 @@ Tilbyr sikre lokale offline nedlastinger og smart D-pad fjernkontrollstøtte for
                     <li><a href="/no/#features" class="hover:text-white transition-all hover:pl-1">Funksjoner</a></li>
                     <li><a href="/no/#tv-experience" class="hover:text-white transition-all hover:pl-1">TV-opplevelse</a></li>
                     <li><a href="/no/#downloads" class="hover:text-white transition-all hover:pl-1">Nedlastinger</a></li>
+                    <li><a href="/no/sync/" class="hover:text-white transition-all hover:pl-1">Rask legg til fra telefon</a></li>
                 </ul>
             </div>
             <div>

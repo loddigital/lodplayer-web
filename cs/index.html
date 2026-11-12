@@ -4,19 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stáhnout LOD Player | 
-Prémiový offline přehrávač IPTV a VOD</title>
+    <title>LOD Player | Oficiální offline přehrávač IPTV a VOD (Android TV a mobil)</title>
     <meta name="description" content="Stáhnout LOD Player – dokonalý offline přehrávač IPTV s bezpečným stahováním VOD, možnostmi sledování offline, přizpůsobitelným zvukem/titulky a optimalizací pro Android TV.">
     <meta name="keywords" content="Stáhnout LOD Player, LOD Player APK, offline IPTV, stažení VOD, sledování offline, IPTV s funkcí stahování, Smart TV IPTV, Android TV Player, Xtream Player, Premium IPTV">
+    <meta name="author" content="LOD Digital">
+    <meta name="application-name" content="LOD Player">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="google-site-verification" content="5viU7AZYJhWrIuPQ--Jdr91vPQqOsZcE2SOCvHB2hfs" />
 
     <!-- Hreflang Tags for Multi-language readiness -->
     <link rel="alternate" hreflang="x-default" href="https://lodplayer.com/" />
+    <link rel="alternate" hreflang="en" href="https://lodplayer.com/" />
     <link rel="alternate" hreflang="ar" href="https://lodplayer.com/ar/" />
     <link rel="alternate" hreflang="cs" href="https://lodplayer.com/cs/" />
     <link rel="alternate" hreflang="da" href="https://lodplayer.com/da/" />
     <link rel="alternate" hreflang="de" href="https://lodplayer.com/de/" />
-    <link rel="alternate" hreflang="en" href="https://lodplayer.com/" />
     <link rel="alternate" hreflang="es" href="https://lodplayer.com/es/" />
     <link rel="alternate" hreflang="fi" href="https://lodplayer.com/fi/" />
     <link rel="alternate" hreflang="fr" href="https://lodplayer.com/fr/" />
@@ -43,15 +45,20 @@ Prémiový offline přehrávač IPTV a VOD</title>
     <link rel="alternate" hreflang="zh" href="https://lodplayer.com/zh/" />
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="LOD Player - Free IPTV Player for Android" />
-    <meta property="og:description"
-        content="Download LOD Player, the fastest and cleanest free IPTV player for Android TV and smartphones." />
+    <meta property="og:site_name" content="LOD Player" />
+    <meta property="og:title" content="LOD Player | Oficiální offline přehrávač IPTV a VOD (Android TV a mobil)" />
+    <meta property="og:description" content="Stáhnout LOD Player – dokonalý offline přehrávač IPTV s bezpečným stahováním VOD, možnostmi sledování offline, přizpůsobitelným zvukem/titulky a optimalizací pro Android TV." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://lodplayer.com/" />
+    <meta property="og:url" content="https://lodplayer.com/cs/" />
+    <meta property="og:locale" content="cs" />
     <meta property="og:image" content="https://lodplayer.com/assets/images/og-banner.png" />
+    <meta property="og:image:alt" content="LOD Player - Offline IPTV and VOD Player for Android TV and Mobile" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LOD Player | Oficiální offline přehrávač IPTV a VOD (Android TV a mobil)" />
+    <meta name="twitter:description" content="Stáhnout LOD Player – dokonalý offline přehrávač IPTV s bezpečným stahováním VOD, možnostmi sledování offline, přizpůsobitelným zvukem/titulky a optimalizací pro Android TV." />
+    <meta name="twitter:image" content="https://lodplayer.com/assets/images/og-banner.png" />
 
     <!-- Favicon & Touch Icons -->
     <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
@@ -73,21 +80,82 @@ Prémiový offline přehrávač IPTV a VOD</title>
 
     <link rel="canonical" href="https://lodplayer.com/cs/" />
 
-    <!-- SEO Schema.org -->
+    <!-- SEO, GEO & AEO Schema.org (Organization, WebSite, SoftwareApplication) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "LOD Player",
-      "url": "https://lodplayer.com/cs/",
-      "operatingSystem": "Android, Android TV",
-      "applicationCategory": "MultimediaApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "Stáhnout LOD Player – dokonalý offline přehrávač IPTV s bezpečným stahováním VOD, možnostmi sledování offline, přizpůsobitelným zvukem/titulky a optimalizací pro Android TV."
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://lodplayer.com/#organization",
+          "name": "LOD Digital",
+          "alternateName": "LOD Player",
+          "url": "https://lodplayer.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://lodplayer.com/assets/images/logo.png"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@lodplayer.com",
+            "contactType": "customer support"
+          },
+          "sameAs": [
+            "https://play.google.com/store/apps/details?id=com.lodplayer",
+            "https://github.com/loddigital/lodplayer-web"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://lodplayer.com/#website",
+          "url": "https://lodplayer.com/",
+          "name": "LOD Player",
+          "alternateName": ["LOD Player IPTV", "LOD Digital IPTV Player"],
+          "inLanguage": "cs",
+          "publisher": {
+            "@id": "https://lodplayer.com/#organization"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://lodplayer.com/#software",
+          "name": "LOD Player",
+          "alternateName": "LOD Player - Offline IPTV and VOD Player",
+          "url": "https://lodplayer.com/cs/",
+          "operatingSystem": "Android, Android TV, Google TV, Smart TV",
+          "applicationCategory": "MultimediaApplication",
+          "applicationSubCategory": "IPTV and VOD Media Player",
+          "installUrl": "https://play.google.com/store/apps/details?id=com.lodplayer",
+          "downloadUrl": "https://github.com/loddigital/lodplayer-web/releases/latest/download/lod-player.apk",
+          "screenshot": "https://lodplayer.com/assets/images/tv-mockup.png",
+          "softwareVersion": "1.2.0",
+          "author": {
+            "@id": "https://lodplayer.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://lodplayer.com/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Offline VOD Download (Watch Offline)",
+            "Android TV and Smart TV D-Pad Remote Navigation",
+            "Xtream Codes API and M3U Playlist Support",
+            "Quick Phone-to-TV Playlist Sync via 8-Digit Code",
+            "Multi-Language Audio and Custom Subtitles",
+            "Cloud Synchronization across 5 Devices",
+            "Smart Playback History and Parental Control"
+          ],
+          "sameAs": [
+            "https://play.google.com/store/apps/details?id=com.lodplayer",
+            "https://github.com/loddigital/lodplayer-web/releases"
+          ],
+          "description": "Stáhnout LOD Player – dokonalý offline přehrávač IPTV s bezpečným stahováním VOD, možnostmi sledování offline, přizpůsobitelným zvukem/titulky a optimalizací pro Android TV."
+        }
+      ]
     }
     </script>
     <script type="application/ld+json">
@@ -99,21 +167,35 @@ Prémiový offline přehrávač IPTV a VOD</title>
         "name": "Mohu si stáhnout VOD a sledovat je offline?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ano, LOD Player je jedním z mála přehrávačů IPTV, který nabízí bezpečné stahování offline. \nFilmy a seriály si můžete stáhnout přímo v aplikaci a později je sledovat bez připojení k internetu."
+          "text": "Ano, LOD Player je jedním z mála přehrávačů IPTV, který nabízí bezpečné stahování offline. Filmy a seriály si můžete stáhnout přímo v aplikaci a později je sledovat bez připojení k internetu."
         }
       }, {
         "@type": "Question",
         "name": "Poskytuje LOD Player obsah IPTV?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ne, LOD Player je čistě přehrávač médií. \nNeposkytujeme, nehostíme ani neprodáváme žádný mediální obsah, živé přenosy ani seznamy skladeb. \nMusíte poskytnout svůj vlastní legálně získaný playlist M3U nebo Xtream API."
+          "text": "Ne, LOD Player je čistě přehrávač médií. Neposkytujeme, nehostíme ani neprodáváme žádný mediální obsah, živé přenosy ani seznamy skladeb. Musíte poskytnout svůj vlastní legálně získaný playlist M3U nebo Xtream API."
         }
       }, {
         "@type": "Question",
         "name": "Je aplikace optimalizována pro Android TV?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutně. \nNaše aplikace nabízí vlastní rozvržení na šířku a plnou podporu dálkového ovládání D-Pad, díky čemuž je navigace na velkých obrazovkách Smart TV a Android TV boxech neuvěřitelně plynulá."
+          "text": "Absolutně. Naše aplikace nabízí vlastní rozvržení na šířku a plnou podporu dálkového ovládání D-Pad, díky čemuž je navigace na velkých obrazovkách Smart TV a Android TV boxech neuvěřitelně plynulá."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Co je LOD Player a jaké formáty playlistů podporuje?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "LOD Player je moderní bezplatný přehrávač IPTV a VOD vyvinutý společností LOD Digital pro telefony Android, tablety a Android TV. Podporuje Xtream Codes API a M3U playlisty, nabízí offline stahování videí, cloudovou synchronizaci pro 5 zařízení a ovládání D-Pad ovladačem."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Jak mohu rychle přidat M3U nebo Xtream playlist do Smart TV?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Svůj playlist můžete přenést během několika sekund bez psaní na dálkovém ovladači. Otevřete LOD Player na TV, opište 8místný párovací kód na stránce lodplayer.com/sync v telefonu nebo v mobilní aplikaci a odešlete playlist přímo do TV."
         }
       }]
     }
@@ -138,7 +220,7 @@ Prémiový offline přehrávač IPTV a VOD</title>
     <header id="header" class="fixed top-0 left-0 w-full z-100 backdrop-blur-lg bg-bgDark/70 border-b border-white/12 transition-all duration-300">
         <div id="nav-container" class="max-w-300 mx-auto px-4 md:px-8 relative flex justify-between items-center h-17.5 md:h-20 transition-all duration-300">
             <a href="/cs/" class="flex items-center gap-2 md:gap-3 text-xl md:text-2xl font-extrabold font-outfit bg-clip-text text-transparent bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)]">
-                <img src="/assets/images/logo.png" alt="LOD Player Logo" loading="lazy" class="w-8 h-8 md:w-10.5 md:h-10.5 rounded-lg md:rounded-[10px] border border-white/15 shadow-[0_4px_12px_rgba(59,130,246,0.3)] object-cover">
+                <img src="/assets/images/logo.png" alt="LOD Player Logo" width="42" height="42" class="w-8 h-8 md:w-10.5 md:h-10.5 rounded-lg md:rounded-[10px] border border-white/15 shadow-[0_4px_12px_rgba(59,130,246,0.3)] object-cover">
                 <span class="max-[380px]:hidden">LOD Player</span>
             </a>
             <nav id="desktop-nav" class="flex items-center gap-2 md:gap-8">
@@ -196,7 +278,7 @@ Prémiový offline přehrávač IPTV a VOD</title>
                         class="self-start bg-primary/15 text-softBlue border border-primary/30 px-4 py-1.5 rounded-full text-[0.85rem] font-semibold tracking-wider uppercase">Stáhněte si a sledujte kdekoli</span>
                     <h1
                         class="font-outfit font-bold text-[1.5rem] md:text-[2.5rem] leading-[1.15] text-white tracking-[-0.02em]">
-                        Offline přehrávač IPTV a VOD</h1>
+                        LOD Player — Offline přehrávač IPTV a VOD</h1>
                     <p class="text-[1.15rem] text-textMuted max-w-135">LOD Player je nejmodernější přehrávač, který nabízí offline stahování VOD, pokročilý výběr stop zvuku/titulků a bezproblémovou optimalizaci ovladače Android TV D-Pad.</p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 w-full sm:w-max">
                         <!-- 1. Google Play Store Button -->
@@ -422,8 +504,7 @@ Prémiový offline přehrávač IPTV a VOD</title>
                             </svg>
                         </div>
                         <h3 class="font-outfit font-bold text-[1.3rem] text-white">Stažení offline VOD</h3>
-                        <p class="text-[0.95rem] text-textMuted leading-relaxed">Stáhněte si své oblíbené filmy a seriály přímo v aplikaci. 
-Vychutnejte si vysoce kvalitní místní přehrávání bez nutnosti aktivního připojení k internetu.</p>
+                        <p class="text-[0.95rem] text-textMuted leading-relaxed">Stáhněte si své oblíbené filmy a seriály přímo v aplikaci. Vychutnejte si vysoce kvalitní místní přehrávání bez nutnosti aktivního připojení k internetu.</p>
                     </article>
 
                     <!-- Card 2: Language & Subtitles -->
@@ -468,8 +549,7 @@ Vychutnejte si vysoce kvalitní místní přehrávání bez nutnosti aktivního 
                             </svg>
                         </div>
                         <h3 class="font-outfit font-bold text-[1.3rem] text-white">Smart TV a D-Pad Remote</h3>
-                        <p class="text-[0.95rem] text-textMuted leading-relaxed">Plně optimalizováno pro obrazovky Android TV/Smart TV. 
-Užijte si plynulou dálkovou navigaci D-Pad a přehrávání bez zpoždění i na zařízeních TV Box nižší třídy.</p>
+                        <p class="text-[0.95rem] text-textMuted leading-relaxed">Plně optimalizováno pro obrazovky Android TV/Smart TV. Užijte si plynulou dálkovou navigaci D-Pad a přehrávání bez zpoždění i na zařízeních TV Box nižší třídy.</p>
                     </article>
 
                     <!-- Card 5: Cloudová synchronizace -->
@@ -519,14 +599,14 @@ Užijte si plynulou dálkovou navigaci D-Pad a přehrávání bez zpoždění i 
                     <!-- 1. TV Screen (Back Center) -->
                     <div
                         class="absolute top-0 sm:top-[5%] left-1/2 -translate-x-1/2 w-[90%] sm:w-[85%] lg:w-full aspect-video rounded-xl sm:rounded-2xl border border-white/10 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.9),0_0_50px_rgba(59,130,246,0.2)] overflow-hidden z-10 transition-transform hover:scale-[1.02] duration-500">
-                        <img src="/assets/images/tv-mockup.png" alt="LOD Player on Smart TV" loading="lazy"
+                        <img src="/assets/images/tv-mockup.png" alt="LOD Player Android TV and Smart TV IPTV Interface with D-Pad Remote Navigation" loading="lazy"
                             class="w-full h-full object-cover">
                     </div>
 
                     <!-- 2. Tablet Screen (Middle Left) -->
                     <div
                         class="absolute bottom-[10%] sm:bottom-[-5%] left-[0%] sm:left-[-10%] w-[55%] sm:w-[50%] lg:w-[60%] aspect-video rounded-lg sm:rounded-xl border border-white/15 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.8),0_0_30px_rgba(59,130,246,0.15)] overflow-hidden z-20 transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 backdrop-blur-sm bg-bgDark/40">
-                        <img src="/assets/images/tablet-mockup.jpeg" alt="LOD Player on Tablet" loading="lazy"
+                        <img src="/assets/images/tablet-mockup.jpeg" alt="LOD Player Offline VOD and Series Playback on Tablet" loading="lazy"
                             class="w-full h-full object-cover">
                     </div>
 
@@ -537,7 +617,7 @@ Užijte si plynulou dálkovou navigaci D-Pad a přehrávání bez zpoždění i 
                         <div
                             class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-3.75 sm:h-6.25 bg-gray-900 rounded-b-xl sm:rounded-b-3xl z-40">
                         </div>
-                        <img src="/assets/images/mobile-mockup.png" alt="LOD Player on Mobile" loading="lazy"
+                        <img src="/assets/images/mobile-mockup.png" alt="LOD Player Mobile IPTV App with Offline VOD Downloads" loading="lazy"
                             class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -545,12 +625,10 @@ Užijte si plynulou dálkovou navigaci D-Pad a přehrávání bez zpoždění i 
                 <!-- Description -->
                 <div class="flex flex-col gap-6">
                     <div class="flex flex-col gap-4">
-                        <span class="text-softBlue text-[0.9rem] font-bold uppercase tracking-widest">Big Screen
-                            Comfort</span>
+                        <span class="text-softBlue text-[0.9rem] font-bold uppercase tracking-widest">Komfort na velké obrazovce</span>
                         <h2 class="font-outfit font-bold text-[2.2rem] md:text-[2.8rem] text-white tracking-[-0.02em]">
                             Navrženo pro chytré televizory</h2>
-                        <p class="text-[1.05rem] text-textMuted">Rozlučte se s frustrujícím ovládáním kurzoru. 
-LOD Player přeměňuje navigaci IPTV na velkých obrazovkách na hladký a přirozený zážitek.</p>
+                        <p class="text-[1.05rem] text-textMuted">Rozlučte se s frustrujícím ovládáním kurzoru. LOD Player přeměňuje navigaci IPTV na velkých obrazovkách na hladký a přirozený zážitek.</p>
                     </div>
 
                     <div class="flex gap-4 mt-2">
@@ -594,8 +672,7 @@ LOD Player přeměňuje navigaci IPTV na velkých obrazovkách na hladký a při
                     </div>
                     <div class="flex flex-col gap-1">
                         <h3 class="text-[1.1rem] font-bold text-white font-outfit">Zásady bezpečného stahování offline</h3>
-                        <p class="text-[0.95rem] text-textMuted leading-relaxed">Kvůli ochraně držitelů autorských práv a zaručení bezpečnosti zařízení nemohou správci souborů třetích stran získat přístup k obsahu VOD staženému v rámci LOD Player ani jej kopírovat. 
-Své stažené soubory můžete sledovat offline výhradně prostřednictvím integrovaného zabezpečeného přehrávače LOD Player na kartě 'Stahování'.</p>
+                        <p class="text-[0.95rem] text-textMuted leading-relaxed">Kvůli ochraně držitelů autorských práv a zaručení bezpečnosti zařízení nemohou správci souborů třetích stran získat přístup k obsahu VOD staženému v rámci LOD Player ani jej kopírovat. Své stažené soubory můžete sledovat offline výhradně prostřednictvím integrovaného zabezpečeného přehrávače LOD Player na kartě 'Stahování'.</p>
                     </div>
                 </div>
             </div>
@@ -653,7 +730,7 @@ Své stažené soubory můžete sledovat offline výhradně prostřednictvím in
                             <div class="flex flex-col items-start whitespace-nowrap">
                                 <span class="text-[0.75rem] text-white/70 uppercase tracking-wider">PŘÍMÉ STAŽENÍ</span>
                                 <span class="text-[1.05rem] font-bold font-outfit text-white">Android APK <span
-                                        class="apk-version-text text-[0.65rem] text-textDark font-normal ml-1 tracking-wide">v1.2.0-54</span></span>
+                                        class="apk-version-text text-[0.65rem] text-textDark font-normal ml-1 tracking-wide"></span></span>
                             </div>
                         </a>
                     </div>
@@ -671,19 +748,23 @@ Své stažené soubory můžete sledovat offline výhradně prostřednictvím in
                 <div class="flex flex-col gap-4">
                     <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
                         <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Mohu si stáhnout VOD a sledovat je offline?</h3>
-                        <p class="text-[0.95rem] text-textMuted">Ano, LOD Player je jedním z mála přehrávačů IPTV, který nabízí bezpečné stahování offline. 
-Filmy a seriály si můžete stáhnout přímo v aplikaci a později je sledovat bez připojení k internetu.</p>
+                        <p class="text-[0.95rem] text-textMuted">Ano, LOD Player je jedním z mála přehrávačů IPTV, který nabízí bezpečné stahování offline. Filmy a seriály si můžete stáhnout přímo v aplikaci a později je sledovat bez připojení k internetu.</p>
                     </div>
                     <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
                         <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Poskytuje LOD Player obsah IPTV?</h3>
-                        <p class="text-[0.95rem] text-textMuted">Ne, LOD Player je čistě přehrávač médií. 
-Neposkytujeme, nehostíme ani neprodáváme žádný mediální obsah, živé přenosy ani seznamy skladeb. 
-Musíte poskytnout svůj vlastní legálně získaný playlist M3U nebo Xtream API.</p>
+                        <p class="text-[0.95rem] text-textMuted">Ne, LOD Player je čistě přehrávač médií. Neposkytujeme, nehostíme ani neprodáváme žádný mediální obsah, živé přenosy ani seznamy skladeb. Musíte poskytnout svůj vlastní legálně získaný playlist M3U nebo Xtream API.</p>
                     </div>
                     <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
                         <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Je aplikace optimalizována pro Android TV?</h3>
-                        <p class="text-[0.95rem] text-textMuted">Absolutně. 
-Naše aplikace nabízí vlastní rozvržení na šířku a plnou podporu dálkového ovládání D-Pad, díky čemuž je navigace na velkých obrazovkách Smart TV a Android TV boxech neuvěřitelně plynulá.</p>
+                        <p class="text-[0.95rem] text-textMuted">Absolutně. Naše aplikace nabízí vlastní rozvržení na šířku a plnou podporu dálkového ovládání D-Pad, díky čemuž je navigace na velkých obrazovkách Smart TV a Android TV boxech neuvěřitelně plynulá.</p>
+                    </div>
+                    <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
+                        <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Co je LOD Player a jaké formáty playlistů podporuje?</h3>
+                        <p class="text-[0.95rem] text-textMuted">LOD Player je moderní bezplatný přehrávač IPTV a VOD vyvinutý společností LOD Digital pro telefony Android, tablety a Android TV. Podporuje Xtream Codes API a M3U playlisty, nabízí offline stahování videí, cloudovou synchronizaci pro 5 zařízení a ovládání D-Pad ovladačem.</p>
+                    </div>
+                    <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
+                        <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Jak mohu rychle přidat M3U nebo Xtream playlist do Smart TV?</h3>
+                        <p class="text-[0.95rem] text-textMuted">Svůj playlist můžete přenést během několika sekund bez psaní na dálkovém ovladači. Otevřete LOD Player na TV, opište 8místný párovací kód na stránce lodplayer.com/sync v telefonu nebo v mobilní aplikaci a odešlete playlist přímo do TV.</p>
                     </div>
                 </div>
             </div>
@@ -700,8 +781,7 @@ Naše aplikace nabízí vlastní rozvržení na šířku a plnou podporu dálkov
                     <img src="/assets/images/logo.png" loading="lazy" alt="LOD Player Logo" class="w-8 h-8 rounded-lg object-cover">
                     <span class="bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)] bg-clip-text text-transparent">LOD Player</span>
                 </div>
-                <p class="max-w-[320px] text-[0.9rem] leading-relaxed">Pokročilý přehrávač IPTV vyvinutý společností LOD Digital. 
-Nabízí bezpečné místní stahování offline a podporu chytrého dálkového ovladače D-pad pro televizory a mobilní zařízení.</p>
+                <p class="max-w-[320px] text-[0.9rem] leading-relaxed">Pokročilý přehrávač IPTV vyvinutý společností LOD Digital. Nabízí bezpečné místní stahování offline a podporu chytrého dálkového ovladače D-pad pro televizory a mobilní zařízení.</p>
             </div>
             <div>
                 <h3 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Rychlé odkazy</h3>
@@ -709,6 +789,7 @@ Nabízí bezpečné místní stahování offline a podporu chytrého dálkového
                     <li><a href="/cs/#features" class="hover:text-white transition-all hover:pl-1">Vlastnosti</a></li>
                     <li><a href="/cs/#tv-experience" class="hover:text-white transition-all hover:pl-1">TV zážitek</a></li>
                     <li><a href="/cs/#downloads" class="hover:text-white transition-all hover:pl-1">Stahování</a></li>
+                    <li><a href="/cs/sync/" class="hover:text-white transition-all hover:pl-1">Rychlé přidání z telefonu</a></li>
                 </ul>
             </div>
             <div>

@@ -15,6 +15,7 @@ export const getFooterHTML = () => {
                     <li><a href="{{seo.base_url}}#features" class="hover:text-white transition-all hover:pl-1">Features</a></li>
                     <li><a href="{{seo.base_url}}#tv-experience" class="hover:text-white transition-all hover:pl-1">TV Experience</a></li>
                     <li><a href="{{seo.base_url}}#downloads" class="hover:text-white transition-all hover:pl-1">Download</a></li>
+                    <li><a href="{{seo.base_url}}sync/" class="hover:text-white transition-all hover:pl-1">Quick Add from Phone</a></li>
                 </ul>
             </div>
             <div>
