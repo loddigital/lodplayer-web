@@ -50,8 +50,38 @@
     <meta property="og:description" content="Загрузите LOD Player — идеальный оффлайн-плеер IPTV с безопасной загрузкой VOD, возможностью просмотра в автономном режиме, настраиваемым звуком/субтитрами и оптимизацией Android TV." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lodplayer.com/ru/" />
-    <meta property="og:locale" content="ru" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="ar_AR" />
+    <meta property="og:locale:alternate" content="cs_CZ" />
+    <meta property="og:locale:alternate" content="da_DK" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="fi_FI" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="he_IL" />
+    <meta property="og:locale:alternate" content="hi_IN" />
+    <meta property="og:locale:alternate" content="hu_HU" />
+    <meta property="og:locale:alternate" content="id_ID" />
+    <meta property="og:locale:alternate" content="it_IT" />
+    <meta property="og:locale:alternate" content="ja_JP" />
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <meta property="og:locale:alternate" content="ms_MY" />
+    <meta property="og:locale:alternate" content="nl_NL" />
+    <meta property="og:locale:alternate" content="nb_NO" />
+    <meta property="og:locale:alternate" content="pl_PL" />
+    <meta property="og:locale:alternate" content="pt_PT" />
+    <meta property="og:locale:alternate" content="ro_RO" />
+    <meta property="og:locale:alternate" content="sk_SK" />
+    <meta property="og:locale:alternate" content="sv_SE" />
+    <meta property="og:locale:alternate" content="th_TH" />
+    <meta property="og:locale:alternate" content="tr_TR" />
+    <meta property="og:locale:alternate" content="uk_UA" />
+    <meta property="og:locale:alternate" content="vi_VN" />
+    <meta property="og:locale:alternate" content="zh_CN" />
     <meta property="og:image" content="https://lodplayer.com/assets/images/og-banner.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="LOD Player - Offline IPTV and VOD Player for Android TV and Mobile" />
 
     <!-- Twitter Cards -->
@@ -74,6 +104,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Preload LCP hero image -->
+    <link rel="preload" as="image" href="/assets/images/tv-mockup.webp" fetchpriority="high">
 
     <!-- CSS Styles -->
     <link rel="stylesheet" href="/style.css">
@@ -102,6 +135,7 @@
           },
           "sameAs": [
             "https://play.google.com/store/apps/details?id=com.lodplayer",
+            "https://github.com/loddigital",
             "https://github.com/loddigital/lodplayer-web"
           ]
         },
@@ -122,12 +156,21 @@
           "name": "LOD Player",
           "alternateName": "LOD Player - Offline IPTV and VOD Player",
           "url": "https://lodplayer.com/ru/",
+          "inLanguage": "ru",
+          "datePublished": "2026-06-07",
+          "dateModified": "2026-11-16",
           "operatingSystem": "Android, Android TV, Google TV, Smart TV",
           "applicationCategory": "MultimediaApplication",
           "applicationSubCategory": "IPTV and VOD Media Player",
           "installUrl": "https://play.google.com/store/apps/details?id=com.lodplayer",
           "downloadUrl": "https://github.com/loddigital/lodplayer-web/releases/latest/download/lod-player.apk",
-          "screenshot": "https://lodplayer.com/assets/images/tv-mockup.png",
+          "screenshot": [
+            "https://lodplayer.com/assets/images/tv-mockup.png",
+            "https://play-lh.googleusercontent.com/05L-VGuW8uLhXSxIas2sfQ37aA08MZ4admMeN3LNqFwUy5cJwatjrrI3NVj9cdSm5z_DzTaYjdLkrMj2mUq3Ew=w1052-h592",
+            "https://play-lh.googleusercontent.com/T8DSU68yMwmFsyXdI4ur17-enzNoHG8urn9D7Jw_sVtgL4wLG5o9bwA2lkitYj3dN1UfB-JuswvGj1gaF9OJgA=w1052-h592",
+            "https://play-lh.googleusercontent.com/yctJxNCYv0NmzsRQmkjBaKM7DqnpQrvr2bYehKPWsN8qw0eQpSlEK0ssjvjuCZkaDlcb49L-eBuwYEUI4yvU1w=w1052-h592",
+            "https://play-lh.googleusercontent.com/gTJ_TRsw2TjcFTwLdxNJonA8ZI0nnNcs2ENb9U-JmTqV8s9LIa1CQekRaiKhpN791qF1ajtHpozg5MlzRTOOCA=w1052-h592"
+          ],
           "softwareVersion": "1.2.0",
           "author": {
             "@id": "https://lodplayer.com/#organization"
@@ -138,7 +181,15 @@
           "offers": {
             "@type": "Offer",
             "price": "0",
-            "priceCurrency": "USD"
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "33"
           },
           "featureList": [
             "Offline VOD Download (Watch Offline)",
@@ -197,6 +248,27 @@
           "@type": "Answer",
           "text": "Передайте плейлист за считанные секунды без ввода текста с пульта ТВ. Откройте LOD Player на телевизоре, получите 8-значный код и отправьте свой список со смартфона через страницу lodplayer.com/sync или мобильное приложение."
         }
+      }, {
+        "@type": "Question",
+        "name": "Законно ли использовать LOD Player?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да. LOD Player — это легальный медиаплеер, похожий на обычный видеоплеер. Он не содержит каналов, фильмов или подписок. Законность зависит от источника вашего плейлиста, поэтому добавляйте только тот контент M3U или Xtream, к которому у вас есть законное право доступа. LOD Digital не предоставляет, не размещает и не продает какие-либо плейлисты."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Какие устройства поддерживает LOD Player?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "LOD Player работает на смартфонах Android, планшетах Android, Android TV, Google TV и приставках Smart TV на базе Android. Устройства Android TV работают со стандартным пультом D-Pad. Одна учетная запись может синхронизировать избранное, историю просмотра и позиции воспроизведения на 5 устройствах и 5 плейлистах с облачной синхронизацией."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Как добавить учетную запись Xtream Codes API в LOD Player?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Откройте LOD Player, добавьте новый список воспроизведения и выберите Xtream Codes API, затем введите URL-адрес сервера, имя пользователя и пароль от вашего провайдера. Для списка M3U вместо этого вставьте URL-адрес списка воспроизведения. Вы также можете отправить любой формат со своего телефона на телевизор с помощью 8-значного кода на сайте lodplayer.com/sync."
+        }
       }]
     }
     </script>
@@ -209,10 +281,8 @@
         <div
             class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow top-[-10%] left-[-10%] bg-[radial-gradient(circle,rgba(59,130,246,0.25)_0%,rgba(59,130,246,0)_70%)]">
         </div>
-        <div class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow top-[40%] right-[-10%] bg-[radial-gradient(circle,rgba(147,51,234,0.12)_0%,rgba(147,51,234,0)_70%)]"
-            style="animation-delay: -5s;"></div>
-        <div class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow bottom-[-10%] left-[20%] bg-[radial-gradient(circle,rgba(59,130,246,0.15)_0%,rgba(59,130,246,0)_70%)]"
-            style="animation-delay: -10s;"></div>
+        <div class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow5 top-[40%] right-[-10%] bg-[radial-gradient(circle,rgba(147,51,234,0.12)_0%,rgba(147,51,234,0)_70%)]"></div>
+        <div class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow10 bottom-[-10%] left-[20%] bg-[radial-gradient(circle,rgba(59,130,246,0.15)_0%,rgba(59,130,246,0)_70%)]"></div>
     </div>
 
     <!-- Header Placeholder -->
@@ -220,7 +290,7 @@
     <header id="header" class="fixed top-0 left-0 w-full z-100 backdrop-blur-lg bg-bgDark/70 border-b border-white/12 transition-all duration-300">
         <div id="nav-container" class="max-w-300 mx-auto px-4 md:px-8 relative flex justify-between items-center h-17.5 md:h-20 transition-all duration-300">
             <a href="/ru/" class="flex items-center gap-2 md:gap-3 text-xl md:text-2xl font-extrabold font-outfit bg-clip-text text-transparent bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)]">
-                <img src="/assets/images/logo.png" alt="LOD Player Logo" width="42" height="42" class="w-8 h-8 md:w-10.5 md:h-10.5 rounded-lg md:rounded-[10px] border border-white/15 shadow-[0_4px_12px_rgba(59,130,246,0.3)] object-cover">
+                <img src="/assets/images/logo.webp" alt="LOD Player Logo" width="42" height="42" class="w-8 h-8 md:w-10.5 md:h-10.5 rounded-lg md:rounded-[10px] border border-white/15 shadow-[0_4px_12px_rgba(59,130,246,0.3)] object-cover">
                 <span class="max-[380px]:hidden">LOD Player</span>
             </a>
             <nav id="desktop-nav" class="flex items-center gap-2 md:gap-8">
@@ -599,14 +669,14 @@
                     <!-- 1. TV Screen (Back Center) -->
                     <div
                         class="absolute top-0 sm:top-[5%] left-1/2 -translate-x-1/2 w-[90%] sm:w-[85%] lg:w-full aspect-video rounded-xl sm:rounded-2xl border border-white/10 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.9),0_0_50px_rgba(59,130,246,0.2)] overflow-hidden z-10 transition-transform hover:scale-[1.02] duration-500">
-                        <img src="/assets/images/tv-mockup.png" alt="LOD Player Android TV and Smart TV IPTV Interface with D-Pad Remote Navigation" loading="lazy"
+                        <img src="/assets/images/tv-mockup.webp" alt="LOD Player Android TV and Smart TV IPTV Interface with D-Pad Remote Navigation" width="1280" height="720" fetchpriority="high" decoding="async"
                             class="w-full h-full object-cover">
                     </div>
 
                     <!-- 2. Tablet Screen (Middle Left) -->
                     <div
                         class="absolute bottom-[10%] sm:bottom-[-5%] left-[0%] sm:left-[-10%] w-[55%] sm:w-[50%] lg:w-[60%] aspect-video rounded-lg sm:rounded-xl border border-white/15 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.8),0_0_30px_rgba(59,130,246,0.15)] overflow-hidden z-20 transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 backdrop-blur-sm bg-bgDark/40">
-                        <img src="/assets/images/tablet-mockup.jpeg" alt="LOD Player Offline VOD and Series Playback on Tablet" loading="lazy"
+                        <img src="/assets/images/tablet-mockup.webp" alt="LOD Player Offline VOD and Series Playback on Tablet" width="1024" height="805" loading="lazy" decoding="async"
                             class="w-full h-full object-cover">
                     </div>
 
@@ -617,7 +687,7 @@
                         <div
                             class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-3.75 sm:h-6.25 bg-gray-900 rounded-b-xl sm:rounded-b-3xl z-40">
                         </div>
-                        <img src="/assets/images/mobile-mockup.png" alt="LOD Player Mobile IPTV App with Offline VOD Downloads" loading="lazy"
+                        <img src="/assets/images/mobile-mockup.webp" alt="LOD Player Mobile IPTV App with Offline VOD Downloads" width="540" height="1170" loading="lazy" decoding="async"
                             class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -766,6 +836,18 @@
                         <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Как быстро добавить плейлист M3U или Xtream на Smart TV?</h3>
                         <p class="text-[0.95rem] text-textMuted">Передайте плейлист за считанные секунды без ввода текста с пульта ТВ. Откройте LOD Player на телевизоре, получите 8-значный код и отправьте свой список со смартфона через страницу lodplayer.com/sync или мобильное приложение.</p>
                     </div>
+                    <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
+                        <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Законно ли использовать LOD Player?</h3>
+                        <p class="text-[0.95rem] text-textMuted">Да. LOD Player — это легальный медиаплеер, похожий на обычный видеоплеер. Он не содержит каналов, фильмов или подписок. Законность зависит от источника вашего плейлиста, поэтому добавляйте только тот контент M3U или Xtream, к которому у вас есть законное право доступа. LOD Digital не предоставляет, не размещает и не продает какие-либо плейлисты.</p>
+                    </div>
+                    <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
+                        <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Какие устройства поддерживает LOD Player?</h3>
+                        <p class="text-[0.95rem] text-textMuted">LOD Player работает на смартфонах Android, планшетах Android, Android TV, Google TV и приставках Smart TV на базе Android. Устройства Android TV работают со стандартным пультом D-Pad. Одна учетная запись может синхронизировать избранное, историю просмотра и позиции воспроизведения на 5 устройствах и 5 плейлистах с облачной синхронизацией.</p>
+                    </div>
+                    <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
+                        <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Как добавить учетную запись Xtream Codes API в LOD Player?</h3>
+                        <p class="text-[0.95rem] text-textMuted">Откройте LOD Player, добавьте новый список воспроизведения и выберите Xtream Codes API, затем введите URL-адрес сервера, имя пользователя и пароль от вашего провайдера. Для списка M3U вместо этого вставьте URL-адрес списка воспроизведения. Вы также можете отправить любой формат со своего телефона на телевизор с помощью 8-значного кода на сайте lodplayer.com/sync.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -778,7 +860,7 @@
         <div class="max-w-300 mx-auto px-8 relative grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-8 mb-6">
             <div class="flex flex-col gap-5">
                 <div class="flex items-center gap-2.5 font-outfit text-[1.4rem] font-extrabold text-white">
-                    <img src="/assets/images/logo.png" loading="lazy" alt="LOD Player Logo" class="w-8 h-8 rounded-lg object-cover">
+                    <img src="/assets/images/logo.webp" loading="lazy" alt="LOD Player Logo" width="32" height="32" class="w-8 h-8 rounded-lg object-cover">
                     <span class="bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)] bg-clip-text text-transparent">LOD Player</span>
                 </div>
                 <p class="max-w-[320px] text-[0.9rem] leading-relaxed">Усовершенствованный проигрыватель IPTV, разработанный LOD Digital. Обеспечивает безопасную локальную автономную загрузку и поддержку интеллектуального пульта дистанционного управления D-pad для телевизоров и мобильных устройств.</p>
@@ -806,9 +888,9 @@
             <p>&copy; 2026 LOD Digital. Все права защищены.</p>
             <div class="flex flex-wrap gap-5">
                 <a href="/privacy-policy.html" class="hover:text-textMuted transition-colors">политика конфиденциальности</a>
-                <a href="/terms.html" class="hover:text-textMuted transition-colors">Terms of Service</a>
-                <a href="/delete-account.html" class="hover:text-textMuted transition-colors">Delete Account</a>
-                <a href="/delete-data.html" class="hover:text-textMuted transition-colors">Delete Data</a>
+                <a href="/terms.html" class="hover:text-textMuted transition-colors">Условия использования</a>
+                <a href="/delete-account.html" class="hover:text-textMuted transition-colors">Удалить аккаунт</a>
+                <a href="/delete-data.html" class="hover:text-textMuted transition-colors">Удалить данные</a>
             </div>
         </div>
     </footer>

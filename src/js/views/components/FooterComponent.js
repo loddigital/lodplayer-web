@@ -4,7 +4,7 @@ export const getFooterHTML = () => {
         <div class="max-w-300 mx-auto px-8 relative grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-8 mb-6">
             <div class="flex flex-col gap-5">
                 <div class="flex items-center gap-2.5 font-outfit text-[1.4rem] font-extrabold text-white">
-                    <img src="/assets/images/logo.png" loading="lazy" alt="LOD Player Logo" class="w-8 h-8 rounded-lg object-cover">
+                    <img src="/assets/images/logo.webp" loading="lazy" alt="LOD Player Logo" width="32" height="32" class="w-8 h-8 rounded-lg object-cover">
                     <span class="bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)] bg-clip-text text-transparent">LOD Player</span>
                 </div>
                 <p class="max-w-[320px] text-[0.9rem] leading-relaxed">An advanced IPTV player developed by LOD Digital. Offering secure local offline downloads and smart D-pad remote controller support for televisions and mobile devices.</p>

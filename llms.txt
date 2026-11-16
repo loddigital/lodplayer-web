@@ -33,6 +33,13 @@
 - **How do I add a playlist to LOD Player on Android TV?**
   Open LOD Player on your TV to display an 8-digit pairing code, then visit https://lodplayer.com/sync/ on your phone (or use the LOD Player mobile app), enter the 8-digit code, paste your Xtream API or M3U credentials, and tap "Send to TV".
 
+- **Is LOD Player legal to use?**
+  Yes. LOD Player is a legal media player application. It contains no channels, movies or subscriptions. Legality depends on the playlist source, so users should only add M3U or Xtream content they have the legal right to access. LOD Digital does not provide, host or sell any playlist.
+- **Which devices does LOD Player support?**
+  LOD Player runs on Android smartphones, Android tablets, Android TV, Google TV and Android-based Smart TV boxes. One account can sync favorites, watch history and playback positions across up to 5 devices and 5 playlists.
+- **How do I add an Xtream Codes API login to LOD Player?**
+  Add a new playlist, choose Xtream Codes API, then enter the server URL, username and password from your provider. For an M3U list, paste the playlist URL instead. Either format can also be sent from a phone to a TV with the 8-digit code at https://lodplayer.com/sync/.
+
 ## Important Pages & Documentation
 - [Home Page (English)](https://lodplayer.com/): Overview of features, Smart TV showcase, and download links.
 - [Home Page (Turkish - Türkçe)](https://lodplayer.com/tr/): Çevrimdışı IPTV ve VOD Oynatıcı resmi Türkçe sayfası.

@@ -15,6 +15,8 @@
   --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 
   --animate-floatGlow: floatGlow 25s infinite ease-in-out;
+  --animate-floatGlow5: floatGlow 25s infinite ease-in-out -5s;
+  --animate-floatGlow10: floatGlow 25s infinite ease-in-out -10s;
   --animate-floatUpDown: floatUpDown 6s infinite ease-in-out;
 
   @keyframes floatGlow {
