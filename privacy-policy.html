@@ -107,7 +107,7 @@
                     Privacy Policy</h1>
                 <p
                     class="text-[1rem] text-textDark bg-white/5 inline-block px-4 py-1.5 rounded-full border border-white/10">
-                    <strong>Effective Date:</strong> October 25, 2026
+                    <strong>Effective Date:</strong> November 23, 2026
                 </p>
                 <p class="text-xs text-textMuted mt-3 italic">
                     This policy is provided in English; translations, if any, are for convenience only.
@@ -115,7 +115,7 @@
             </div>
 
             <div class="text-[1.05rem] leading-relaxed text-textMuted mb-12">
-                <p class="text-center text-[1.15rem] max-w-175 mx-auto">Thank you for choosing LOD Player. This Privacy Policy explains transparently how LOD Player collects, uses, stores, synchronizes, and safeguards your information across mobile devices, smart TVs, and our web portal.</p>
+                <p class="text-center text-[1.15rem] max-w-175 mx-auto">Thank you for choosing LOD Player. This Privacy Policy explains transparently how LOD Player collects, uses, stores, synchronizes, and safeguards your information across iOS (iPhone and iPad), Android, Android TV, and our web synchronization portal.</p>
             </div>
 
             <div class="flex flex-col gap-8 md:gap-10">
@@ -197,30 +197,52 @@
                                     <td class="p-3.5">Authorizing temporary TV pairing rooms and web portal transfers without requiring full account credentials.</td>
                                     <td class="p-3.5">Legitimate Interests (Art. 6(1)(f))</td>
                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 4. App Infrastructure, Subscriptions & Advertising (With or Without an Account) -->
+                <section class="bg-bgDarkAccent/65 border border-white/12 rounded-2xl p-8 backdrop-blur-md shadow-glass hover:border-white/20 transition-all">
+                    <h2 class="font-outfit font-bold text-[1.6rem] text-white border-b border-white/10 pb-4 mb-5 flex items-center gap-3">
+                        <span class="text-primary">4.</span> App Infrastructure, Subscriptions &amp; Advertising (With or Without an Account)
+                    </h2>
+                    <p class="mb-5">Certain technical, billing, and advertising services operate regardless of whether you register a cloud account:</p>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm border-collapse border border-white/10 rounded-xl overflow-hidden mb-4">
+                            <thead>
+                                <tr class="bg-white/10 text-white font-semibold">
+                                    <th class="p-3.5 border-b border-white/10">Data Category</th>
+                                    <th class="p-3.5 border-b border-white/10">Purpose of Processing</th>
+                                    <th class="p-3.5 border-b border-white/10">Legal Basis (GDPR / KVKK)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/10 text-textDark">
                                 <tr>
                                     <td class="p-3.5 font-medium text-white">Subscription &amp; Entitlement Status</td>
-                                    <td class="p-3.5">Validating Premium features and ad-free playback status across your active devices via RevenueCat.</td>
+                                    <td class="p-3.5">Validating Monthly/Yearly Premium purchases, renewals, and ad-free status across Apple App Store and Google Play via RevenueCat. When signed into the same LOD Player account, Premium entitlements sync across your iOS (iPhone/iPad), Android, and Android TV devices.</td>
                                     <td class="p-3.5">Performance of Contract (Art. 6(1)(b))</td>
                                 </tr>
                                 <tr>
                                     <td class="p-3.5 font-medium text-white">Crash &amp; Diagnostic Logs</td>
-                                    <td class="p-3.5">Identifying and fixing app crashes, memory leaks, and TV hardware incompatibilities via Firebase Crashlytics.</td>
+                                    <td class="p-3.5">Identifying and fixing app crashes, memory leaks, and device/OS incompatibilities via Firebase Crashlytics.</td>
                                     <td class="p-3.5">Legitimate Interests (Art. 6(1)(f))</td>
                                 </tr>
                                 <tr>
-                                    <td class="p-3.5 font-medium text-white">Advertising Identifier (Free Version Only)</td>
-                                    <td class="p-3.5">Serving contextual and personalized advertisements to fund the free tier of the application.</td>
-                                    <td class="p-3.5">Consent (Art. 6(1)(a)) / Legitimate Interests</td>
+                                    <td class="p-3.5 font-medium text-white">Advertising Identifier (IDFA on iOS / AAID on Android — Free Version Only)</td>
+                                    <td class="p-3.5">Serving advertisements to fund the free tier. On iOS, IDFA is accessed only if you grant permission via Apple's App Tracking Transparency (ATT) prompt; if declined, only non-personalized / contextual ads are shown. On Android, personalized ads are subject to regional CMP consent.</td>
+                                    <td class="p-3.5">Explicit Consent (Art. 6(1)(a)) for personalized ads &amp; tracking; Legitimate Interests for non-personalized / contextual delivery</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
 
-                <!-- 4. Data Retention Table -->
+                <!-- 5. Data Retention Table -->
                 <section class="bg-bgDarkAccent/65 border border-white/12 rounded-2xl p-8 backdrop-blur-md shadow-glass hover:border-white/20 transition-all">
                     <h2 class="font-outfit font-bold text-[1.6rem] text-white border-b border-white/10 pb-4 mb-5 flex items-center gap-3">
-                        <span class="text-primary">4.</span> Data Retention &amp; Auto-Deletion Policy
+                        <span class="text-primary">5.</span> Data Retention &amp; Auto-Deletion Policy
                     </h2>
                     <p class="mb-4">We retain data only as long as strictly necessary to deliver the service and comply with applicable laws. Please note that automated dormant account cleanups are client-triggered upon inactivity milestones, and we aim to delete data according to the following schedule:</p>
 
@@ -284,16 +306,16 @@
                     </div>
                 </section>
 
-                <!-- 5. Security -->
+                <!-- 6. Security -->
                 <section class="bg-bgDarkAccent/65 border border-white/12 rounded-2xl p-8 backdrop-blur-md shadow-glass hover:border-white/20 transition-all">
                     <h2 class="font-outfit font-bold text-[1.6rem] text-white border-b border-white/10 pb-4 mb-5 flex items-center gap-3">
-                        <span class="text-primary">5.</span> Security &amp; Encryption
+                        <span class="text-primary">6.</span> Security &amp; Encryption
                     </h2>
                     <p class="mb-4">We implement industry-standard administrative, physical, and technical measures to protect your information:</p>
                     <ul class="list-disc pl-6 space-y-2 text-textDark mb-4">
                         <li><strong class="text-white">Encryption in Transit:</strong> All communications between the app, web portal, and Firebase servers are encrypted using modern Transport Layer Security (TLS 1.3 / HTTPS).</li>
                         <li><strong class="text-white">Strict RTDB Security Rules:</strong> Realtime Database paths are locked down with server-enforced rules. Only authenticated users with verified email addresses can access or modify their personal synchronization tree.</li>
-                        <li><strong class="text-white">Local Storage Encryption:</strong> On-device data is stored using high-performance encrypted MMKV storage with AES encryption.</li>
+                        <li><strong class="text-white">Local Storage Encryption:</strong> On both iOS and Android, sensitive on-device data (such as playlist credentials, playback history, and session tokens) is stored inside the application's protected sandbox container using MMKV storage with AES encryption. General temporary playlist caches remain strictly isolated inside the protected app container.</li>
                         <li><strong class="text-white">Five-Device Enforcement:</strong> Accounts are hardware-restricted to a maximum of 5 concurrent active device slots to prevent credential sharing and abuse.</li>
                     </ul>
                     <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 leading-relaxed">
@@ -301,10 +323,10 @@
                     </div>
                 </section>
 
-                <!-- 6. Your Rights -->
+                <!-- 7. Your Rights -->
                 <section class="bg-bgDarkAccent/65 border border-white/12 rounded-2xl p-8 backdrop-blur-md shadow-glass hover:border-white/20 transition-all">
                     <h2 class="font-outfit font-bold text-[1.6rem] text-white border-b border-white/10 pb-4 mb-5 flex items-center gap-3">
-                        <span class="text-primary">6.</span> Your Privacy Rights (GDPR, UK GDPR, CCPA-CPRA, KVKK)
+                        <span class="text-primary">7.</span> Your Privacy Rights (GDPR, UK GDPR, CCPA-CPRA, KVKK)
                     </h2>
                     <p class="mb-4">Depending on your jurisdiction, you possess specific legal rights regarding your personal data:</p>
                     <ul class="list-disc pl-6 space-y-2 text-textDark mb-4">
@@ -312,75 +334,80 @@
                         <li><strong class="text-white">Right to Rectification:</strong> You may update or correct your email address and profile credentials at any time.</li>
                         <li><strong class="text-white">Right to Erasure ("Right to be Forgotten"):</strong> You have the absolute right to delete your account and all associated cloud data permanently.</li>
                         <li><strong class="text-white">Right to Restrict or Object to Processing:</strong> You may object to data processing carried out under our legitimate interests.</li>
-                        <li><strong class="text-white">Right to Withdraw Consent:</strong> Where processing is based on consent (such as personalized advertising), you can withdraw consent at any time without penalty.</li>
+                        <li><strong class="text-white">Right to Withdraw Consent:</strong> Where processing is based on consent (such as personalized advertising or iOS tracking), you can withdraw consent at any time without penalty.</li>
                         <li><strong class="text-white">Right to Lodge a Complaint:</strong> You have the right to file a complaint with your local data protection supervisory authority (e.g., KVKK in Turkey, the ICO in the UK, or relevant EU Data Protection Authorities).</li>
                     </ul>
-                    <p class="text-sm text-textDark">
-                        <strong class="text-white">How to exercise your rights:</strong> You can delete your account or cloud data instantly within the mobile/TV app by navigating to <strong class="text-white">Settings &gt; Cloud Synchronization &amp; Devices &gt; Delete Account (or Delete Cloud Data)</strong>, visit our dedicated <a href="/delete-account.html" class="text-softBlue hover:underline">Account Deletion Page</a> or <a href="/delete-data.html" class="text-softBlue hover:underline">Cloud Data Deletion Page</a>, or email our privacy team at <a href="mailto:support@lodplayer.com" class="text-softBlue hover:underline">support@lodplayer.com</a>. We respond to all formal data subject requests within 30 days.
+                    <p class="text-sm text-textDark mb-3">
+                        <strong class="text-white">How to exercise your rights:</strong> You can delete your account or cloud data instantly within the iOS (iPhone/iPad), Android, or Android TV app by navigating to <strong class="text-white">Settings &gt; Cloud Synchronization &amp; Devices &gt; Delete Account (or Delete Cloud Data)</strong>, visit our dedicated <a href="/delete-account.html" class="text-softBlue hover:underline">Account Deletion Page</a> or <a href="/delete-data.html" class="text-softBlue hover:underline">Cloud Data Deletion Page</a>, or email our privacy team at <a href="mailto:support@lodplayer.com" class="text-softBlue hover:underline">support@lodplayer.com</a>. We respond to all formal data subject requests within 30 days.
+                    </p>
+                    <p class="text-xs text-amber-300 bg-amber-500/10 border border-amber-500/20 rounded-xl p-3.5 leading-relaxed">
+                        <strong class="text-amber-200">Active Subscriptions Notice:</strong> Deleting your LOD Player account permanently deletes your login credentials and cloud data, but it does not automatically cancel an active Apple App Store or Google Play subscription. Please manage or cancel active subscriptions directly in your Apple ID or Google Play account settings.
                     </p>
                 </section>
 
-                <!-- 7. Third Parties & International Data Transfers -->
+                <!-- 8. Third Parties & International Data Transfers -->
                 <section class="bg-bgDarkAccent/65 border border-white/12 rounded-2xl p-8 backdrop-blur-md shadow-glass hover:border-white/20 transition-all">
                     <h2 class="font-outfit font-bold text-[1.6rem] text-white border-b border-white/10 pb-4 mb-5 flex items-center gap-3">
-                        <span class="text-primary">7.</span> Third-Party Services &amp; International Transfers
+                        <span class="text-primary">8.</span> Third-Party Services &amp; International Transfers
                     </h2>
-                    <p class="mb-4">We engage trusted third-party service providers to facilitate infrastructure, subscription billing, and stability monitoring:</p>
+                    <p class="mb-4">We engage trusted third-party service providers to facilitate infrastructure, cross-platform subscription billing, stability monitoring, and free-tier advertising:</p>
                     <ul class="list-disc pl-6 space-y-2 text-textDark mb-4">
-                        <li><strong class="text-white">Google Firebase (Google LLC):</strong> Cloud database infrastructure (hosted in europe-west1 / Belgium), user authentication, and Firebase Crashlytics crash reporting.</li>
-                        <li><strong class="text-white">RevenueCat, Inc.:</strong> In-app purchase management and receipt validation for Premium tier subscriptions.</li>
-                        <li><strong class="text-white">Advertising Partners:</strong> ironSource LevelPlay, Unity Ads, and Google Mobile Ads (used exclusively in the free ad-supported version).</li>
-                        <li><strong class="text-white">Platform App Stores:</strong> Google Play Store and Apple App Store for app distribution and payment processing.</li>
+                        <li><strong class="text-white">Google Firebase (Google LLC):</strong> Cloud database infrastructure (hosted in europe-west1 / Belgium), user authentication, and Firebase Crashlytics crash reporting (<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" class="text-softBlue hover:underline">Firebase Privacy</a>).</li>
+                        <li><strong class="text-white">RevenueCat, Inc.:</strong> Cross-platform in-app purchase management and receipt validation for Monthly/Yearly Premium subscriptions across Apple App Store and Google Play (<a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer" class="text-softBlue hover:underline">RevenueCat Privacy Policy</a>).</li>
+                        <li><strong class="text-white">Advertising Partners (Free Ad-Supported Version Only):</strong> On iOS (iPhone and iPad), mediation and ads are served exclusively via <strong class="text-white">Unity LevelPlay / ironSource</strong> and <strong class="text-white">Unity Ads</strong> (<a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-softBlue hover:underline">Unity &amp; ironSource Privacy Policy</a>). On Android, advertising partners include Unity LevelPlay / ironSource, Unity Ads, and <strong class="text-white">Google Mobile Ads</strong> (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-softBlue hover:underline">Google Privacy Policy</a>).</li>
+                        <li><strong class="text-white">Platform App Stores:</strong> Apple App Store (iPhone and iPad distribution and payment processing) and Google Play Store (Android and Android TV distribution and payment processing).</li>
                     </ul>
                     <p class="text-sm text-textDark">
                         Where data is transferred outside the European Economic Area (EEA), United Kingdom, or Turkey (such as to servers in the United States), transfers are executed under approved legal transfer mechanisms, including the European Commission's Standard Contractual Clauses (SCCs) and the EU-U.S. Data Privacy Framework (DPF).
                     </p>
                 </section>
 
-                <!-- 8. Advertising & Consent -->
+                <!-- 9. Advertising & Consent -->
                 <section class="bg-bgDarkAccent/65 border border-white/12 rounded-2xl p-8 backdrop-blur-md shadow-glass hover:border-white/20 transition-all">
                     <h2 class="font-outfit font-bold text-[1.6rem] text-white border-b border-white/10 pb-4 mb-5 flex items-center gap-3">
-                        <span class="text-primary">8.</span> Advertising &amp; Consent Management
+                        <span class="text-primary">9.</span> Advertising, ATT &amp; Consent Management
                     </h2>
-                    <p class="mb-4">We use ironSource LevelPlay to display advertisements in our free version. LevelPlay and its advertising partners (including ironSource, Unity Ads, and Google) may use device identifiers, cookies, and IP addresses to serve and measure advertisements.</p>
+                    <p class="mb-4">We use Unity LevelPlay (ironSource) mediation to display advertisements in our free version. LevelPlay and its active advertising partners (ironSource and Unity Ads on iOS; ironSource, Unity Ads, and Google Mobile Ads on Android) may process device signals, IP addresses, and—where permitted—advertising identifiers to serve and measure advertisements.</p>
                     <ul class="list-disc pl-6 space-y-3 text-textDark">
-                        <li><strong class="text-white">Personalized Ads &amp; CMP:</strong> In regions where required (such as the EEA, UK, and Switzerland), we deploy a certified Consent Management Platform (CMP) to collect your explicit consent before collecting your device's Advertising ID. On iOS devices, we adhere strictly to Apple's App Tracking Transparency (ATT) framework.</li>
-                        <li><strong class="text-white">Opting Out:</strong> You can manage or reset your advertising identifier and opt out of personalized tracking at any time through your device system settings (e.g., "Opt out of Ads Personalization" or "Delete advertising ID" on Android, or "Allow Apps to Request to Track" on iOS). Upgrading to LOD Player Premium completely removes all advertisements.</li>
+                        <li><strong class="text-white">iOS App Tracking Transparency (ATT):</strong> On iOS devices (iPhone and iPad), free-tier users are presented with Apple's App Tracking Transparency (ATT) prompt at launch asking whether to allow tracking (<em>"Allow"</em> or <em>"Ask App Not to Track"</em>). If you select <em>"Ask App Not to Track"</em> (or disable tracking in iOS Settings), LOD Player does not access your device's IDFA for cross-app tracking, propagates your opt-out signal to LevelPlay (consent and CCPA flags), and serves only non-personalized / contextual ads (alongside privacy-preserving Apple SKAdNetwork attribution).</li>
+                        <li><strong class="text-white">Android Regional Consent (CMP):</strong> On Android devices in regions where required (such as the EEA, UK, and Switzerland), we deploy Google's User Messaging Platform (UMP) Consent Management Platform to collect your explicit consent before serving personalized advertisements, and you can review or update your consent choices in App Settings at any time.</li>
+                        <li><strong class="text-white">Opting Out &amp; Premium Ad-Free Access:</strong> You can manage or reset your advertising identifier and opt out of personalized tracking at any time through your device system settings (<em>Settings &gt; Privacy &amp; Security &gt; Tracking</em> on iOS, or <em>Opt out of Ads Personalization / Delete advertising ID</em> on Android). Upgrading to LOD Player Premium removes all advertisements and disables ad tracking prompts.</li>
                     </ul>
                 </section>
 
-                <!-- 9. Device Permissions -->
+                <!-- 10. Device Permissions -->
                 <section class="bg-bgDarkAccent/65 border border-white/12 rounded-2xl p-8 backdrop-blur-md shadow-glass hover:border-white/20 transition-all">
                     <h2 class="font-outfit font-bold text-[1.6rem] text-white border-b border-white/10 pb-4 mb-5 flex items-center gap-3">
-                        <span class="text-primary">9.</span> Device Permissions
+                        <span class="text-primary">10.</span> Device Permissions
                     </h2>
-                    <p class="mb-4">LOD Player requests specific permissions only when essential to deliver features locally:</p>
+                    <p class="mb-4">LOD Player requests specific system permissions only when needed to deliver core features:</p>
                     <ul class="list-disc pl-6 space-y-2 text-textDark">
-                        <li><strong class="text-white">Storage &amp; Foreground Service:</strong> Required for offline VOD downloading and media caching on mobile devices. Downloads operate while the app is active or executing through foreground notifications.</li>
-                        <li><strong class="text-white">Microphone (Speech-to-Text):</strong> Requested strictly to provide the voice search function. Speech recognition is processed <strong class="text-white">completely offline and locally</strong> on your device; we never record or transmit your voice data to remote servers.</li>
+                        <li><strong class="text-white">Local Storage &amp; Download Notifications:</strong> Downloaded VOD media files are saved strictly inside the application's protected sandbox storage. On iOS, LOD Player requests local notification permission at launch solely to display offline VOD download progress and completion alerts (no remote push notifications are sent). On Android, downloads execute via a foreground service notification. Photo library permission declarations on iOS apply only if local media selection or saving is invoked.</li>
+                        <li><strong class="text-white">Microphone &amp; Speech Recognition (Voice Search):</strong> Requested strictly when you use the voice search feature. On iOS, speech recognition uses Apple's native <code class="text-softBlue">SFSpeechRecognizer</code> framework, under which audio may be processed by Apple's speech recognition servers to convert your speech into text according to Apple's privacy terms. On Android, recognition uses the platform speech service. <strong class="text-white">LOD Digital never records, stores, or transmits your voice audio to LOD Digital servers.</strong></li>
+                        <li><strong class="text-white">App Tracking Transparency (iOS Free Tier Only):</strong> Non-premium iOS users are shown Apple's ATT prompt at app launch to choose whether personalized ad tracking is allowed, as described in Section 9.</li>
                     </ul>
                 </section>
 
-                <!-- 10. Children's Privacy -->
+                <!-- 11. Children's Privacy -->
                 <section class="bg-bgDarkAccent/65 border border-white/12 rounded-2xl p-8 backdrop-blur-md shadow-glass hover:border-white/20 transition-all">
                     <h2 class="font-outfit font-bold text-[1.6rem] text-white border-b border-white/10 pb-4 mb-5 flex items-center gap-3">
-                        <span class="text-primary">10.</span> Children's Privacy
+                        <span class="text-primary">11.</span> Children's Privacy
                     </h2>
                     <p class="text-sm text-textDark leading-relaxed">LOD Player is not directed at children under the age of 13 (or under 16 in the European Union). We do not knowingly collect personal information from children. Children under these ages are prohibited from creating a cloud account. If you believe a child has provided us with personal data, please contact us at <a href="mailto:support@lodplayer.com" class="text-softBlue hover:underline">support@lodplayer.com</a>, and we will promptly delete the data.</p>
                 </section>
 
-                <!-- 11. Web Sync Portal -->
+                <!-- 12. Web Sync Portal -->
                 <section class="bg-bgDarkAccent/65 border border-white/12 rounded-2xl p-8 backdrop-blur-md shadow-glass hover:border-white/20 transition-all">
                     <h2 class="font-outfit font-bold text-[1.6rem] text-white border-b border-white/10 pb-4 mb-5 flex items-center gap-3">
-                        <span class="text-primary">11.</span> Web Sync Portal Privacy
+                        <span class="text-primary">12.</span> Web Sync Portal Privacy
                     </h2>
                     <p class="text-sm text-textDark leading-relaxed">When using our web synchronization portal (lodplayer.com/sync), no tracking cookies or persistent third-party analytics are stored on your browser. Temporary authentication state is maintained strictly within your current browser tab's <code class="text-softBlue">sessionStorage</code>. The playlist details you input are transmitted exclusively to the designated TV pairing room and are removed after pairing.</p>
                 </section>
 
-                <!-- 12. Content Liability & Disclaimer -->
+                <!-- 13. Content Liability & Disclaimer -->
                 <section class="bg-bgDarkAccent/65 border border-white/12 rounded-2xl p-8 backdrop-blur-md shadow-glass hover:border-white/20 transition-all">
                     <h2 class="font-outfit font-bold text-[1.6rem] text-white border-b border-white/10 pb-4 mb-5 flex items-center gap-3">
-                        <span class="text-primary">12.</span> Content Disclaimer &amp; User Responsibility
+                        <span class="text-primary">13.</span> Content Disclaimer &amp; User Responsibility
                     </h2>
                     <p class="text-sm text-textDark leading-relaxed mb-3">
                         LOD Player is strictly an independent media player software application. <strong class="text-white">We do not provide, host, distribute, broadcast, or sell any playlists, live television channels, movies, or video content of any kind.</strong> Users must supply their own legally obtained streams and credentials.
@@ -390,10 +417,10 @@
                     </p>
                 </section>
 
-                <!-- 13. Changes to this Policy & Contact -->
+                <!-- 14. Changes to this Policy & Contact -->
                 <section class="bg-bgDarkAccent/65 border border-white/12 rounded-2xl p-8 backdrop-blur-md shadow-glass hover:border-white/20 transition-all">
                     <h2 class="font-outfit font-bold text-[1.6rem] text-white border-b border-white/10 pb-4 mb-5 flex items-center gap-3">
-                        <span class="text-primary">13.</span> Changes to This Policy &amp; Contact
+                        <span class="text-primary">14.</span> Changes to This Policy &amp; Contact
                     </h2>
                     <p class="text-sm text-textDark leading-relaxed mb-4">We may update this Privacy Policy periodically. In the event of material modifications, we will notify you through an in-app notice or prominent banner. Continued use of LOD Player following notification signifies acceptance of the updated terms.</p>
                     <div class="flex items-center gap-3 bg-bgDarkAccent/80 w-max px-5 py-3 rounded-xl border border-white/10 shadow-inner">
