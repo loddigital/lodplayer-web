@@ -1,7 +1,7 @@
 export const getFooterHTML = () => {
     return `
     <footer class="bg-[#030712] border-t border-white/12 pt-10 pb-6 text-[0.95rem] text-textMuted mt-auto">
-        <div class="max-w-300 mx-auto px-8 relative grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-8 mb-6">
+        <div class="max-w-300 mx-auto px-8 relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-8 mb-6">
             <div class="flex flex-col gap-5">
                 <div class="flex items-center gap-2.5 font-outfit text-[1.4rem] font-extrabold text-white">
                     <img src="/assets/images/logo.webp" loading="lazy" alt="LOD Player Logo" width="32" height="32" class="w-8 h-8 rounded-lg object-cover">
@@ -16,6 +16,15 @@ export const getFooterHTML = () => {
                     <li><a href="{{seo.base_url}}#tv-experience" class="hover:text-white transition-all hover:pl-1">TV Experience</a></li>
                     <li><a href="{{seo.base_url}}#downloads" class="hover:text-white transition-all hover:pl-1">Download</a></li>
                     <li><a href="{{seo.base_url}}sync/" class="hover:text-white transition-all hover:pl-1">Quick Add from Phone</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Guides</h3>
+                <ul class="flex flex-col gap-2.5 list-none">
+                    <li><a href="/android-tv-iptv-player/" class="hover:text-white transition-all hover:pl-1">LOD Player Android TV Guide</a></li>
+                    <li><a href="/offline-vod-download/" class="hover:text-white transition-all hover:pl-1">Offline VOD Download</a></li>
+                    <li><a href="/m3u-xtream-guide/" class="hover:text-white transition-all hover:pl-1">M3U &amp; Xtream Guide</a></li>
+                    <li><a href="/about/" class="hover:text-white transition-all hover:pl-1">About LOD Player</a></li>
                 </ul>
             </div>
             <div>

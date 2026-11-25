@@ -1,15 +1,16 @@
 # LOD Player — Official Offline IPTV & VOD Media Player
 
-> LOD Player is a modern, hardware-accelerated IPTV and VOD media player developed by LOD Digital for Android smartphones, tablets, Android TV, and Smart TV set-top boxes. It stands out with secure in-app offline VOD downloading, full Android TV D-Pad remote navigation, multi-device cloud synchronization, and instant phone-to-TV playlist transfer via lodplayer.com/sync.
+> LOD Player is a modern, hardware-accelerated IPTV and VOD media player developed by LOD Digital for iOS (iPhone and iPad), Android smartphones, tablets, Android TV, and Smart TV set-top boxes. It stands out with secure in-app offline VOD downloading, full Android TV D-Pad remote navigation, multi-device cloud synchronization across iOS and Android, and instant phone-to-TV playlist transfer via lodplayer.com/sync.
 
 ## Official Information & Links
 - **Brand / Application Name:** LOD Player
 - **Developer / Publisher:** LOD Digital (Istanbul, Turkey)
 - **Official Website:** https://lodplayer.com/
 - **Quick TV Playlist Setup (Web Sync):** https://lodplayer.com/sync/
+- **Apple App Store (iOS):** https://apps.apple.com/app/lod-player-iptv-player/id6831201648
 - **Google Play Store:** https://play.google.com/store/apps/details?id=com.lodplayer
 - **Direct Android APK Download:** https://github.com/loddigital/lodplayer-web/releases/latest/download/lod-player.apk
-- **Supported Platforms:** Android Smartphones, Android Tablets, Android TV, Google TV, Smart TV Boxes
+- **Supported Platforms:** iOS (iPhone, iPad), Android Smartphones, Android Tablets, Android TV, Google TV, Smart TV Boxes
 - **Supported Playlist Formats:** Xtream Codes API, M3U / M3U8 URLs
 - **Price:** Free to download (Freemium)
 - **Support Email:** support@lodplayer.com
@@ -25,25 +26,30 @@
 
 ## Frequently Asked Questions (AEO Summary)
 - **What is LOD Player?**
-  LOD Player is an advanced IPTV and VOD media player for Android and Android TV that supports Xtream Codes API and M3U playlists, featuring offline video downloading, cloud sync across 5 devices, and remote-friendly Smart TV navigation.
+  LOD Player is an advanced IPTV and VOD media player for iOS (iPhone and iPad), Android, and Android TV that supports Xtream Codes API and M3U playlists, featuring offline video downloading, cloud sync across 5 devices, and remote-friendly Smart TV navigation.
 - **Does LOD Player provide IPTV channels or subscriptions?**
   No. LOD Player is strictly a media player application. It does not provide, host, or sell any television channels, movies, VOD content, or playlists. Users must provide their own legally acquired M3U or Xtream API playlist.
 - **Can I download IPTV movies and series to watch offline?**
   Yes. LOD Player allows users to download VOD content (movies and series) directly inside the application and watch them offline without an active internet connection.
 - **How do I add a playlist to LOD Player on Android TV?**
-  Open LOD Player on your TV to display an 8-digit pairing code, then visit https://lodplayer.com/sync/ on your phone (or use the LOD Player mobile app), enter the 8-digit code, paste your Xtream API or M3U credentials, and tap "Send to TV".
+  Open LOD Player on your TV to display an 8-digit pairing code, then visit https://lodplayer.com/sync/ on your phone (or use the LOD Player iOS or Android app), enter the 8-digit code, paste your Xtream API or M3U credentials, and tap "Send to TV".
 
 - **Is LOD Player legal to use?**
   Yes. LOD Player is a legal media player application. It contains no channels, movies or subscriptions. Legality depends on the playlist source, so users should only add M3U or Xtream content they have the legal right to access. LOD Digital does not provide, host or sell any playlist.
 - **Which devices does LOD Player support?**
-  LOD Player runs on Android smartphones, Android tablets, Android TV, Google TV and Android-based Smart TV boxes. One account can sync favorites, watch history and playback positions across up to 5 devices and 5 playlists.
+  LOD Player runs on iOS (iPhone and iPad), Android smartphones, Android tablets, Android TV, Google TV and Android-based Smart TV boxes. One account can sync favorites, watch history and playback positions across up to 5 devices and 5 playlists.
 - **How do I add an Xtream Codes API login to LOD Player?**
   Add a new playlist, choose Xtream Codes API, then enter the server URL, username and password from your provider. For an M3U list, paste the playlist URL instead. Either format can also be sent from a phone to a TV with the 8-digit code at https://lodplayer.com/sync/.
 
 ## Important Pages & Documentation
 - [Home Page (English)](https://lodplayer.com/): Overview of features, Smart TV showcase, and download links.
 - [Home Page (Turkish - Türkçe)](https://lodplayer.com/tr/): Çevrimdışı IPTV ve VOD Oynatıcı resmi Türkçe sayfası.
-- [Quick TV Setup / Playlist Sync](https://lodplayer.com/sync/): Web tool to send M3U and Xtream playlists to Android TV via an 8-digit code.
+- [Quick TV Setup / Playlist Sync (EN)](https://lodplayer.com/sync/): Web tool and full guide to send M3U and Xtream playlists to Android TV via an 8-digit code.
+- [Quick TV Setup / Playlist Sync (TR)](https://lodplayer.com/tr/sync/): 8 haneli kod ile Smart TV'ye telefondan M3U ve Xtream gönderme aracı ve rehberi.
+- [Android TV IPTV Player Guide](https://lodplayer.com/android-tv-iptv-player/): Guide to D-Pad remote navigation, Google Play & APK installation, and Smart TV setup.
+- [Offline VOD Download Guide](https://lodplayer.com/offline-vod-download/): How to download VOD movies and series inside LOD Player for offline playback on iOS and Android.
+- [M3U & Xtream Codes Setup Guide](https://lodplayer.com/m3u-xtream-guide/): Guide to adding M3U, M3U8, get.php, and Xtream Codes API playlists in LOD Player.
+- [About LOD Player & LOD Digital](https://lodplayer.com/about/): Official product identity, verified store IDs (com.lodplayer, App Store id6831201648), and legal boundaries.
 - [Privacy Policy](https://lodplayer.com/privacy-policy.html): Details on local-only usage, cloud sync data protection, and user rights.
 - [Terms of Service](https://lodplayer.com/terms.html): Acceptable use policy, 5-device account rules, and copyright disclaimers.
 - [Delete Account](https://lodplayer.com/delete-account.html): Instructions for permanent account deletion.

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOD Player | Oficjalny odtwarzacz Offline IPTV i VOD (Android TV i Telefon)</title>
-    <meta name="description" content="Pobierz LOD Player – najlepszy odtwarzacz IPTV offline, oferujący bezpieczne pobieranie VOD, możliwości oglądania w trybie offline, konfigurowalne audio/napisy i optymalizację Android TV.">
-    <meta name="keywords" content="Pobierz LOD Player, LOD Player APK, IPTV offline, pobieranie VOD, oglądaj offline, IPTV z funkcją pobierania, Smart TV IPTV, Android TV Player, Xtream Player, Premium IPTV">
+    <title>LOD Player | Oficjalny odtwarzacz Offline IPTV i VOD (iOS, Android i TV)</title>
+    <meta name="description" content="Pobierz LOD Player na iOS, Android i Android TV - najlepszy odtwarzacz IPTV offline z bezpiecznym pobieraniem VOD, oglądaniem bez internetu, wyborem dźwięku i napisów oraz optymalizacją dla Smart TV.">
+    <meta name="keywords" content="Pobierz LOD Player, LOD Player iOS, LOD Player APK, App Store IPTV, iPhone IPTV, iPad IPTV, Offline IPTV, Pobieranie VOD, Oglądaj offline, Smart TV IPTV, Odtwarzacz Android TV, Xtream Player, Premium IPTV">
     <meta name="author" content="LOD Digital">
     <meta name="application-name" content="LOD Player">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -46,12 +46,12 @@
 
     <!-- Open Graph / Social Media -->
     <meta property="og:site_name" content="LOD Player" />
-    <meta property="og:title" content="LOD Player | Oficjalny odtwarzacz Offline IPTV i VOD (Android TV i Telefon)" />
-    <meta property="og:description" content="Pobierz LOD Player – najlepszy odtwarzacz IPTV offline, oferujący bezpieczne pobieranie VOD, możliwości oglądania w trybie offline, konfigurowalne audio/napisy i optymalizację Android TV." />
+    <meta property="og:title" content="LOD Player | Oficjalny odtwarzacz Offline IPTV i VOD (iOS, Android i TV)" />
+    <meta property="og:description" content="Pobierz LOD Player na iOS, Android i Android TV - najlepszy odtwarzacz IPTV offline z bezpiecznym pobieraniem VOD, oglądaniem bez internetu, wyborem dźwięku i napisów oraz optymalizacją dla Smart TV." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lodplayer.com/pl/" />
     <meta property="og:locale" content="pl_PL" />
-    <meta property="og:locale:alternate" content="ar_AR" />
+    <meta property="og:locale:alternate" content="ar_SA" />
     <meta property="og:locale:alternate" content="cs_CZ" />
     <meta property="og:locale:alternate" content="da_DK" />
     <meta property="og:locale:alternate" content="de_DE" />
@@ -82,12 +82,12 @@
     <meta property="og:image" content="https://lodplayer.com/assets/images/og-banner.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="LOD Player - Offline IPTV and VOD Player for Android TV and Mobile" />
+    <meta property="og:image:alt" content="LOD Player - Offline IPTV and VOD Player for iOS, Android, and Android TV" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="LOD Player | Oficjalny odtwarzacz Offline IPTV i VOD (Android TV i Telefon)" />
-    <meta name="twitter:description" content="Pobierz LOD Player – najlepszy odtwarzacz IPTV offline, oferujący bezpieczne pobieranie VOD, możliwości oglądania w trybie offline, konfigurowalne audio/napisy i optymalizację Android TV." />
+    <meta name="twitter:title" content="LOD Player | Oficjalny odtwarzacz Offline IPTV i VOD (iOS, Android i TV)" />
+    <meta name="twitter:description" content="Pobierz LOD Player na iOS, Android i Android TV - najlepszy odtwarzacz IPTV offline z bezpiecznym pobieraniem VOD, oglądaniem bez internetu, wyborem dźwięku i napisów oraz optymalizacją dla Smart TV." />
     <meta name="twitter:image" content="https://lodplayer.com/assets/images/og-banner.png" />
 
     <!-- Favicon & Touch Icons -->
@@ -96,6 +96,7 @@
     <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="LOD Player" />
+    <meta name="apple-itunes-app" content="app-id=6831201648" />
     <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
     <!-- Google Fonts -->
@@ -104,9 +105,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- Preload LCP hero image -->
-    <link rel="preload" as="image" href="/assets/images/tv-mockup.webp" fetchpriority="high">
 
     <!-- CSS Styles -->
     <link rel="stylesheet" href="/style.css">
@@ -126,7 +124,7 @@
           "url": "https://lodplayer.com/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://lodplayer.com/assets/images/logo.png"
+            "url": "https://lodplayer.com/assets/images/logo.webp"
           },
           "contactPoint": {
             "@type": "ContactPoint",
@@ -134,6 +132,7 @@
             "contactType": "customer support"
           },
           "sameAs": [
+            "https://apps.apple.com/app/lod-player-iptv-player/id6831201648",
             "https://play.google.com/store/apps/details?id=com.lodplayer",
             "https://github.com/loddigital",
             "https://github.com/loddigital/lodplayer-web"
@@ -141,8 +140,8 @@
         },
         {
           "@type": "WebSite",
-          "@id": "https://lodplayer.com/#website",
-          "url": "https://lodplayer.com/",
+          "@id": "https://lodplayer.com/pl/#website",
+          "url": "https://lodplayer.com/pl/",
           "name": "LOD Player",
           "alternateName": ["LOD Player IPTV", "LOD Digital IPTV Player"],
           "inLanguage": "pl",
@@ -152,20 +151,23 @@
         },
         {
           "@type": "SoftwareApplication",
-          "@id": "https://lodplayer.com/#software",
+          "@id": "https://lodplayer.com/pl/#software",
           "name": "LOD Player",
-          "alternateName": "LOD Player - Offline IPTV and VOD Player",
+          "alternateName": "LOD Player - odtwarzacz IPTV i VOD w trybie offline",
           "url": "https://lodplayer.com/pl/",
           "inLanguage": "pl",
           "datePublished": "2026-06-07",
-          "dateModified": "2026-11-16",
-          "operatingSystem": "Android, Android TV, Google TV, Smart TV",
+          "dateModified": "2026-11-25",
+          "operatingSystem": "iOS, iPadOS, Android, Android TV, Google TV, Smart TV",
           "applicationCategory": "MultimediaApplication",
-          "applicationSubCategory": "IPTV and VOD Media Player",
-          "installUrl": "https://play.google.com/store/apps/details?id=com.lodplayer",
+          "applicationSubCategory": "Odtwarzacz multimedialny IPTV i VOD",
+          "installUrl": [
+            "https://apps.apple.com/app/lod-player-iptv-player/id6831201648",
+            "https://play.google.com/store/apps/details?id=com.lodplayer"
+          ],
           "downloadUrl": "https://github.com/loddigital/lodplayer-web/releases/latest/download/lod-player.apk",
           "screenshot": [
-            "https://lodplayer.com/assets/images/tv-mockup.png",
+            "https://lodplayer.com/assets/images/tv-mockup.webp",
             "https://play-lh.googleusercontent.com/05L-VGuW8uLhXSxIas2sfQ37aA08MZ4admMeN3LNqFwUy5cJwatjrrI3NVj9cdSm5z_DzTaYjdLkrMj2mUq3Ew=w1052-h592",
             "https://play-lh.googleusercontent.com/T8DSU68yMwmFsyXdI4ur17-enzNoHG8urn9D7Jw_sVtgL4wLG5o9bwA2lkitYj3dN1UfB-JuswvGj1gaF9OJgA=w1052-h592",
             "https://play-lh.googleusercontent.com/yctJxNCYv0NmzsRQmkjBaKM7DqnpQrvr2bYehKPWsN8qw0eQpSlEK0ssjvjuCZkaDlcb49L-eBuwYEUI4yvU1w=w1052-h592",
@@ -184,27 +186,21 @@
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock"
           },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.7",
-            "bestRating": "5",
-            "worstRating": "1",
-            "ratingCount": "33"
-          },
           "featureList": [
-            "Offline VOD Download (Watch Offline)",
-            "Android TV and Smart TV D-Pad Remote Navigation",
-            "Xtream Codes API and M3U Playlist Support",
-            "Quick Phone-to-TV Playlist Sync via 8-Digit Code",
-            "Multi-Language Audio and Custom Subtitles",
-            "Cloud Synchronization across 5 Devices",
-            "Smart Playback History and Parental Control"
+            "Pobieranie VOD offline (oglądaj offline)",
+            "Zdalna nawigacja Android TV i Smart TV D-Pad",
+            "Xtream Codes API i obsługa list odtwarzania M3U",
+            "Szybka synchronizacja list odtwarzania między telefonem a telewizorem za pomocą 8-cyfrowego kodu",
+            "Wielojęzyczny dźwięk i niestandardowe napisy",
+            "Synchronizacja w chmurze na 5 urządzeniach",
+            "Inteligentna historia odtwarzania i kontrola rodzicielska"
           ],
           "sameAs": [
+            "https://apps.apple.com/app/lod-player-iptv-player/id6831201648",
             "https://play.google.com/store/apps/details?id=com.lodplayer",
             "https://github.com/loddigital/lodplayer-web/releases"
           ],
-          "description": "Pobierz LOD Player – najlepszy odtwarzacz IPTV offline, oferujący bezpieczne pobieranie VOD, możliwości oglądania w trybie offline, konfigurowalne audio/napisy i optymalizację Android TV."
+          "description": "Pobierz LOD Player na iOS, Android i Android TV - najlepszy odtwarzacz IPTV offline z bezpiecznym pobieraniem VOD, oglądaniem bez internetu, wyborem dźwięku i napisów oraz optymalizacją dla Smart TV."
         }
       ]
     }
@@ -239,7 +235,7 @@
         "name": "Czym jest LOD Player i jakie formaty list odtwarzania obsługuje?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "LOD Player to nowoczesny, darmowy odtwarzacz IPTV i VOD stworzony przez LOD Digital na telefony Android, tablety oraz Android TV. Obsługuje listy Xtream Codes API i M3U, pobieranie VOD do oglądania offline, synchronizację w chmurze na 5 urządzeniach oraz obsługę pilotem D-Pad."
+          "text": "LOD Player to nowoczesny, darmowy odtwarzacz IPTV i VOD opracowany przez LOD Digital na iOS (iPhone i iPad), telefony i tablety z systemem Android oraz Android TV. Obsługuje listy Xtream Codes API i M3U, oferuje pobieranie wideo offline, synchronizację w chmurze na 5 urządzeniach i pełną obsługę pilota D-Pad."
         }
       }, {
         "@type": "Question",
@@ -260,7 +256,7 @@
         "name": "Jakie urządzenia obsługuje LOD Player?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "LOD Player działa na smartfonach i tabletach z systemem Android, Android TV, Google TV i urządzeniach Smart TV z systemem Android. Urządzenia z systemem Android TV współpracują ze standardowym pilotem D-Pad. Jedno konto umożliwia synchronizację ulubionych, historii oglądania i pozycji odtwarzania na maksymalnie 5 urządzeniach i 5 listach odtwarzania z synchronizacją w chmurze."
+          "text": "LOD Player działa na urządzeniach iOS (iPhone i iPad), smartfonach i tabletach Android, Android TV, Google TV oraz przystawkach Smart TV opartych na Androidzie. Urządzenia Android TV obsługują standardowy pilot D-Pad. Jedno konto pozwala synchronizować ulubione, historię oglądania i pozycje odtwarzania na maksymalnie 5 urządzeniach i 5 listach."
         }
       }, {
         "@type": "Question",
@@ -349,13 +345,13 @@
                     <h1
                         class="font-outfit font-bold text-[1.5rem] md:text-[2.5rem] leading-[1.15] text-white tracking-[-0.02em]">
                         LOD Player — Offline odtwarzacz IPTV i VOD</h1>
-                    <p class="text-[1.15rem] text-textMuted max-w-135">LOD Player to najnowocześniejszy odtwarzacz umożliwiający pobieranie VOD w trybie offline, zaawansowany wybór ścieżki audio/napisów i płynną optymalizację kontrolera D-Pad Android TV.</p>
+                    <p class="text-[1.15rem] text-textMuted max-w-135">LOD Player to nowoczesny odtwarzacz dla systemów iOS, Android i Android TV oferujący pobieranie VOD offline, zaawansowany wybór ścieżek dźwiękowych i napisów oraz płynną optymalizację pod kątem pilota D-Pad.</p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 w-full sm:w-max">
                         <!-- 1. Google Play Store Button -->
-                        <a href="https://play.google.com/store/apps/details?id=com.lodplayer" target="_blank"
+                        <a href="https://play.google.com/store/apps/details?id=com.lodplayer" target="_blank" rel="noopener noreferrer"
                             class="flex items-center gap-3 bg-[linear-gradient(135deg,#3b82f6_0%,#1d4ed8_100%)] border border-white/10 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer transition-all duration-300 backdrop-blur-md shadow-glass hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(59,130,246,0.4)] hover:border-white/20 w-full justify-start">
                             <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                                <svg viewBox="0 0 24 24" class="fill-white">
+                                <svg viewBox="0 0 24 24" class="fill-white" aria-hidden="true">
                                     <path
                                         d="M3.609 1.814L13.783 12 3.609 22.186A2.23 2.23 0 0 1 3 20.6V3.4c0-.623.232-1.215.609-1.586zm11.597 8.766l2.36 1.362L4.996 23.473l10.21-12.893zm3.729 2.152c.677-.39 1.065-1.042 1.065-1.732s-.388-1.342-1.065-1.732l-2.613-1.508-2.639 3.24 2.639 3.24 2.613-1.508zM15.206 11.58L4.996.527l12.57 7.258-2.36 3.795z" />
                                 </svg>
@@ -367,28 +363,28 @@
                             </div>
                         </a>
 
-                        <!-- 2. App Store Button (Coming Soon) -->
-                        <div
-                            class="flex items-center gap-3 bg-[#0a1120]/65 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-default opacity-70 backdrop-blur-md shadow-glass hover:border-white/12 transition-all duration-300 w-full justify-start">
+                        <!-- 2. App Store Button -->
+                        <a href="https://apps.apple.com/app/lod-player-iptv-player/id6831201648" target="_blank" rel="noopener noreferrer"
+                            class="flex items-center gap-3 bg-[linear-gradient(135deg,#3b82f6_0%,#1d4ed8_100%)] border border-white/10 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer transition-all duration-300 backdrop-blur-md shadow-glass hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(59,130,246,0.4)] hover:border-white/20 w-full justify-start">
                             <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                                <svg viewBox="0 0 24 24" class="fill-white">
+                                <svg viewBox="0 0 24 24" class="fill-white" aria-hidden="true">
                                     <path
                                         d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.1,16.67C20.08,16.74 19.67,18.11 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z" />
                                 </svg>
                             </div>
                             <div class="flex flex-col items-start whitespace-nowrap">
                                 <span
-                                    class="text-[0.75rem] text-white/70 uppercase tracking-wider">JUŻ WKRÓTCE</span>
+                                    class="text-[0.75rem] text-white/70 uppercase tracking-wider">POBIERZ W</span>
                                 <span class="text-[1.05rem] font-bold font-outfit text-white">App Store</span>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- 3. APK Direct Download -->
                         <a href="https://github.com/loddigital/lodplayer-web/releases/latest/download/lod-player.apk"
                             download="LOD_Player_Latest.apk"
                             class="apk-download-btn flex items-center gap-3 bg-[#0a1120]/80 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:border-white/30 transition-all duration-300 w-full justify-start">
                             <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                                <svg viewBox="0 0 24 24" class="fill-white w-5 h-5">
+                                <svg viewBox="0 0 24 24" class="fill-white w-5 h-5" aria-hidden="true">
                                     <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
                                 </svg>
                             </div>
@@ -669,14 +665,14 @@
                     <!-- 1. TV Screen (Back Center) -->
                     <div
                         class="absolute top-0 sm:top-[5%] left-1/2 -translate-x-1/2 w-[90%] sm:w-[85%] lg:w-full aspect-video rounded-xl sm:rounded-2xl border border-white/10 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.9),0_0_50px_rgba(59,130,246,0.2)] overflow-hidden z-10 transition-transform hover:scale-[1.02] duration-500">
-                        <img src="/assets/images/tv-mockup.webp" alt="LOD Player Android TV and Smart TV IPTV Interface with D-Pad Remote Navigation" width="1280" height="720" fetchpriority="high" decoding="async"
+                        <img src="/assets/images/tv-mockup.webp" alt="LOD Player Android TV and Smart TV IPTV Interface with D-Pad Remote Navigation" width="1280" height="720" loading="lazy" decoding="async"
                             class="w-full h-full object-cover">
                     </div>
 
                     <!-- 2. Tablet Screen (Middle Left) -->
                     <div
                         class="absolute bottom-[10%] sm:bottom-[-5%] left-[0%] sm:left-[-10%] w-[55%] sm:w-[50%] lg:w-[60%] aspect-video rounded-lg sm:rounded-xl border border-white/15 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.8),0_0_30px_rgba(59,130,246,0.15)] overflow-hidden z-20 transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 backdrop-blur-sm bg-bgDark/40">
-                        <img src="/assets/images/tablet-mockup.webp" alt="LOD Player Offline VOD and Series Playback on Tablet" width="1024" height="805" loading="lazy" decoding="async"
+                        <img src="/assets/images/tablet-mockup.webp" alt="LOD Player Offline VOD and Series Playback on iPad and Android Tablet" width="1024" height="805" loading="lazy" decoding="async"
                             class="w-full h-full object-cover">
                     </div>
 
@@ -687,7 +683,7 @@
                         <div
                             class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-3.75 sm:h-6.25 bg-gray-900 rounded-b-xl sm:rounded-b-3xl z-40">
                         </div>
-                        <img src="/assets/images/mobile-mockup.webp" alt="LOD Player Mobile IPTV App with Offline VOD Downloads" width="540" height="1170" loading="lazy" decoding="async"
+                        <img src="/assets/images/mobile-mockup.webp" alt="LOD Player Mobile IPTV App for iPhone and Android with Offline VOD Downloads" width="540" height="1170" loading="lazy" decoding="async"
                             class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -759,10 +755,10 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 w-full sm:w-max mx-auto">
                         <!-- 1. Google Play Store Button -->
-                        <a href="https://play.google.com/store/apps/details?id=com.lodplayer" target="_blank"
+                        <a href="https://play.google.com/store/apps/details?id=com.lodplayer" target="_blank" rel="noopener noreferrer"
                             class="flex items-center gap-3 bg-[linear-gradient(135deg,#3b82f6_0%,#1d4ed8_100%)] border border-white/10 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer transition-all duration-300 backdrop-blur-md shadow-glass hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(59,130,246,0.4)] hover:border-white/20 w-full justify-start">
                             <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                                <svg viewBox="0 0 24 24" class="fill-white">
+                                <svg viewBox="0 0 24 24" class="fill-white" aria-hidden="true">
                                     <path
                                         d="M3.609 1.814L13.783 12 3.609 22.186A2.23 2.23 0 0 1 3 20.6V3.4c0-.623.232-1.215.609-1.586zm11.597 8.766l2.36 1.362L4.996 23.473l10.21-12.893zm3.729 2.152c.677-.39 1.065-1.042 1.065-1.732s-.388-1.342-1.065-1.732l-2.613-1.508-2.639 3.24 2.639 3.24 2.613-1.508zM15.206 11.58L4.996.527l12.57 7.258-2.36 3.795z" />
                                 </svg>
@@ -773,27 +769,27 @@
                             </div>
                         </a>
 
-                        <!-- 2. App Store Button (Coming Soon) -->
-                        <div
-                            class="flex items-center gap-3 bg-[#0a1120]/65 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-default opacity-70 backdrop-blur-md shadow-glass hover:border-white/12 transition-all duration-300 w-full justify-start">
+                        <!-- 2. App Store Button -->
+                        <a href="https://apps.apple.com/app/lod-player-iptv-player/id6831201648" target="_blank" rel="noopener noreferrer"
+                            class="flex items-center gap-3 bg-[linear-gradient(135deg,#3b82f6_0%,#1d4ed8_100%)] border border-white/10 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer transition-all duration-300 backdrop-blur-md shadow-glass hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(59,130,246,0.4)] hover:border-white/20 w-full justify-start">
                             <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                                <svg viewBox="0 0 24 24" class="fill-white">
+                                <svg viewBox="0 0 24 24" class="fill-white" aria-hidden="true">
                                     <path
                                         d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.1,16.67C20.08,16.74 19.67,18.11 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z" />
                                 </svg>
                             </div>
                             <div class="flex flex-col items-start whitespace-nowrap">
-                                <span class="text-[0.75rem] text-white/70 uppercase tracking-wider">JUŻ WKRÓTCE</span>
+                                <span class="text-[0.75rem] text-white/70 uppercase tracking-wider">POBIERZ W</span>
                                 <span class="text-[1.05rem] font-bold font-outfit text-white">App Store</span>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- 3. APK Direct Download -->
                         <a href="https://github.com/loddigital/lodplayer-web/releases/latest/download/lod-player.apk"
                             download="LOD_Player_Latest.apk"
                             class="apk-download-btn flex items-center gap-3 bg-[#0a1120]/80 border border-white/12 px-[1.6rem] py-[0.8rem] rounded-2xl cursor-pointer backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:border-white/30 transition-all duration-300 w-full justify-start sm:col-start-1">
                             <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                                <svg viewBox="0 0 24 24" class="fill-white w-5 h-5">
+                                <svg viewBox="0 0 24 24" class="fill-white w-5 h-5" aria-hidden="true">
                                     <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
                                 </svg>
                             </div>
@@ -830,7 +826,7 @@
                     </div>
                     <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
                         <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Czym jest LOD Player i jakie formaty list odtwarzania obsługuje?</h3>
-                        <p class="text-[0.95rem] text-textMuted">LOD Player to nowoczesny, darmowy odtwarzacz IPTV i VOD stworzony przez LOD Digital na telefony Android, tablety oraz Android TV. Obsługuje listy Xtream Codes API i M3U, pobieranie VOD do oglądania offline, synchronizację w chmurze na 5 urządzeniach oraz obsługę pilotem D-Pad.</p>
+                        <p class="text-[0.95rem] text-textMuted">LOD Player to nowoczesny, darmowy odtwarzacz IPTV i VOD opracowany przez LOD Digital na iOS (iPhone i iPad), telefony i tablety z systemem Android oraz Android TV. Obsługuje listy Xtream Codes API i M3U, oferuje pobieranie wideo offline, synchronizację w chmurze na 5 urządzeniach i pełną obsługę pilota D-Pad.</p>
                     </div>
                     <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
                         <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Jak szybko dodać listę M3U lub Xtream do telewizora Smart TV?</h3>
@@ -842,7 +838,7 @@
                     </div>
                     <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
                         <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Jakie urządzenia obsługuje LOD Player?</h3>
-                        <p class="text-[0.95rem] text-textMuted">LOD Player działa na smartfonach i tabletach z systemem Android, Android TV, Google TV i urządzeniach Smart TV z systemem Android. Urządzenia z systemem Android TV współpracują ze standardowym pilotem D-Pad. Jedno konto umożliwia synchronizację ulubionych, historii oglądania i pozycji odtwarzania na maksymalnie 5 urządzeniach i 5 listach odtwarzania z synchronizacją w chmurze.</p>
+                        <p class="text-[0.95rem] text-textMuted">LOD Player działa na urządzeniach iOS (iPhone i iPad), smartfonach i tabletach Android, Android TV, Google TV oraz przystawkach Smart TV opartych na Androidzie. Urządzenia Android TV obsługują standardowy pilot D-Pad. Jedno konto pozwala synchronizować ulubione, historię oglądania i pozycje odtwarzania na maksymalnie 5 urządzeniach i 5 listach.</p>
                     </div>
                     <div class="bg-[#0a1120]/65 border border-white/12 rounded-2xl p-6 backdrop-blur-md shadow-glass">
                         <h3 class="font-outfit font-bold text-[1.15rem] text-white mb-2">Jak dodać login API Xtream Codes do LOD Player?</h3>
@@ -857,7 +853,7 @@
     <!-- Footer Placeholder -->
     
     <footer class="bg-[#030712] border-t border-white/12 pt-10 pb-6 text-[0.95rem] text-textMuted mt-auto">
-        <div class="max-w-300 mx-auto px-8 relative grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-8 mb-6">
+        <div class="max-w-300 mx-auto px-8 relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-8 mb-6">
             <div class="flex flex-col gap-5">
                 <div class="flex items-center gap-2.5 font-outfit text-[1.4rem] font-extrabold text-white">
                     <img src="/assets/images/logo.webp" loading="lazy" alt="LOD Player Logo" width="32" height="32" class="w-8 h-8 rounded-lg object-cover">
@@ -872,6 +868,15 @@
                     <li><a href="/pl/#tv-experience" class="hover:text-white transition-all hover:pl-1">Doświadczenia telewizyjne</a></li>
                     <li><a href="/pl/#downloads" class="hover:text-white transition-all hover:pl-1">Pliki do pobrania</a></li>
                     <li><a href="/pl/sync/" class="hover:text-white transition-all hover:pl-1">Szybkie dodawanie z telefonu</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Guides</h3>
+                <ul class="flex flex-col gap-2.5 list-none">
+                    <li><a href="/android-tv-iptv-player/" class="hover:text-white transition-all hover:pl-1">LOD Player Android TV Guide</a></li>
+                    <li><a href="/offline-vod-download/" class="hover:text-white transition-all hover:pl-1">Offline VOD Download</a></li>
+                    <li><a href="/m3u-xtream-guide/" class="hover:text-white transition-all hover:pl-1">M3U and Xtream Guide</a></li>
+                    <li><a href="/about/" class="hover:text-white transition-all hover:pl-1">About LOD Player</a></li>
                 </ul>
             </div>
             <div>

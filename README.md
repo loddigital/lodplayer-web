@@ -1,6 +1,6 @@
 # LOD Player - Official Landing Page
 
-This repository contains the source code and assets for the official landing page of **LOD Player**, a next-generation IPTV player optimized for both Mobile and Android TV platforms.
+This repository contains the source code and assets for the official landing page of **LOD Player**, a next-generation IPTV player optimized for iOS (iPhone & iPad), Android Mobile, and Android TV platforms.
 
 🌐 **Live Website:** [https://lodplayer.com](https://lodplayer.com)
 
@@ -8,7 +8,7 @@ This repository contains the source code and assets for the official landing pag
 
 ## 🚀 Key Features of LOD Player
 
-* **Google Play Store Verified:** Available officially on the Google Play Store for seamless and secure installation.
+* **Apple App Store & Google Play Store Verified:** Available officially on both the [Apple App Store](https://apps.apple.com/app/lod-player-iptv-player/id6831201648) (iOS) and Google Play Store (Android & Android TV) for seamless and secure installation.
 * **Zero Ads on Android TV:** Optimized for smart TVs and streaming sticks (Mi Stick, Fire Stick, etc.) with a completely ad-free interface.
 * **Advanced Offline Mode (Download & Watch):** Allows mobile users to download media contents to local storage and watch them later without an internet connection.
 * **Flexible M3U & Xtream API Support:** Easily load your digital content by uploading raw M3U playlist links or logging in with your Xtream API credentials.
@@ -22,8 +22,8 @@ This repository contains the source code and assets for the official landing pag
 
 * **Privacy Policy:** [https://lodplayer.com/privacy-policy.html](https://lodplayer.com/privacy-policy.html)
 * **Terms of Service:** [https://lodplayer.com/terms.html](https://lodplayer.com/terms.html)
-* **Account Deletion (Google Play Compliance):** [https://lodplayer.com/delete-account.html](https://lodplayer.com/delete-account.html)
-* **Cloud Data Deletion (Google Play Compliance):** [https://lodplayer.com/delete-data.html](https://lodplayer.com/delete-data.html)
+* **Account Deletion (App Store & Google Play Compliance):** [https://lodplayer.com/delete-account.html](https://lodplayer.com/delete-account.html)
+* **Cloud Data Deletion (App Store & Google Play Compliance):** [https://lodplayer.com/delete-data.html](https://lodplayer.com/delete-data.html)
 
 ---
 

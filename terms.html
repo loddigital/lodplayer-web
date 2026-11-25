@@ -91,15 +91,29 @@
         <div
             class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow top-[-10%] left-[-10%] bg-[radial-gradient(circle,rgba(59,130,246,0.25)_0%,rgba(59,130,246,0)_70%)]">
         </div>
-        <div class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow top-[40%] right-[-10%] bg-[radial-gradient(circle,rgba(147,51,234,0.12)_0%,rgba(147,51,234,0)_70%)]"
-            style="animation-delay: -5s;"></div>
+        <div class="absolute w-[50vw] h-[50vw] max-w-150 max-h-150 rounded-full blur-[100px] opacity-60 animate-floatGlow5 top-[40%] right-[-10%] bg-[radial-gradient(circle,rgba(147,51,234,0.12)_0%,rgba(147,51,234,0)_70%)]"></div>
     </div>
 
     <!-- Header Placeholder -->
-    <div id="header-placeholder"></div>
+    
+    <header id="header" class="fixed top-0 left-0 w-full z-100 backdrop-blur-lg bg-bgDark/70 border-b border-white/12 transition-all duration-300">
+        <div id="nav-container" class="max-w-300 mx-auto px-4 md:px-8 relative flex justify-between items-center h-17.5 md:h-20 transition-all duration-300">
+            <a href="/" class="flex items-center gap-2 md:gap-3 text-xl md:text-2xl font-extrabold font-outfit bg-clip-text text-transparent bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)]">
+                <img src="/assets/images/logo.webp" alt="LOD Player Logo" width="42" height="42" class="w-8 h-8 md:w-10.5 md:h-10.5 rounded-lg md:rounded-[10px] border border-white/15 shadow-[0_4px_12px_rgba(59,130,246,0.3)] object-cover">
+                <span class="max-[380px]:hidden">LOD Player</span>
+            </a>
+            <nav id="desktop-nav" class="flex items-center gap-2 md:gap-8">
+                <a href="/" class="text-[0.95rem] font-medium text-textMuted hover:text-white transition-all flex items-center gap-2">
+                <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current" aria-hidden="true"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/></svg>
+                Back to Home
+            </a>
+            </nav>
+        </div>
+    </header>
+    
 
     <!-- Main Content -->
-    <main class="pt-45 md:pt-20 pb-25 relative grow">
+    <main class="pt-28 md:pt-32 pb-25 relative grow">
         <div class="max-w-212.5 mx-auto px-6 relative">
 
             <div class="mb-10 text-center">
@@ -218,7 +232,55 @@
     </main>
 
     <!-- Footer Placeholder -->
-    <div id="footer-placeholder"></div>
+    
+    <footer class="bg-[#030712] border-t border-white/12 pt-10 pb-6 text-[0.95rem] text-textMuted mt-auto">
+        <div class="max-w-300 mx-auto px-8 relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-8 mb-6">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center gap-2.5 font-outfit text-[1.4rem] font-extrabold text-white">
+                    <img src="/assets/images/logo.webp" loading="lazy" alt="LOD Player Logo" width="32" height="32" class="w-8 h-8 rounded-lg object-cover">
+                    <span class="bg-[linear-gradient(135deg,#60a5fa_0%,#3b82f6_100%)] bg-clip-text text-transparent">LOD Player</span>
+                </div>
+                <p class="max-w-[320px] text-[0.9rem] leading-relaxed">An advanced IPTV player developed by LOD Digital. Offering secure local offline downloads and smart D-pad remote controller support for televisions and mobile devices.</p>
+            </div>
+            <div>
+                <h3 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Quick Links</h3>
+                <ul class="flex flex-col gap-2.5 list-none">
+                    <li><a href="/#features" class="hover:text-white transition-all hover:pl-1">Features</a></li>
+                    <li><a href="/#tv-experience" class="hover:text-white transition-all hover:pl-1">TV Experience</a></li>
+                    <li><a href="/#downloads" class="hover:text-white transition-all hover:pl-1">Downloads</a></li>
+                    <li><a href="/sync/" class="hover:text-white transition-all hover:pl-1">Quick Add from Phone</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Guides</h3>
+                <ul class="flex flex-col gap-2.5 list-none">
+                    <li><a href="/android-tv-iptv-player/" class="hover:text-white transition-all hover:pl-1">LOD Player Android TV Guide</a></li>
+                    <li><a href="/offline-vod-download/" class="hover:text-white transition-all hover:pl-1">Offline VOD Download</a></li>
+                    <li><a href="/m3u-xtream-guide/" class="hover:text-white transition-all hover:pl-1">M3U and Xtream Guide</a></li>
+                    <li><a href="/about/" class="hover:text-white transition-all hover:pl-1">About LOD Player</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-outfit text-[1.05rem] font-semibold text-white mb-5">Support and Contact</h3>
+                <div class="flex flex-col gap-2.5">
+                    <div class="flex items-center gap-2.5 text-[0.9rem]">
+                        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-textMuted" aria-hidden="true"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
+                        <a href="mailto:support@lodplayer.com" class="hover:text-white">support@lodplayer.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-300 mx-auto px-8 relative border-t border-white/12 pt-7 flex flex-col md:flex-row gap-4 items-center justify-between text-[0.85rem] text-textDark">
+            <p>&copy; 2026 LOD Digital. All rights reserved.</p>
+            <div class="flex flex-wrap gap-5">
+                <a href="/privacy-policy.html" class="hover:text-textMuted transition-colors">Privacy Policy</a>
+                <a href="/terms.html" class="hover:text-textMuted transition-colors">Terms of Service</a>
+                <a href="/delete-account.html" class="hover:text-textMuted transition-colors">Delete Account</a>
+                <a href="/delete-data.html" class="hover:text-textMuted transition-colors">Delete Data</a>
+            </div>
+        </div>
+    </footer>
+    
 
     <!-- Application Logic (MVC) -->
     <script type="module" src="/src/js/app.js"></script>
